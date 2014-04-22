@@ -32,8 +32,14 @@ img{max-width:100%;}
      font-family: 'open_sansregular';
       src:url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
 }
+html{
+  height: 100%;
+}
 body {
-	background:url('../images/bg.jpg');
+  min-height: 100%;
+}
+body {
+	background:url('../images/bg.jpg') no-repeat fixed;
 	background-size:100% 100%;
 	font-family: 'open_sansregular';
 	font-size: 100%;
