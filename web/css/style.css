@@ -1160,3 +1160,9 @@ body {
 	color: red;
 	font-weight: bold;
 }
+
+/*prikaz slike na seznamu receptov*/
+.slika_vsi_recepti
+{
+	width:100%;
+}
