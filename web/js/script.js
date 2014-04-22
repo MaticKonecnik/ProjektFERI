@@ -20,5 +20,10 @@ function menu_select() {
 	{
 		$("div.menu > ul > li:nth-child(2) > a").addClass("active");
   	}
+	else
+	{
+		$("div.menu > ul > li:nth-child(1) > a").addClass("active");
+  	}
+	
 	
 }

@@ -103,7 +103,7 @@ body {
 	background-position:0px -46px;
 }
 .mcd-menu li  a > i.icon2{
-	background-position: -42px -46px;
+	background-position: -42px 0px;
 }
 .mcd-menu li a:hover > i.icon2{
 	background-position: -42px -46px;
