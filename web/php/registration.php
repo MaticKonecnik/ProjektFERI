@@ -19,7 +19,6 @@
 		header("Location: login.php");
 	}
 	else{
-		
 		die("Registracija neuspešna!".mysqli_error($con));
 	}
 ?>
