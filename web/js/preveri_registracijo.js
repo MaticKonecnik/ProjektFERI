@@ -4,5 +4,7 @@ $(document).ready(function() {
 
 function preveri_gesla()
 {
-	//$("input[name=\"name\"]").blur()
+	$('input[name="password"]').blur(function(event){
+		
+	});
 }
