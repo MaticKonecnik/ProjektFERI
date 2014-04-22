@@ -9,7 +9,7 @@
 
 	while($row = mysqli_fetch_array($result))
 	{ ?>		
-			<div class="span_of_2">
+			<div class="span_of_2 prikaz_vseh_receptov">
 				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" class="slika_vsi_recepti"/></span>
 				<div class="span_of_list">
 					<div class="span1_of_1">
