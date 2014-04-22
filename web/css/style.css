@@ -526,7 +526,6 @@ body {
 	font-family: 'open_sansregular';
 	font-size: 0.8925em;
 	color: #808080;
-	text-transform: capitalize;
 	margin:20px 0 10px;
 	display: block;
 	-webkit-text-stroke: 0.5px;
@@ -1148,4 +1147,10 @@ body {
 	.span_of_list1 {
 		min-height: 110px;
 	}
+}
+
+/* span za preverjanje ujemanja dveh gesel pri registraciji */
+#validate{
+	color: red;
+	font-weight: bold;
 }
