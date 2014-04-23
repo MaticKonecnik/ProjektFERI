@@ -619,6 +619,60 @@ body {
 .contact_form input[type="reset"]:hover{
 	background: #BEBEBE;
 }
+
+
+/*start header_forma*/
+.header_form{
+	padding:6%;
+	background: white;
+	border-radius: 0px 0px 8px 8px;
+	-webkit-border-radius: 0px 0px 8px 8px;
+	-moz-border-radius: 0px 0px 8px 8px;
+	-o-border-radius: 0px 0px 8px 8px;
+}
+
+.header_form form div{
+	margin: 4% 0 4%;
+}
+.header_form textarea{
+	resize:none;
+	height: 100px;
+}
+
+.header_form input[type="submit"] {
+	width: 20%;
+	margin-right: 10px;
+	float:right;
+	background: #71AF42;
+	color: #ffffff;
+	border: 1px solid #69A23D;
+	text-align:center;
+	font-family: 'open_sansregular';
+	font-weight:100;
+	cursor: pointer;
+	padding: 16px 38px;
+	outline: none;
+	font-size: 1em;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	text-shadow: 0 1px 0 rgb(0, 0, 0);
+	-webkit-text-shadow: 0 1px 0 rgb(0, 0, 0);
+	-moz-text-shadow: 0 1px 0 rgb(0, 0, 0);
+	-o-text-shadow: 0 1px 0 rgb(0, 0, 0);
+}
+
+.header_form input[type="submit"]:hover{
+	background:#659E39;
+}
+	
 /* start span_of_2 */
 .span_of_2{
  	float: left;

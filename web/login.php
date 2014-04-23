@@ -1,27 +1,32 @@
 <?php
+	error_reporting(E_ALL & ~E_NOTICE);
+	session_start();
 	include("includes/header.php");
 	include("includes/menu.php");
 	include_once ("includes/database.php");
-	session_start();
 	$submit=isset($_POST['submit']);
 	
 	if($submit){
 	$email=$_POST['email'];
 	$password=$_POST['password'];
-		$sql="SELECT name, surname, password FROM user WHERE email='$email'";
+		$sql="SELECT id, password FROM user WHERE email='$email'";
 		$query= mysqli_query($con, $sql);
 		$rezultat=mysqli_num_rows($query);
 		if ($rezultat>0){
 			while($row=mysqli_fetch_assoc($query)){
 				$dbpassword=$row['password'];
 				if($dbpassword==$password){
-					$_SESSION["login"]=$email;
+					$id=$row['id'];
+					$_SESSION["login"]=$id;
 					header('Location: index.php');
 				}
 				else{
-					echo "Napačno geslo!";
+					$message="Napačno geslo!";
 				}
 			}
+		}
+		else{
+		 $message="Niste <a href='register.html'>ragistrirani!</a>";
 		}
 	}
 ?>
@@ -38,8 +43,8 @@
                         <span>Geslo</span>
 						<input type="password" class="text" name="password" placeholder="•••••••" required>
 						<span id="validate"></span>
+						<?php if (isset($message)) echo $message ?>
 						<div>
-							<input type="reset" value="Preklici">
 							<input type="submit" value="Prijavi se" name="submit">
 							<div class="clear"></div>
 						</div>
