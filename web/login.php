@@ -20,9 +20,12 @@
 					header('Location: index.php');
 				}
 				else{
-					echo "Krivo geslo!";
+					$message="Krivo geslo!";
 				}
 			}
+		}
+		else{
+		$message="Niste ste se še <a href='register.html'>registrirali!</a>";
 		}
 	}
 ?>
@@ -39,6 +42,7 @@
                         <span>Geslo</span>
 						<input type="password" class="text" name="password" placeholder="•••••••" required>
 						<span id="validate"></span>
+						<?php if(isset($message)) echo $message ?>
 						<div>
 							<input type="reset" value="Preklici">
 							<input type="submit" value="Prijavi se" name="submit">
