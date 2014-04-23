@@ -3,7 +3,7 @@
 				<li>
 					<a href="index.php"<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo(' class="active"'); ?>>
 						<i class="icon1"></i>
-						<strong>Zacetna</strong>
+						<strong>Začetna</strong>
 					</a>
 				</li>
 				<li>

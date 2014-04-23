@@ -22,6 +22,9 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
+
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext);
+
 @font-face {
      font-family: 'open_sansregular';
       src:url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
@@ -57,7 +60,7 @@ body {
 	margin-bottom: 4%;
 }
 .mcd-menu {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -392,14 +395,14 @@ body {
 	color: #797979;
 	text-transform: capitalize;
 	font-weight: 700;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .grid_text1 h5{
 	font-size:1.5em;
 	color: #797979;
 	text-transform: capitalize;
 	font-weight: 600;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .list1{
 	padding-bottom: 8px;
@@ -461,7 +464,7 @@ body {
 	background: #ffffff;
 	color: #555555;
 	text-transform: capitalize;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .list2 li:nth-child(1){
 	border-left:none;
@@ -510,7 +513,7 @@ body {
 	font-size:2em;
 	color: #ffffff;
 	text-transform:capitalize;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 /* start contact_form */
 .contact_form {
@@ -655,7 +658,7 @@ body {
 	font-size: 2.5em;
 	color: #898989;
 	text-transform: uppercase;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .span1_of_2 p{
 	font-size: 0.8725em;
@@ -671,7 +674,7 @@ body {
 	line-height: 1.8em;
 	font-size: 0.8725em;
 	color: #EC2D00;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -727,7 +730,7 @@ body {
 	font-size: 2.5em;
 	color: #898989;
 	text-transform: capitalize;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .span_pea1{
 	float: right;
@@ -741,12 +744,12 @@ body {
 .span_pea1 li span{
 	font-size:6em;
 	color: #555555;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .span_pea1 li p{
 	font-size:1em;
 	color: #898989;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 }
 .span_plus{
 	text-align:center;
@@ -761,7 +764,7 @@ body {
 	border-bottom: none;
 }
 .span_plus li a{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Verdana', sans-serif;
 	display: block;
 	padding: 20px;
 	background: #d0d0d0;
@@ -1170,7 +1173,8 @@ body {
 	left:19.7%;
 	width:57%;
 	background-color:rgba(255,255,255,0.5);
-	/*padding:15px 15px 15px 30px;*/
+	border-radius: 8px 8px 8px 8px;
+	-webkit-border-radius: 8px 8px 8px 8px;
 	padding:15px;
 }
 .comment_form form

@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  init_slider();
+	if(location.pathname.indexOf("index.php") != -1)
+  		init_slider();
 });
 
 
