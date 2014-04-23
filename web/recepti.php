@@ -3,7 +3,6 @@
 	include("includes/header.php");
 	include("includes/menu.php");
 	
-	
 	$sql = "SELECT id, name, image, instructions FROM recipe";
 	$result = mysqli_query($con,$sql);
 
