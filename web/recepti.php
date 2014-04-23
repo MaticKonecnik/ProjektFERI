@@ -7,16 +7,21 @@
 	$result = mysqli_query($con,$sql);
 
 	while($row = mysqli_fetch_array($result))
-	{ ?>		
+	{
+		$vsebina = $row['instructions'];
+		$stevilo_znakov = 300;
+		if(strlen($vsebina)>$stevilo_znakov)
+			$pos=strpos($vsebina, ' ', $stevilo_znakov); $vsebina=substr($row['instructions'],0,$pos ).'...';
+		?>
 			<div class="span_of_2 prikaz_vseh_receptov">
-				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" class="slika_vsi_recepti"/></span>
+				<span class="span_of_img"><div style="background-image:url('<?php echo($row['image']); ?>');" class="slika_vsi_recepti"></div></span>
 				<div class="span_of_list">
 					<div class="span1_of_1">
 						<h4><?php echo($row['name']); ?></h4>
 					</div>
 					<div class="span1_of_2">
-						<p><?php echo($row['instructions']); ?></p>
-						<a class="arrow" href="<?php echo('recept.php?id='.$row['id']); ?>"><span>Više o receptu...</span></a>
+						<p><?php echo($vsebina); ?></p>
+						<a class="arrow" href="<?php echo('recept.php?id='.$row['id']); ?>"><span>Več o receptu...</span></a>
 					</div>	
 					<div class="clear"></div>
 				</div>	
