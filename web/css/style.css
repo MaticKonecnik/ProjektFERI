@@ -683,7 +683,6 @@ body {
 	line-height: 1.8em;
 	font-size: 0.8725em;
 	color: #EC2D00;
-	text-transform: capitalize;
 	font-family: 'Montserrat', sans-serif;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -1165,4 +1164,24 @@ body {
 	padding-bottom:25px;
 	position:relative;
 	left:19.7%;
+}
+/*komentarji*/
+.comment_form
+{
+	position:relative;
+	left:19.7%;
+	width:57%;
+	background-color:rgba(255,255,255,0.5);
+	/*padding:15px 15px 15px 30px;*/
+	padding:15px;
+}
+.comment_form form
+{
+	width:100%;
+	margin:0 auto;
+}
+.comment_form form textarea
+{
+	width:90%;
+	margin:0 auto;
 }

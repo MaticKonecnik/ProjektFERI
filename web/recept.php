@@ -3,7 +3,8 @@
 	include("includes/header.php");
 	include("includes/menu.php");
 	
-	$sql = "SELECT id, name, image, instructions FROM recipe";
+	$id = $_GET['id'];
+	$sql = "SELECT id, name, image, instructions FROM recipe WHERE id='$id'";
 	$result = mysqli_query($con,$sql);
 
 	while($row = mysqli_fetch_array($result))
@@ -22,6 +23,11 @@
 				</div>	
 			</div>
             <div class="clear"></div>
+            <div class="contact_form comment_form">
+					<form method="post" autocomplete="off">
+                        <textarea placeholder="Komentar..."></textarea>
+					</form>
+				</div>			
 <?php
 	}
 	include("includes/footer.php");

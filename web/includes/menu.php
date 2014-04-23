@@ -1,13 +1,13 @@
 		<div class="menu"><!-- start menu -->
 			<ul class="mcd-menu">
 				<li>
-					<a href="index.php"<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('class="active"'); ?>>
+					<a href="index.php"<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo(' class="active"'); ?>>
 						<i class="icon1"></i>
 						<strong>Zacetna</strong>
 					</a>
 				</li>
 				<li>
-					<a href="recepti.php"<?php if(basename($_SERVER['PHP_SELF'])=="recepti.php") echo('class="active"'); ?>>
+					<a href="recepti.php"<?php if(basename($_SERVER['PHP_SELF'])=="recepti.php") echo(' class="active"'); ?>>
 						<i class="icon2"></i>
 						<strong>Recepti</strong>
 					</a>
