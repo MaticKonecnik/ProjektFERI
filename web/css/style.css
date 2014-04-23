@@ -1183,3 +1183,10 @@ body {
 	width:90%;
 	margin:0 auto;
 }
+
+/*Login*/
+.login_form
+{
+	margin:0 auto;
+	float:none;
+}

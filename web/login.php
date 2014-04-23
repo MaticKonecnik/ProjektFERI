@@ -1,10 +1,9 @@
 <?php
 	include("includes/header.php");
 	include("includes/menu.php");
-	include_once ("php/database.php");
+	include_once ("includes/database.php");
 	session_start();
 	$submit=isset($_POST['submit']);
-	
 	
 	if($submit){
 	$email=$_POST['email'];
@@ -20,7 +19,11 @@
 					header('Location: index.php');
 				}
 				else{
+<<<<<<< HEAD
 					$message="Krivo geslo!";
+=======
+					echo "Napačno geslo!";
+>>>>>>> 070fe1bac3fc93ab09278362bd48599dab65f1a3
 				}
 			}
 		}
@@ -31,7 +34,7 @@
 ?>
 	<div class="clear"></div>
 		<div class="spans_of_2"><!-- start spans_of_2 -->
-			<div class="span_of_1"><!-- start span_of_1 -->
+			<div class="span_of_1 login_form"><!-- start span_of_1 -->
 				<div class="span_of_text">
 					<h4>Prijava</h4>
 				</div>
