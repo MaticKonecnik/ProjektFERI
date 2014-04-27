@@ -4,11 +4,9 @@
 	include("includes/menu.php");
 	
 	$id = $_GET['id'];
-	$sql = "SELECT id, name, image, instructions FROM recipe WHERE id='$id'";
-	$result = mysqli_query($con,$sql);
-
-	while($row = mysqli_fetch_array($result))
-	{ ?>		
+	$sql = "SELECT id, name, image, instructions FROM recipe WHERE id='$id' LIMIT 1";
+	$row = mysqli_fetch_array(mysqli_query($con,$sql));
+	 ?>		
 			<div class="span_of_2 prikaz_vseh_receptov">
 				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" class="slika_en_recept"/></span>
 				<div class="span_of_list">
@@ -23,11 +21,10 @@
 			</div>
             <div class="clear"></div>
             <div class="contact_form comment_form">
-					<form method="post" autocomplete="off">
-                        <textarea placeholder="Komentar..."></textarea>
-					</form>
-				</div>			
+                <div id="comment_wrapper">
+                </div>
+                <input type="text" id="vnos_komentarja" placeholder="Komentar..."></input>
+			</div>			
 <?php
-	}
 	include("includes/footer.php");
 ?>
