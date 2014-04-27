@@ -27,7 +27,7 @@
 <html>
 <head>
 <title>Projekt</title>
-<m<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<link rel="stylesheet" type="text/css" href="css/slider.css" />'."\n"); ?>
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -39,15 +39,20 @@
 <div class="wrap">
 <?php
 if(!isset($id)){
-	echo " <form method='post'>
+	echo " <form method='post'> 
 			<div class='header_form' >
 			<input type='submit' value='Registriraj se' name='registracija'>
 			<input type='submit' value='Prijavi se' name='prijava'>
 			</div></form>";
 		}
 else{
-	echo "<div class='header_form'>$name $surname</div>";
-}
-	?>
+	echo "
+			<div class='header_form'>
+			$name $surname
+			
+			<a href='logout.php'><input type='submit' value='Odjava'></a>
+			</div>";
+	}
+?>
 	<div class="main"><!-- start main -->
     
