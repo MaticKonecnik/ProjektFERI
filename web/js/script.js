@@ -5,6 +5,7 @@ $(document).ready(function() {
 	{
 		loadKomentarji();
 	  	dodajKomentarje();
+		$("body").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
 	}
 });
 

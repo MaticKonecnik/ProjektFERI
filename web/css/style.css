@@ -621,7 +621,7 @@ body {
 
 /*start header_forma*/
 .header_form{
-	padding:6%;
+	padding:4%;
 	background: white;
 	border-radius: 0px 0px 8px 8px;
 	-webkit-border-radius: 0px 0px 8px 8px;
@@ -1215,7 +1215,7 @@ body {
 	position:relative;
 	left:19.7%;
 }
-.slika_en_recept
+#slika_en_recept
 {
 	width:100%;
 }

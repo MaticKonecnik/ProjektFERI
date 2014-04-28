@@ -8,7 +8,7 @@
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	 ?>		
 			<div class="span_of_2 prikaz_vseh_receptov">
-				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" class="slika_en_recept"/></span>
+				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" id="slika_en_recept"/></span>
 				<div class="span_of_list">
 					<div class="span1_of_1">
 						<h4><?php echo($row['name']); ?></h4>
