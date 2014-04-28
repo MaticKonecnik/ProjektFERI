@@ -9,7 +9,7 @@
 		header('Location: login.php');
 	}
 	else if ($registracija){
-		header('Location: register.html');
+		header('Location: registration.php');
 	}
 	else if (isset($id)){
 		$sql="SELECT name, surname FROM user WHERE id='$id'";
