@@ -12,13 +12,14 @@
 		header('Location: registration.php');
 	}
 	else if (isset($id)){
-		$sql="SELECT name, surname FROM user WHERE id='$id'";
+		$sql="SELECT name, surname, image FROM user WHERE id='$id'";
 		$query= mysqli_query($con, $sql);
 		$rezultat=mysqli_num_rows($query);
 		if ($rezultat>0){
 			while($row=mysqli_fetch_assoc($query)){
 			$name=$row['name'];
 			$surname=$row['surname'];
+			$image=$row['image'];
 			}
 		}	
 	}
@@ -48,7 +49,7 @@ if(!isset($id)){
 		}
 else{
 	echo "	<div class='header_form'>
-			<a href='profile.php?id=$id'>$name $surname</a>
+			<a href='profile.php?id=$id' class='current-login'><img src='$image' alt='$name $surname' title='$name $surname' class='login-img'/>$name $surname</a>
 			<a href='logout.php'><input type='submit' value='Odjava'></a>
 			</div>";
 	}

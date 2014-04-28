@@ -46,7 +46,7 @@ body {
 }
 /* start main */
 .main{
-	padding: 8% 4%;
+	padding: 3% 4% 8% 4%;
 }
 /* start grid1_of_1 */
 .grid1_of_1 {
@@ -622,7 +622,7 @@ body {
 /*start header_forma*/
 .header_form{
 	padding:4%;
-	background: white;
+
 	border-radius: 0px 0px 8px 8px;
 	-webkit-border-radius: 0px 0px 8px 8px;
 	-moz-border-radius: 0px 0px 8px 8px;
@@ -1260,9 +1260,17 @@ body {
 	margin:0 auto;
 	float:none;
 }
-#hidden_id
+.login-img {
+    float: left;
+    margin-right: 33px;
+    border-radius: 5px;
+    overflow: hidden;
+	width:70px;
+	height:70px;
+}
+.current-login
 {
-	visibility:collapse;
+	color:white;
 }
 
 
