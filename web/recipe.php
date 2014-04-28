@@ -16,15 +16,15 @@
 							<div class="grid_text">	
 								<ul class="list1">
                         <?php
-                        	$sql = "SELECT ingredient.name AS naziv FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
+                        	$sql = "SELECT ingredient.name AS naziv, has_ingredient.type AS enota, has_ingredient.quantity AS kolicina FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
 							$result = mysqli_query($con,$sql);
 							$stevec = 0;
 							while($sestavine = mysqli_fetch_array($result))
 							{
 								if($stevec%2==0)
-									echo('<li class="active"><a href="#">'.$sestavine['naziv'].' <span>1 kos</span> </a></li>');
+									echo('<li class="active"><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								else
-									echo('<li><a href="#">'.$sestavine['naziv'].' <span>1 kos</span> </a></li>');
+									echo('<li><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								$stevec++;
 							}
 						?>                                 
