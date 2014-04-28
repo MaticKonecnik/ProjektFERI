@@ -39,8 +39,8 @@
 			<div class="clear"></div>
             			<div  class="grid_bottom">
 				<ul>
-					<li><a href="#"><i  class="icon_1"></i> <span>Popularni recepti</span></a></li>
-					<li><a href="#"><i  class="icon_2"></i> <span>Dodaj sliko</span></a></li>
+					<li><a href="popular.php"><i  class="icon_1"></i> <span>Popularni recepti</span></a></li>
+					<li><a href="#"><i  class="icon_2"></i> <span>Dodaj recept</span></a></li>
 					<li><a href="#"><i  class="icon_3"></i> <span>Povabi prijatelje</span></a></li>
 				</ul>
 			</div>
