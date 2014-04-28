@@ -22,7 +22,6 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
-
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext);
 
 @font-face {
@@ -713,6 +712,7 @@ body {
 	color: #898989;
 	text-transform: uppercase;
 	font-family: 'Verdana', sans-serif;
+	overflow-wrap: break-word;
 }
 .span1_of_2 p{
 	font-size: 0.8725em;
@@ -1309,6 +1309,10 @@ body {
 .comment {
     position: relative;
 }
+.comment a
+{
+	color: #EC2D00;
+}
 
 .comments:before,
 .comment:before,
@@ -1321,8 +1325,8 @@ body {
 
 .comments:before {
     width: 3px;
-    top: -20px;
-    bottom: -20px;
+    top: -15px;
+    bottom: 0px;
     background: rgba(0,0,0,0.1);
 }
 
@@ -1337,7 +1341,7 @@ body {
 }
 
 .comment:hover:before {
-    background: orange;
+    background: #EC2D00;
 }
 
 .comment .text:before {

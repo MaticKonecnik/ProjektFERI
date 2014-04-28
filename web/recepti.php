@@ -14,7 +14,7 @@
 			$pos=strpos($vsebina, ' ', $stevilo_znakov); $vsebina=substr($row['instructions'],0,$pos ).'...';
 		?>
 			<div class="span_of_2 prikaz_vseh_receptov">
-				<span class="span_of_img"><div style="background-image:url('<?php echo($row['image']); ?>');" class="slika_vsi_recepti"></div></span>
+				<span class="span_of_img"><a href="<?php echo('recept.php?id='.$row['id']); ?>" title="<?php echo($row['name']); ?>"><div style="background-image:url('<?php echo($row['image']); ?>');" class="slika_vsi_recepti"></div></a></span>
 				<div class="span_of_list">
 					<div class="span1_of_1">
 						<h4><?php echo($row['name']); ?></h4>
