@@ -3,8 +3,6 @@
 	include("includes/menu.php");
 	$sql = "SELECT id, name, image, instructions FROM recipe ORDER BY clicked DESC LIMIT 4";
 	$result = mysqli_query($con,$sql);	
-	$sql = "SELECT id, name, image, instructions, source_url, likes FROM recipe ORDER BY likes DESC LIMIT 4";
-	$query = mysqli_query($con,$sql);
 ?>
 		<div class="grids_of_2"><!-- start grids_of_2 -->	
 			<div class="slider"><!-- start slider -->
@@ -25,20 +23,6 @@
 							</div>
                             
 						<?php }
-						?>
-				<?php 
-						while ($row = mysqli_fetch_assoc($query))
-						{
-							$id=$row['id'];
-							$vsebina = $row['instructions'];
-							$stevilo_znakov = 300;
-							if(strlen($vsebina)>$stevilo_znakov)
-							$pos=strpos($vsebina, ' ', $stevilo_znakov); $vsebina=substr($row['instructions'],0,$pos ).'...';
-							echo "<div class='da-slide'>
-								<a href='recipe.php?id=$id'><h2>".$row['name']."</h2></a>
-								<p>$vsebina</p>
-								</div>";
-						}
 					?>
 						<nav class="da-arrows">
 							<span class="da-arrows-prev"></span>
