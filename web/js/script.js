@@ -41,6 +41,7 @@ function dodajKomentarje()
 			data: { id_recepta: id_recepta, vsebina: $("#vnos_komentarja").val() }
 			})
 			.done(function(msg) {
+			  $("#vnos_komentarja").val("");
 			  loadKomentarji();
 			});
     }

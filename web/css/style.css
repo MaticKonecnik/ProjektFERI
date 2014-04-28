@@ -414,7 +414,6 @@ body {
 	padding: 15px 20px;
 	background: #ffffff;
 	color: #303030;
-	text-transform: capitalize;
 	font-size: 0.8725em;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
@@ -1220,6 +1219,12 @@ body {
 {
 	width:100%;
 }
+
+.sestavine
+{
+	margin-right:10%;
+}
+
 /*komentarji*/
 .comment_form
 {
