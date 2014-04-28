@@ -4,7 +4,7 @@
 	include("includes/menu.php");
 	
 	$id = $_GET['id'];
-	$sql = "SELECT id, name, image, instructions, source_url FROM recipe WHERE id='$id' LIMIT 1";
+	$sql = "SELECT id, name, image, instructions, source_url, likes FROM recipe WHERE id='$id' LIMIT 1";
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	 ?>		
 			<div class="span_of_2 prikaz_vseh_receptov">
@@ -41,6 +41,29 @@
 					</div>	
 					<div class="clear"></div>
 				</div>	
+				
+				<div class="span_of_list1">
+					<div class="span_list1">
+						<ul class="span_pea">
+							<li><h4>Všečki:</h4></li>
+						</ul>
+						<ul class="span_pea1">
+							<li><span><?php echo($row['likes']); ?></span></li>
+						</ul>
+					</div>
+					<div class="span_list2">
+						<ul class="span_plus">
+							<li><a href="pluslike.php?id=<?php echo($row['id']); ?>"><span class="plus">+</span></a></li>
+							<li><a href="minuslike.php?id=<?php echo($row['id']); ?>"><span class="minus">-</span></a></li>
+						</ul>
+						<ul class="span_img">
+							<li><a href="#"><img src="images/pic7.jpg" alt=""/></a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				
 			</div>
             <div class="clear"></div>
                 <?php
