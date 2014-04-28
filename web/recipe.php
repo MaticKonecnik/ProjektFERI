@@ -56,4 +56,11 @@
 					echo('</div>');
 				}
 	include("includes/footer.php");
+	
+	if(!isset($_SESSION['hasVisited']))
+	{
+	  $_SESSION['hasVisited']="yes";
+	  $sql = "UPDATE recipe SET clicked = clicked + 1 WHERE id = '$id'";
+	  mysqli_query($con,$sql);
+	}
 ?>

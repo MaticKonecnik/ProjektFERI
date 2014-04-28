@@ -243,7 +243,7 @@ body {
 	margin-top: 5%;
 }
 .slider{
-	background: url('../images/slider_bg.jpg') no-repeat bottom right #fff;
+	/*background: url('../images/slider_bg.jpg') no-repeat bottom right #fff;*/
 	border-top: 8px solid rgb(255, 121, 121);
 	float: left;
 	width: 70%;

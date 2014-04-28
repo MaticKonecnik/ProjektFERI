@@ -1,11 +1,14 @@
 $(document).ready(function() {
 	if(location.pathname.indexOf("index.php") != -1)
+	{
+		$('.banner').unslider();
   		init_slider();
+	}
 	if(location.pathname.indexOf("recipe.php") != -1)
 	{
 		loadKomentarji();
 	  	dodajKomentarje();
-		$("body").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
+		$("body,html").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
 	}
 });
 

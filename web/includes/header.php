@@ -1,8 +1,6 @@
 <?php 
-	error_reporting(E_ALL & ~E_NOTICE);
 	session_start();
 	include_once ("includes/database.php");
-	$id=$_SESSION["login"];
 	$prijava=isset($_POST['prijava']);
 	$registracija=isset($_POST['registracija']);
 	if ($prijava){
@@ -11,7 +9,8 @@
 	else if ($registracija){
 		header('Location: registration.php');
 	}
-	else if (isset($id)){
+	else if (isset($_SESSION["login"])){
+		$id= $_SESSION["login"];
 		$sql="SELECT name, surname, image FROM user WHERE id='$id'";
 		$query= mysqli_query($con, $sql);
 		$rezultat=mysqli_num_rows($query);
@@ -34,6 +33,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
+<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/unslider.min.js"></script>'."\n"); ?>
 <?php if(basename($_SERVER['PHP_SELF'])=="registration.php") echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n"); ?>
 <script type="text/javascript" src="js/script.js"></script>
 </head>
