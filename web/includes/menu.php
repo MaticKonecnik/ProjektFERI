@@ -7,7 +7,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="recepti.php"<?php if(basename($_SERVER['PHP_SELF'])=="recepti.php") echo(' class="active"'); ?>>
+					<a href="recipes.php"<?php if(basename($_SERVER['PHP_SELF'])=="recipes.php") echo(' class="active"'); ?>>
 						<i class="icon2"></i>
 						<strong>Recepti</strong>
 					</a>
