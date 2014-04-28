@@ -33,6 +33,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
+<?php if(basename($_SERVER['PHP_SELF'])=="registration.php") echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n"); ?>
 <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
