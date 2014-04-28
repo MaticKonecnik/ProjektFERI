@@ -31,7 +31,7 @@
                 <?php
 				$sql = "SELECT COUNT(id) AS stevec FROM comment WHERE recipe_id='$id'";
 				$row = mysqli_fetch_array(mysqli_query($con,$sql));
-				if($row['stevec']>0)
+				if($row['stevec']>0 || isset($_SESSION['login']))
 				{
 					echo('<div class="contact_form comment_form">
                 			<div id="comment_wrapper">
