@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	if(location.pathname.indexOf("index.php") != -1)
   		init_slider();
-	if(location.pathname.indexOf("recept.php") != -1)
+	if(location.pathname.indexOf("recipe.php") != -1)
 	{
 		loadKomentarji();
 	  	dodajKomentarje();
