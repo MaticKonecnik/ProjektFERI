@@ -47,10 +47,8 @@ if(!isset($id)){
 			</div></form>";
 		}
 else{
-	echo "
-			<div class='header_form'>
-			$name $surname
-			
+	echo "	<div class='header_form'>
+			<a href='profile.php?id=$id'>$name $surname</a>
 			<a href='logout.php'><input type='submit' value='Odjava'></a>
 			</div>";
 	}
