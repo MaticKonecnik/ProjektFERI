@@ -1,26 +1,26 @@
 <?php
 	include("includes/header.php");
 	include("includes/menu.php");
+	$sql = "SELECT id, name, image, instructions, source_url, likes FROM recipe ORDER BY likes DESC LIMIT 4";
+	$query = mysqli_query($con,$sql);
 ?>
 		<div class="grids_of_2"><!-- start grids_of_2 -->	
 			<div class="slider"><!-- start slider -->
 				<div id="da-slider" class="da-slider"><!-- start slider -->
-						<div class="da-slide">
-							<h2>natural food</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span> </p>
-						</div>
-						<div class="da-slide">
-							<h2>healthy recipes</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <span class="hide">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span> </p>
-						</div>
-						<div class="da-slide">
-							<h2>natural food</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span> </p>
-						</div>
-						<div class="da-slide">
-							<h2>healthy recipes</h2>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="hide">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span> </p>
-						</div>
+				<?php 
+						while ($row = mysqli_fetch_assoc($query))
+						{
+							$id=$row['id'];
+							$vsebina = $row['instructions'];
+							$stevilo_znakov = 300;
+							if(strlen($vsebina)>$stevilo_znakov)
+							$pos=strpos($vsebina, ' ', $stevilo_znakov); $vsebina=substr($row['instructions'],0,$pos ).'...';
+							echo "<div class='da-slide'>
+								<a href='recipe.php?id=$id'><h2>".$row['name']."</h2></a>
+								<p>$vsebina</p>
+								</div>";
+						}
+					?>
 						<nav class="da-arrows">
 							<span class="da-arrows-prev"></span>
 							<span class="da-arrows-next"></span>
