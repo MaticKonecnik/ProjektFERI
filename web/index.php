@@ -1,18 +1,14 @@
 <?php
 	include("includes/header.php");
 	include("includes/menu.php");
-<<<<<<< HEAD
 	$sql = "SELECT id, name, image, instructions FROM recipe ORDER BY clicked DESC LIMIT 4";
 	$result = mysqli_query($con,$sql);	
-=======
 	$sql = "SELECT id, name, image, instructions, source_url, likes FROM recipe ORDER BY likes DESC LIMIT 4";
 	$query = mysqli_query($con,$sql);
->>>>>>> 207089bf3be629a2cf2742ef6f8b37355f3c55f7
 ?>
 		<div class="grids_of_2"><!-- start grids_of_2 -->	
 			<div class="slider"><!-- start slider -->
 				<div id="da-slider" class="da-slider"><!-- start slider -->
-<<<<<<< HEAD
 						
                         <?php
 						while($row = mysqli_fetch_array($result))
@@ -30,7 +26,6 @@
                             
 						<?php }
 						?>
-=======
 				<?php 
 						while ($row = mysqli_fetch_assoc($query))
 						{
@@ -45,7 +40,6 @@
 								</div>";
 						}
 					?>
->>>>>>> 207089bf3be629a2cf2742ef6f8b37355f3c55f7
 						<nav class="da-arrows">
 							<span class="da-arrows-prev"></span>
 							<span class="da-arrows-next"></span>
