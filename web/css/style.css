@@ -1371,3 +1371,85 @@ body {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
+
+#userProfile{
+	margin: 0 auto;
+	background: #ffffff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+#userProfile tr:first-child a{
+	background-image:url("../images/editpic.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 16px;
+	padding-left: 20px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	background-color: lightblue;
+	border: 1px solid black;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	color: black;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+
+#userProfile td{
+	padding: 5px;
+}
+
+#userProfile tr:nth-child(even){
+	background: #f5f5f5;
+}
+
+#userProfile tr:last-child{
+	text-align: center;
+}
+
+.lightbox {
+	/* Default lightbox to hidden */
+	display: none;
+	/* Position and style */
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	overflow:auto;
+}
+
+.lightbox .contact_form{
+	padding: 2% 6%;
+	font-size: 14px;
+}
+
+.lightbox .contact_form span{
+	margin:2%;
+}
+
+.lightbox .contact_form .padd{
+	margin:2%;
+}
+
+.lightbox .span_of_1{
+	margin: 0 auto;
+	float: none;
+	padding: 0;
+}
+
+.lightbox:target {
+	/* Remove default browser outline */
+	outline: none;
+	/* Unhide lightbox */
+	display: block;
+}
