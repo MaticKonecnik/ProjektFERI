@@ -1,7 +1,10 @@
 $(document).ready(function() {
 	if(location.pathname.indexOf("index.php") != -1)
 	{
-		$('.banner').unslider();
+  		init_slider();
+	}
+	if(location.pathname.indexOf("popular.php") != -1)
+	{
   		init_slider();
 	}
 	if(location.pathname.indexOf("recipe.php") != -1)

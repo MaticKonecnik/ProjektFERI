@@ -26,7 +26,7 @@
 			}
 		}
 		else{
-		 $message="Niste ragistrirani!<br><br>";
+		 $message="Niste registrirani!<br><br>";
 		}
 	}
 ?>
@@ -39,7 +39,7 @@
 				<div class="contact_form">
 					<form method="post" autocomplete="off">
 						<span>E-mail</span>
-						<input type="email" class="text" name="email" placeholder="example@example.com" required>
+						<input type="email" class="text" name="email" placeholder="example@example.com" required autofocus>
                         <span>Geslo</span>
 						<input type="password" class="text" name="password" placeholder="•••••••" required>
 						<span id="validate"></span>
