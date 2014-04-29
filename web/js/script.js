@@ -13,6 +13,10 @@ $(document).ready(function() {
 	  	dodajKomentarje();
 		$("body,html").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
 	}
+	if(location.pathname.indexOf("profile.php") != -1)
+	{
+		lightbox();
+	}
 });
 
 function init_slider() {
@@ -61,4 +65,34 @@ function getUrlVars() {
         vars[key] = value;
     });
     return vars;
+}
+
+function lightbox(){
+	$("#editProfile").click(function(){
+		$("#underlay").css("display", "block");
+		$("#lightbox").css("display", "block");
+	});
+	
+	$("#cancelProfile").click(function(){
+		$("#underlay").css("display", "none");
+		$("#lightbox").css("display", "none");
+	});
+	
+	$("#updateProfile").click(function(){
+		var user_id = getUrlVars()["id"];
+		$.ajax({
+			type: "POST",
+			url: "includes/ajax/uredi_profil.php",
+			data:{
+				user_id: user_id,
+				name: $("#name").val(),
+				surname: $("#surname").val(),
+				username: $("#username").val(),
+				email: $("#email").val()
+			}
+		})
+		.done(function(msg){
+			location.reload();
+		});
+	});
 }
