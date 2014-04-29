@@ -1,3 +1,4 @@
+
 <?php
 	include("includes/database.php");
 	include("includes/header.php");
@@ -40,50 +41,22 @@
                         <a class="arrow" href="<?php echo($row['source_url']); ?>"><span>Izvorna stran recepta...</span></a>
 					</div>	
 					<div class="clear"></div>
-				</div>	
-				
-				<div class="span_of_list1">
-					<div class="span_list1">
-						<ul class="span_pea">
-							<li><h4>Všečki:</h4></li>
-						</ul>
-						<ul class="span_pea1">
-							<li><span><?php echo($row['likes']); ?></span></li>
-						</ul>
-					</div>
-					<div class="span_list2">
-						<ul class="span_plus">
-							<li><a href="pluslike.php?id=<?php echo($row['id']); ?>"><span class="plus">+</span></a></li>
-							<li><a href="minuslike.php?id=<?php echo($row['id']); ?>"><span class="minus">-</span></a></li>
-						</ul>
-						<ul class="span_img">
-							<li><a href="#"><img src="images/pic7.jpg" alt=""/></a></li>
-						</ul>
-						<div class="clear"></div>
-					</div>
-					<div class="clear"></div>
+				</div>	  
+                                                          
+              	<div class="span_of_list1">
+              		<div class="span_list1">
+                    <ul class="span_pea">
+                    	<li><h4>Ocijena:</h4></li>
+                   </ul>
+                    	<form id="form3A">
+                        	<input name="test-3A-ocjena-1" class="star" value="1" type="radio">
+                            <input name="test-3A-ocjena-1" class="star" value="2" type="radio">
+                            <input name="test-3A-ocjena-1" class="star" value="3" type="radio">
+                            <input name="test-3A-ocjena-1" class="star" value="4" type="radio">
+                            <input name="test-3A-ocjena-1" class="star" value="5" type="radio">
+                        </form>
+                     
+                	</div>
 				</div>
-				
-			</div>
-            <div class="clear"></div>
-                <?php
-				$sql = "SELECT COUNT(id) AS stevec FROM comment WHERE recipe_id='$id'";
-				$row = mysqli_fetch_array(mysqli_query($con,$sql));
-				if($row['stevec']>0 || isset($_SESSION['login']))
-				{
-					echo('<div class="contact_form comment_form">
-                			<div id="comment_wrapper">
-                			</div>');
-					if(isset($_SESSION['login']))
-                		echo('<input type="text" id="vnos_komentarja" placeholder="Komentar..."></input>');
-					echo('</div>');
-				}
-	include("includes/footer.php");
-	
-	if(!isset($_SESSION['hasVisited']))
-	{
-	  $_SESSION['hasVisited']="yes";
-	  $sql = "UPDATE recipe SET clicked = clicked + 1 WHERE id = '$id'";
-	  mysqli_query($con,$sql);
-	}
-?>
+                
+   
