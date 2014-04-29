@@ -15,6 +15,7 @@ $(document).ready(function() {
 	}
 	if(location.pathname.indexOf("profile.php") != -1)
 	{
+		naloziProfil();
 		lightbox();
 	}
 });
@@ -67,6 +68,21 @@ function getUrlVars() {
     return vars;
 }
 
+function naloziProfil(){
+	var id = getUrlVars()["id"];	
+	$.ajax({
+		type: "GET",
+		url: "includes/ajax/nalozi_profil.php",
+		data:{
+			id: id
+		}
+	})
+	.done(function(msg){
+		$("#profile_wrapper").html(msg);
+		lightbox();
+	});
+}
+
 function lightbox(){
 	$("#editProfile").click(function(){
 		$("#underlay").css("display", "block");
@@ -92,7 +108,7 @@ function lightbox(){
 			}
 		})
 		.done(function(msg){
-			location.reload();
+			naloziProfil();
 		});
 	});
 }
