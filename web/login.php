@@ -21,12 +21,12 @@
 					header('Location: index.php');
 				}
 				else{
-					$message="Napačno geslo!";
+					$message="Napačno geslo!<br><br>";
 				}
 			}
 		}
 		else{
-		 $message="Niste <a href='register.html'>ragistrirani!</a>";
+		 $message="Niste registrirani!<br><br>";
 		}
 	}
 ?>
@@ -39,15 +39,13 @@
 				<div class="contact_form">
 					<form method="post" autocomplete="off">
 						<span>E-mail</span>
-						<input type="email" class="text" name="email" placeholder="example@example.com" required>
+						<input type="email" class="text" name="email" placeholder="example@example.com" required autofocus>
                         <span>Geslo</span>
 						<input type="password" class="text" name="password" placeholder="•••••••" required>
 						<span id="validate"></span>
 						<?php if (isset($message)) echo $message ?>
-						<div>
-							<input type="submit" value="Prijavi se" name="submit">
+						<input type="submit" value="Prijavi se" name="submit">
 							<div class="clear"></div>
-						</div>
 					</form>
 				</div>			
 			</div><!-- end span1_of_1 -->

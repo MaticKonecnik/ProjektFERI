@@ -34,7 +34,7 @@
 				<h4>Registracija</h4>
 			</div>
 			<div class="contact_form">
-				<form method="post" action="php/registration.php" autocomplete="off">
+				<form method="post" autocomplete="off">
 					<span>Ime</span>
 					<input type="text" class="text" name="name" placeholder="Micka" required>
 					<span>Priimek</span>

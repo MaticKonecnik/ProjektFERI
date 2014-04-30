@@ -1,8 +1,6 @@
 <?php 
-	error_reporting(E_ALL & ~E_NOTICE);
 	session_start();
 	include_once ("includes/database.php");
-	$id=$_SESSION["login"];
 	$prijava=isset($_POST['prijava']);
 	$registracija=isset($_POST['registracija']);
 	if ($prijava){
@@ -11,14 +9,16 @@
 	else if ($registracija){
 		header('Location: registration.php');
 	}
-	else if (isset($id)){
-		$sql="SELECT name, surname FROM user WHERE id='$id'";
+	else if (isset($_SESSION["login"])){
+		$id= $_SESSION["login"];
+		$sql="SELECT name, surname, image FROM user WHERE id='$id'";
 		$query= mysqli_query($con, $sql);
 		$rezultat=mysqli_num_rows($query);
 		if ($rezultat>0){
 			while($row=mysqli_fetch_assoc($query)){
 			$name=$row['name'];
 			$surname=$row['surname'];
+			$image=$row['image'];
 			}
 		}	
 	}
@@ -33,6 +33,20 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
+<<<<<<< HEAD
+<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/unslider.min.js"></script>'."\n"); ?>
+
+=======
+<?php if(basename($_SERVER['PHP_SELF'])=="popular.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
+>>>>>>> c1beed48a9536d73fd0821ff85fa065218cc23bc
+<?php if(basename($_SERVER['PHP_SELF'])=="registration.php") echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n"); ?>
+
+<?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo('<script type="text/javascript" src="js/starRatings/jquery.rating.js"></script>'."\n"); ?>
+<!-- Zakomentirana skirpta jer onda ne delaju komentari -->
+<?php /* if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<script type="text/javascript" src="js/starRatings/jquery.js"></script>'."\n"); */ ?>
+<!-- css stylsheet zvezdice -->
+<?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<link href="js/starRatings/jquery.rating.css" type="text/css" rel="stylesheet" />'."\n") ?>
+
 <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
@@ -46,13 +60,11 @@ if(!isset($id)){
 			</div></form>";
 		}
 else{
-	echo "
-			<div class='header_form'>
-			$name $surname
-			
+	echo "	<div class='header_form'>
+			<a href='profile.php?id=$id' class='current-login'><img src='$image' alt='$name $surname' title='$name $surname' class='login-img'/>$name $surname</a>
 			<a href='logout.php'><input type='submit' value='Odjava'></a>
 			</div>";
 	}
 ?>
-	<div class="main"><!-- start main -->
-    
+<div class="main">
+<!-- start main --> 
