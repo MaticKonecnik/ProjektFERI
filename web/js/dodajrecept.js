@@ -1,7 +1,7 @@
 function ajax()
 {
     $.ajax({type: "post", url: "includes/ajax/dodaja_recepta.php", success: function(data) {
-            $("#demo-input-facebook-theme").tokenInput("http://localhost/ProjektFERI/web/includes/ajax/dodaja_recepta.php", {// to obvezno spremenit
+            $("#demo-input-facebook-theme").tokenInput("includes/ajax/dodaja_recepta.php", {
             });
             //alert(data);
         }

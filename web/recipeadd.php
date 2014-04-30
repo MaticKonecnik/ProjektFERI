@@ -1,15 +1,10 @@
 <?php
 error_reporting(E_ALL & ~E_NOTICE);
 session_start();
-//$sp = $_SESSION["id"];
-//echo "<script type='text/javascript'>alert('$sp');</script>";
  if(!isset($_SESSION["login"]))
     {
         header('Location: login.php');
     }
-    
-    //$sp = $_SESSION["id"];
-      //      echo "<script type='text/javascript'>alert('$sp');</script>";
 include_once ("includes/database.php");
 if (isset($_POST['vrednost'])) {
     $ids = $_POST['vrednost'];
