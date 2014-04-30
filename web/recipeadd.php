@@ -96,7 +96,7 @@ include("includes/menu.php");
                 <textarea  type=text required maxlength="5000" id="priprava"> </textarea>
                 <div id="dropbox">
                     <span class="message">Sem dodajte ENO fotografijo recepta <br />
-                        <i>äe enkrat poglejte katero fotografijo boste naloûili, kajti sprememba ni moûna!<i/></span>
+                        <i>≈†e enkrat poglejte katero fotografijo boste nalo≈æili, kajti sprememba ni mo≈æna!<i/></span>
 		</div>
                 <div>
                     <input type="button" value="Dodaj" id="submit" name="submit">

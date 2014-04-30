@@ -21,7 +21,7 @@ var DEFAULT_SETTINGS = {
     jsonContainer: null,
 
 	// Display settings
-    hintText: "Vpiöite sestavino",
+    hintText: "Vpi≈°ite sestavino",
     noResultsText: "Ni rezultatov",
     searchingText: "Iskanje...",
     deleteText: "&times;",
