@@ -46,17 +46,44 @@
               	<div class="span_of_list1">
               		<div class="span_list1">
                     <ul class="span_pea">
-                    	<li><h4>Ocijena:</h4></li>
+                    	<!-- selektiranej iz baze i izpis ocjene -->
+                        <!-- mySql funkcija Ocijena vraca trenutno ocjenu izbranog recepta -->
+                    	<li><h4  id="ocijena">Ocjena: <?php $sql = "SELECT Ocjena($id)"; $row2 = mysqli_fetch_array(mysqli_query($con,$sql)); echo ($row2[0]); ?></h4></li>
                    </ul>
+                   <!-- Ajax skripta -->
+                   <script type="text/javascript" src="js/starRatings/rate-product-ajax.js"></script>
                     	<form id="form3A">
-                        	<input name="test-3A-ocjena-1" class="star" value="1" type="radio">
-                            <input name="test-3A-ocjena-1" class="star" value="2" type="radio">
-                            <input name="test-3A-ocjena-1" class="star" value="3" type="radio">
-                            <input name="test-3A-ocjena-1" class="star" value="4" type="radio">
-                            <input name="test-3A-ocjena-1" class="star" value="5" type="radio">
+                        	<input name="test-3A-ocjena-1" class="star rate" value="1" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="2" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="3" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="4" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="5" type="radio">
                         </form>
-                     
+                     	<div class="vote_count"></div>
                 	</div>
 				</div>
+                <div class="clear"></div>
+                <?php
+				$sql = "SELECT COUNT(id) AS stevec FROM comment WHERE recipe_id='$id'";
+				$row = mysqli_fetch_array(mysqli_query($con,$sql));
+				if($row['stevec']>0 || isset($_SESSION['login']))
+				{
+					echo('<div class="contact_form comment_form">
+                			<div id="comment_wrapper">
+                			</div>');
+					if(isset($_SESSION['login']))
+                		echo('<input type="text" id="vnos_komentarja" placeholder="Komentar..."></input>');
+					echo('</div>');
+				}
+				include("includes/footer.php");
+				
+				if(!isset($_SESSION['hasVisited']))
+				{
+				  $_SESSION['hasVisited']="yes";
+				  $sql = "UPDATE recipe SET clicked = clicked + 1 WHERE id = '$id'";
+				  mysqli_query($con,$sql);
+				}
+			?>
+
                 
    

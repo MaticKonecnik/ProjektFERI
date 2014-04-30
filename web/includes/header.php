@@ -34,15 +34,16 @@
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/unslider.min.js"></script>'."\n"); ?>
+
 <?php if(basename($_SERVER['PHP_SELF'])=="registration.php") echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n"); ?>
 
 <?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo('<script type="text/javascript" src="js/starRatings/jquery.rating.js"></script>'."\n"); ?>
-<?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<script type="text/javascript" src="js/starRatings/jquery.js"></script>'."\n"); ?>
-<?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<link href="js/starRatings/jquery.rating.css" type="text/css" rel="stylesheet" />'."\n")?>
+<!-- Zakomentirana skirpta jer onda ne delaju komentari -->
+<?php /* if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<script type="text/javascript" src="js/starRatings/jquery.js"></script>'."\n"); */ ?>
+<!-- css stylsheet zvezdice -->
+<?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<link href="js/starRatings/jquery.rating.css" type="text/css" rel="stylesheet" />'."\n") ?>
 
 <script type="text/javascript" src="js/script.js"></script>
-
-
 </head>
 <body>
 <div class="wrap">
@@ -61,5 +62,5 @@ else{
 			</div>";
 	}
 ?>
-	<div class="main"><!-- start main -->
-    
+<div class="main">
+<!-- start main --> 
