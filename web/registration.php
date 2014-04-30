@@ -29,7 +29,7 @@
 ?>
 	<div class="clear"></div>
 	<div class="spans_of_2"><!-- start spans_of_2 -->
-		<div class="span_of_1"><!-- start span_of_1 -->
+		<div class="span_of_1 login_form"><!-- start span_of_1 -->
 			<div class="span_of_text">
 				<h4>Registracija</h4>
 			</div>

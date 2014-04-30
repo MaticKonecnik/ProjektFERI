@@ -33,14 +33,9 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
-<<<<<<< HEAD
 <?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<script type="text/javascript" src="js/unslider.min.js"></script>'."\n"); ?>
-
-=======
 <?php if(basename($_SERVER['PHP_SELF'])=="popular.php") echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n"); ?>
->>>>>>> c1beed48a9536d73fd0821ff85fa065218cc23bc
 <?php if(basename($_SERVER['PHP_SELF'])=="registration.php") echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n"); ?>
-
 <?php if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo('<script type="text/javascript" src="js/starRatings/jquery.rating.js"></script>'."\n"); ?>
 <!-- Zakomentirana skirpta jer onda ne delaju komentari -->
 <?php /* if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<script type="text/javascript" src="js/starRatings/jquery.js"></script>'."\n"); */ ?>

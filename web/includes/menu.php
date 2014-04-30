@@ -13,9 +13,9 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="recipeadd.php"<?php if(basename($_SERVER['PHP_SELF'])=="recipeadd.php") echo(' class="active"'); ?>>
 						<i class="icon3"></i>
-						<strong>Nekaj</strong>
+						<strong>Dodaj recept</strong>
 					</a>
 				</li>
 				<li>
