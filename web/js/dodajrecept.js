@@ -1,7 +1,11 @@
 function ajax()
 {
     $.ajax({type: "post", url: "includes/ajax/dodaja_recepta.php", success: function(data) {
+<<<<<<< HEAD
             $("#demo-input-facebook-theme").tokenInput("includes/ajax/dodaja_recepta.php", {// to obvezno spremenit
+=======
+            $("#demo-input-facebook-theme").tokenInput("includes/ajax/dodaja_recepta.php", {
+>>>>>>> 793df8fa7ab12a978a5e19d6f9bafe95a8eb6c00
             });
             //alert(data);
         }
