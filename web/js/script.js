@@ -1,7 +1,10 @@
 $(document).ready(function() {
 	if(location.pathname.indexOf("index.php") != -1)
 	{
-		$('.banner').unslider();
+  		init_slider();
+	}
+	if(location.pathname.indexOf("popular.php") != -1)
+	{
   		init_slider();
 	}
 	if(location.pathname.indexOf("recipe.php") != -1)
@@ -9,6 +12,11 @@ $(document).ready(function() {
 		loadKomentarji();
 	  	dodajKomentarje();
 		$("body,html").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
+	}
+	if(location.pathname.indexOf("profile.php") != -1)
+	{
+		naloziProfil();
+		lightbox();
 	}
 });
 
@@ -58,4 +66,49 @@ function getUrlVars() {
         vars[key] = value;
     });
     return vars;
+}
+
+function naloziProfil(){
+	var id = getUrlVars()["id"];	
+	$.ajax({
+		type: "GET",
+		url: "includes/ajax/nalozi_profil.php",
+		data:{
+			id: id
+		}
+	})
+	.done(function(msg){
+		$("#profile_wrapper").html(msg);
+		lightbox();
+	});
+}
+
+function lightbox(){
+	$("#editProfile").click(function(){
+		$("#underlay").css("display", "block");
+		$("#lightbox").css("display", "block");
+	});
+	
+	$("#cancelProfile").click(function(){
+		$("#underlay").css("display", "none");
+		$("#lightbox").css("display", "none");
+	});
+	
+	$("#updateProfile").click(function(){
+		var user_id = getUrlVars()["id"];
+		$.ajax({
+			type: "POST",
+			url: "includes/ajax/uredi_profil.php",
+			data:{
+				user_id: user_id,
+				name: $("#name").val(),
+				surname: $("#surname").val(),
+				username: $("#username").val(),
+				email: $("#email").val()
+			}
+		})
+		.done(function(msg){
+			naloziProfil();
+		});
+	});
 }
