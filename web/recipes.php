@@ -4,6 +4,7 @@
 	include("includes/menu.php");
 	
 	$limit = 50;
+	$pagination_width = 4;
 	$current_page = (isset($_GET['page']) ? $_GET['page'] : 1);
 	$to = $current_page * $limit;
 	$from = $to - $limit;
@@ -43,13 +44,12 @@
 				 	echo('<span class="page active">'.$current_page.'</span>');
 				 else
 				 {
-					if($i!=1 && $i!=$total_pages && $i!=$current_page && ($i > $current_page+4 || $i < $current_page-4))
+					if($i!=1 && $i!=$total_pages && $i!=$current_page && ($i > $current_page+$pagination_width || $i < $current_page-$pagination_width))
 						continue;
-					if($i > $current_page+4 || $i == $current_page-4)
+					if($i > $current_page+$pagination_width || ($i == $current_page-$pagination_width && $current_page!=($pagination_width+1)))
 						echo('<span>...</span>');
 				 	echo('<a href="recipes.php?page='.$i.'" class="page gradient">'.$i.'</a>');
-				 }
-           		
+				 }	
 			}
 			echo('</div>');
 	include("includes/footer.php");
