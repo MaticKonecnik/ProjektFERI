@@ -3,7 +3,16 @@
 	include("includes/header.php");
 	include("includes/menu.php");
 	
-	$sql = "SELECT id, name, image, instructions FROM recipe";
+	$limit = 50;
+	$current_page = (isset($_GET['page']) ? $_GET['page'] : 1);
+	$to = $current_page * $limit;
+	$from = $to - $limit;
+	
+	$sql = "SELECT COUNT(*) AS stevec FROM recipe";
+	$row = mysqli_fetch_array(mysqli_query($con,$sql));
+	$total_pages = round(((float)$row['stevec'] / (float)$limit), 0, PHP_ROUND_HALF_UP);
+	
+	$sql = "SELECT id, name, image, instructions FROM recipe LIMIT $from, $limit";
 	$result = mysqli_query($con,$sql);
 
 	while($row = mysqli_fetch_array($result))
@@ -27,7 +36,15 @@
 				</div>	
 			</div>
             <div class="clear"></div>
-<?php
-	}
+<?php }
+			echo('<div class="pagination">');		
+			for ($i = 1; $i <= $total_pages; $i++) {
+				 if($i==$current_page)
+				 	echo('<span class="page active">'.$current_page.'</span>');
+				 else
+				 	echo('<a href="recipes.php?page='.$i.'" class="page gradient">'.$i.'</a>');
+           		
+			}
+			echo('</div>');
 	include("includes/footer.php");
 ?>
