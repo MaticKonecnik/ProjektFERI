@@ -42,7 +42,13 @@
 				 if($i==$current_page)
 				 	echo('<span class="page active">'.$current_page.'</span>');
 				 else
+				 {
+					if($i!=1 && $i!=$total_pages && $i!=$current_page && ($i > $current_page+4 || $i < $current_page-4))
+						continue;
+					if($i > $current_page+4 || $i == $current_page-4)
+						echo('<span>...</span>');
 				 	echo('<a href="recipes.php?page='.$i.'" class="page gradient">'.$i.'</a>');
+				 }
            		
 			}
 			echo('</div>');
