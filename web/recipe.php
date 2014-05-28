@@ -48,7 +48,7 @@
                     <ul class="span_pea">
                     	<!-- selektiranej iz baze i izpis ocjene -->
                         <!-- mySql funkcija Ocijena vraca trenutno ocjenu izbranog recepta -->
-                    	<li><h4  id="ocijena">Ocjena: <?php $sql = "SELECT Ocjena($id)"; $row2 = mysqli_fetch_array(mysqli_query($con,$sql)); echo ($row2[0]); ?></h4></li>
+                    	<li><h4  id="ocijena">Ocena: <?php $sql = "SELECT Ocjena($id)"; $row2 = mysqli_fetch_array(mysqli_query($con,$sql)); echo ($row2[0]); ?></h4></li>
                    </ul>
                    <!-- Ajax skripta -->
                    <script type="text/javascript" src="js/starRatings/rate-product-ajax.js"></script>
