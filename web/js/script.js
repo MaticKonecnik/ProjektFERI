@@ -112,3 +112,19 @@ function lightbox(){
 		});
 	});
 }
+
+function search(){
+	$('#isci').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){// če je enter	
+			$.ajax({
+			type: "POST",
+			url: "includes/ajax/search.php",
+			data: { isci: $("#isci").val() }
+			})
+			.done(function(msg) {
+			alert ("p");
+			});
+    }
+	});
+}
