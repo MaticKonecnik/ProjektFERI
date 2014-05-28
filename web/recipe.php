@@ -63,6 +63,7 @@
                 	</div>
 				</div>
                 <div class="clear"></div>
+                <div class="priporocanje_container">
                 <?php
 				$stevilo_receptov = 80;
 				$sql = "SELECT b.recipe_id AS recommended_id, SUM(a.frequency*log('$stevilo_receptov'/df.occurrences)) AS sestevek FROM tf a, tf b, df
@@ -75,9 +76,24 @@
 				$result = mysqli_query($con,$sql);
 				while($row = mysqli_fetch_array($result))
 				{
-					echo('PRIPOROCANJE: '.$row['recommended_id'].'<br>');
+					$pr_id = $row['recommended_id'];
+					$sql_p = "SELECT id, name, image FROM recipe WHERE id='$pr_id' LIMIT 1";
+					$priporocanje = mysqli_fetch_array(mysqli_query($con,$sql_p));
+					echo('<a href="recipe.php?id='.$priporocanje['id'].'">');
+					?>
+              		<div class="priporocanje">
+                	<?php
+						echo('<img src="'.$priporocanje['image'].'">');
+						echo($priporocanje['name']);
+
+					?>
+                    </a></div>
+                    <?php
 				}
-				
+				?>
+                </div>
+                <div class="clear"></div>
+                <?php
 				$sql = "SELECT COUNT(id) AS stevec FROM comment WHERE recipe_id='$id'";
 				$row = mysqli_fetch_array(mysqli_query($con,$sql));
 				if($row['stevec']>0 || isset($_SESSION['login']))
@@ -98,6 +114,3 @@
 				  mysqli_query($con,$sql);
 				}
 			?>
-
-                
-   

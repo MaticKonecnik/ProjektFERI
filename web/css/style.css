@@ -1539,3 +1539,29 @@ li.tooltip img
     -webkit-box-shadow: 5px 5px 8px #CCC;
     box-shadow: 5px 5px 8px #CCC;
 }
+
+/*Priporocanje*/
+.priporocanje_container{
+    overflow:auto;
+    margin-bottom:5.33333%;
+	text-align:center;
+}
+.priporocanje
+{
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	width:30%;
+	background:white;
+	display: inline-block;
+	margin-left: auto;
+ 	margin-right: auto;
+}
+.priporocanje img
+{
+	border-radius: 8px 8px 0px 0px;
+	-webkit-border-radius: 8px 8px 0px 0px;
+	-moz-border-radius: 8px 8px 0px 0px;
+	-o-border-radius: 8px 8px 0px 0px;
+}
