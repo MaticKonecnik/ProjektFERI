@@ -5,7 +5,7 @@
 	
 	if(isset($_POST['submit'])){
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$password = hash('sha512', $_POST['password']);
 		$name = $_POST['name'];
 		$surname = $_POST['surname'];
 		$email = $_POST['email'];
@@ -48,7 +48,6 @@
 					<input type="password" class="text" name="password2" placeholder="•••••••" required disabled>
 					<span>E-mail</span>
 					<input type="email" class="text" name="email" placeholder="mpungartnik@gmail.com" required>
-					
 					<div>
 						<input type="reset" value="Preklici">
 						<input type="submit" name="submit" value="Registriraj">

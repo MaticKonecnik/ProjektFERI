@@ -8,7 +8,7 @@
 	
 	if($submit){
 	$email=$_POST['email'];
-	$password=$_POST['password'];
+	$password=hash('sha512', $_POST['password']);
 		$sql="SELECT id, password FROM user WHERE email='$email'";
 		$query= mysqli_query($con, $sql);
 		$rezultat=mysqli_num_rows($query);
