@@ -3,8 +3,10 @@
 	include("includes/header.php");
 	include("includes/menu.php");
 	
-	$limit = 50;
+	$limit = 25;
 	$pagination_width = 4;
+	$stevilo_znakov = 300;
+	
 	$current_page = (isset($_GET['page']) ? $_GET['page'] : 1);
 	$to = $current_page * $limit;
 	$from = $to - $limit;
@@ -19,9 +21,11 @@
 	while($row = mysqli_fetch_array($result))
 	{
 		$vsebina = $row['instructions'];
-		$stevilo_znakov = 300;
 		if(strlen($vsebina)>$stevilo_znakov)
-			$pos=strpos($vsebina, ' ', $stevilo_znakov); $vsebina=substr($row['instructions'],0,$pos ).'...';
+		{
+			$pos=strpos($vsebina, ' ', $stevilo_znakov);
+			$vsebina=substr($row['instructions'],0,$pos ).'...';
+		}
 		?>
 			<div class="span_of_2 prikaz_vseh_receptov">
 				<span class="span_of_img"><a href="<?php echo('recipe.php?id='.$row['id']); ?>" title="<?php echo($row['name']); ?>"><div style="background-image:url('<?php echo($row['image']); ?>');" class="slika_vsi_recepti"></div></a></span>

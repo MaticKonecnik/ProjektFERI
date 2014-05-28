@@ -17,15 +17,15 @@
 							<div class="grid_text">	
 								<ul class="list1">
                         <?php
-                        	$sql = "SELECT ingredient.name AS naziv, has_ingredient.type AS enota, has_ingredient.quantity AS kolicina FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
+                        	$sql = "SELECT ingredient.name AS naziv, ingredient.picture AS slika, has_ingredient.type AS enota, has_ingredient.quantity AS kolicina FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
 							$result = mysqli_query($con,$sql);
 							$stevec = 0;
 							while($sestavine = mysqli_fetch_array($result))
 							{
 								if($stevec%2==0)
-									echo('<li class="active"><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+									echo('<li class="active tooltip"><img src="'.$sestavine['slika'].'"><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								else
-									echo('<li><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+									echo('<li class="tooltip"><img src="'.$sestavine['slika'].'"><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								$stevec++;
 							}
 						?>                                 
@@ -64,6 +64,20 @@
 				</div>
                 <div class="clear"></div>
                 <?php
+				$stevilo_receptov = 80;
+				$sql = "SELECT b.recipe_id AS recommended_id, SUM(a.frequency*log('$stevilo_receptov'/df.occurrences)) AS sestevek FROM tf a, tf b, df
+				WHERE a.recipe_id = '$id'
+					AND a.word_id = b.word_id
+					AND a.word_id = df.word_id
+					AND  b.recipe_id <> '$id'
+				GROUP BY b.recipe_id
+				ORDER BY sestevek DESC LIMIT 3";
+				$result = mysqli_query($con,$sql);
+				while($row = mysqli_fetch_array($result))
+				{
+					echo('PRIPOROCANJE: '.$row['recommended_id'].'<br>');
+				}
+				
 				$sql = "SELECT COUNT(id) AS stevec FROM comment WHERE recipe_id='$id'";
 				$row = mysqli_fetch_array(mysqli_query($con,$sql));
 				if($row['stevec']>0 || isset($_SESSION['login']))
