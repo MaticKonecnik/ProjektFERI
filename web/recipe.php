@@ -79,16 +79,8 @@
 					$pr_id = $row['recommended_id'];
 					$sql_p = "SELECT id, name, image FROM recipe WHERE id='$pr_id' LIMIT 1";
 					$priporocanje = mysqli_fetch_array(mysqli_query($con,$sql_p));
-					echo('<a href="recipe.php?id='.$priporocanje['id'].'">');
-					?>
-              		<div class="priporocanje">
-                	<?php
-						echo('<img src="'.$priporocanje['image'].'">');
-						echo($priporocanje['name']);
-
-					?>
-                    </a></div>
-                    <?php
+					echo('<a href="recipe.php?id='.$priporocanje['id'].'" class="priporocanje" style="background-image:url(\''.$priporocanje['image'].'\');">');
+						echo('<span>'.$priporocanje['name'].'</span></a>'."\r\n");
 				}
 				?>
                 </div>

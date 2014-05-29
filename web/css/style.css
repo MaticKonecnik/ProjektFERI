@@ -1552,16 +1552,29 @@ li.tooltip img
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	-o-border-radius: 8px;
-	width:30%;
-	background:white;
+	width:30% !important;
 	display: inline-block;
 	margin-left: auto;
  	margin-right: auto;
+	width:30%;
+	height:150px; /*velikost slike*/
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
 }
-.priporocanje img
+.priporocanje:hover
 {
-	border-radius: 8px 8px 0px 0px;
-	-webkit-border-radius: 8px 8px 0px 0px;
-	-moz-border-radius: 8px 8px 0px 0px;
-	-o-border-radius: 8px 8px 0px 0px;
+	zoom: 0.95;
 }
+.priporocanje span
+{
+   background: rgba(160, 160, 160, 0.8);
+   color:white;
+   width:100%;
+   display:inline-block; 
+   border-radius: 8px 8px 0px 0px;
+   -webkit-border-radius: 8px 8px 0px 0px;
+   -moz-border-radius: 8px 8px 0px 0px;
+   -o-border-radius: 8px 8px 0px 0px;
+}
+
