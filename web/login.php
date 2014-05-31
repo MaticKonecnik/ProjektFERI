@@ -18,6 +18,8 @@
 				if($dbpassword==$password){
 					$id=$row['id'];
 					$_SESSION["login"]=$id;
+					$_SESSION["start"]=time();
+					$_SESSION["expire"]=$_SESSION["start"]+ (30 * 60);
 					header('Location: index.php');
 				}
 				else{
