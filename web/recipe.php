@@ -1,4 +1,3 @@
-
 <?php
 	include("includes/database.php");
 	include("includes/header.php");
@@ -13,6 +12,14 @@
 				<div class="span_of_list">
 					<div class="span1_of_1">
 						<h4><?php echo($row['name']); ?></h4>
+                        <form id="form3A">
+                        	<input name="test-3A-ocjena-1" class="star rate" value="1" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="2" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="3" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="4" type="radio">
+                            <input name="test-3A-ocjena-1" class="star rate" value="5" type="radio">
+                        </form>
+                         <?php $sql = "SELECT Ocjena($id)"; $row2 = mysqli_fetch_array(mysqli_query($con,$sql)); echo ($row2[0]); ?>
                         <div class="grid1_of_list1 sestavine">
 							<div class="grid_text">	
 								<ul class="list1">
@@ -33,8 +40,6 @@
                                 </ul>
                             </div>
                         </div>
-                        
-                        
 					</div>
 					<div class="span1_of_2">
 						<p><?php echo($row['instructions']); ?></p>
@@ -43,26 +48,30 @@
 					<div class="clear"></div>
 				</div>	  
                                                           
-              	<div class="span_of_list1">
-              		<div class="span_list1">
-                    <ul class="span_pea">
-                    	<!-- selektiranej iz baze i izpis ocjene -->
-                        <!-- mySql funkcija Ocijena vraca trenutno ocjenu izbranog recepta -->
-                    	<li><h4  id="ocijena">Ocena: <?php $sql = "SELECT Ocjena($id)"; $row2 = mysqli_fetch_array(mysqli_query($con,$sql)); echo ($row2[0]); ?></h4></li>
-                   </ul>
-                   <!-- Ajax skripta -->
-                   <script type="text/javascript" src="js/starRatings/rate-product-ajax.js"></script>
-                    	<form id="form3A">
-                        	<input name="test-3A-ocjena-1" class="star rate" value="1" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="2" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="3" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="4" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="5" type="radio">
-                        </form>
-                     	<div class="vote_count"></div>
-                	</div>
-				</div>
+
                 <div class="clear"></div>
+                				
+				<div class="span_of_list1">
+					<div class="span_list1">
+						<ul class="span_pea">
+							<li><h4>Priporočanja:</h4></li>
+						</ul>
+						<ul class="span_pea1">
+							<li><span><?php echo($row['likes']); ?></span></li>
+						</ul>
+					</div>
+					<div class="span_list2">
+						<ul class="span_plus">
+							<li><a href="pluslike.php?id=<?php echo($row['id']); ?>"><span class="plus">+</span></a></li>
+							<li><a href="minuslike.php?id=<?php echo($row['id']); ?>"><span class="minus">-</span></a></li>
+						</ul>
+						<ul class="span_img">
+							<li><a href="#"><img src="images/pic7.jpg" alt=""/></a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
                 <div class="priporocanje_container">
                 <?php
 				$stevilo_receptov = 80;
@@ -80,7 +89,7 @@
 					$sql_p = "SELECT id, name, image FROM recipe WHERE id='$pr_id' LIMIT 1";
 					$priporocanje = mysqli_fetch_array(mysqli_query($con,$sql_p));
 					echo('<a href="recipe.php?id='.$priporocanje['id'].'" class="priporocanje" style="background-image:url(\''.$priporocanje['image'].'\');">');
-						echo('<span>'.$priporocanje['name'].'</span></a>'."\r\n");
+					echo('<span>'.$priporocanje['name'].'</span></a>'."\r\n");
 				}
 				?>
                 </div>

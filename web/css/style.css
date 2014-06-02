@@ -1221,6 +1221,7 @@ body {
 
 .sestavine
 {
+	margin-top:20px;
 	margin-right:10%;
 }
 
@@ -1568,9 +1569,10 @@ li.tooltip img
 }
 .priporocanje span
 {
-   background: rgba(160, 160, 160, 0.8);
+   background: rgba(0, 160, 0, 0.6);
    color:white;
    width:100%;
+   overflow:hidden;
    display:inline-block; 
    border-radius: 8px 8px 0px 0px;
    -webkit-border-radius: 8px 8px 0px 0px;
@@ -1578,3 +1580,14 @@ li.tooltip img
    -o-border-radius: 8px 8px 0px 0px;
 }
 
+
+/* všečki/priporočanje */
+div.span_list2 > ul.span_plus > li
+{
+	height:73px;
+}
+
+body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.span_list2 > ul.span_img
+{
+	height:172px;
+}
