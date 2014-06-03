@@ -1,5 +1,4 @@
 <?php
-	include("includes/database.php");
 	include("includes/header.php");
 	include("includes/menu.php");
 	

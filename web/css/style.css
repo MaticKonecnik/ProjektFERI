@@ -1546,6 +1546,8 @@ li.tooltip img
     overflow:auto;
     margin-bottom:5.33333%;
 	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
 }
 .priporocanje
 {
@@ -1554,10 +1556,11 @@ li.tooltip img
 	-moz-border-radius: 8px;
 	-o-border-radius: 8px;
 	width:30% !important;
-	display: inline-block;
-	margin-left: auto;
+	/*display: inline-block;*/
+	display:block;
+	float:left;
+	margin-left: 2.5%;
  	margin-right: auto;
-	width:30%;
 	height:150px; /*velikost slike*/
 	background-position:center;
 	background-repeat:no-repeat;
@@ -1590,4 +1593,22 @@ div.span_list2 > ul.span_plus > li
 body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.span_list2 > ul.span_img
 {
 	height:172px;
+}
+
+/*sestavi menu*/
+.vnesi_ceno{
+	font-family: 'open_sansregular';
+	padding: 2px;
+	width: 40px;
+	text-align:center;
+	background: #ffffff;
+	outline: none;
+	color: #000;
+	font-size: 0.8725em;
+	border: 1px solid #D6D6D6;
+	-webkit-appearance: none;
+	border-radius: 5px;
+ 	-webkit-border-radius: 5px;
+ 	-moz-border-radius: 5px;
+ 	-o-border-radius: 5px;
 }

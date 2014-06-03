@@ -21,7 +21,6 @@
 								<a href="recipe.php?id=<?php echo($row['id']); ?>"><h2><?php echo($row['name']); ?></h2></a>
 								<p><?php echo($vsebina); ?></p>
 							</div>
-                            
 						<?php }
 					?>
 						<nav class="da-arrows">
@@ -37,12 +36,12 @@
 				</ul>
 			</div>
 			<div class="clear"></div>
-            			<div  class="grid_bottom">
-				<ul>
-					<li><a href="popular.php"><i  class="icon_1"></i> <span>Popularni recepti</span></a></li>
-					<li><a href="#"><i  class="icon_2"></i> <span>Dodaj recept</span></a></li>
-					<li><a href="#"><i  class="icon_3"></i> <span>Povabi prijatelje</span></a></li>
-				</ul>
+			<div class="grid_bottom">
+            <form action="sestavi_meni.php">
+            Sestavi meni za
+            	<input type="number" min="1" class="vnesi_ceno" name="budget" placeholder="5" required>
+            €
+            </form>
 			</div>
 		</div><!-- end grids_of_2 -->
 <?php
