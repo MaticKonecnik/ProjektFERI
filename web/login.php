@@ -16,8 +16,19 @@
 			while($row=mysqli_fetch_assoc($query)){
 				$dbpassword=$row['password'];
 				if($dbpassword==$password){
+					
+					
+					
+					
 					$id=$row['id'];
 					$_SESSION["login"]=$id;
+					
+					//Dobivanje transakcije
+					$sql="SELECT MAX(transaction_id)+1 FROM  transaction;";
+					$result = mysqli_query($con, $sql);
+					$row = mysqli_fetch_row($result);
+					$idTransaction = $row[0];
+					$_SESSION['transaction']=$idTransaction;
 					header('Location: index.php');
 				}
 				else{

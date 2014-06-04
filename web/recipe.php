@@ -4,7 +4,41 @@
 	include("includes/header.php");
 	include("includes/menu.php");
 	
+	//http://localhost/Projekt/ProjektFERI/web/recipe.php?id=2
+	
+	
 	$id = $_GET['id'];
+	
+	//header("Location: aprioriBaza.php?id=$id");
+	
+	if(isset($_SESSION['transaction']))
+	{
+		//vstavljanje transakcije
+		//$sql = "INSERT INTO transaction(transaction_id, item)  VALUES ($_SESSION[transaction], $id);";
+		//insert if not exsist in table yet
+		$sql = "INSERT INTO transaction (transaction_id, item) SELECT * FROM(SELECT $_SESSION[transaction], $id) AS tmp WHERE NOT EXISTS (SELECT * FROM transaction WHERE item = $id AND transaction_id=$_SESSION[transaction]) LIMIT 1;";	
+		mysqli_query($con, $sql);
+		
+		//izracun broj transakcij
+		$sql = "SELECT count(transaction_id) from transaction where transaction_id=$_SESSION[transaction];";
+		$result = mysqli_query($con, $sql);
+		$row = mysqli_fetch_row($result);
+		$brojTransakcij = $row[0];
+		
+		//update transkacije (tj. broj transakcij)
+		$sql = "UPDATE transaction SET total_item= $brojTransakcij where transaction_id=$_SESSION[transaction]";
+		mysqli_query($con, $sql);
+		
+		//izracun fuzzy value za transakciju
+		if($brojTransakcij!=0)
+		{
+			$fuzzyVrednost = (1/$brojTransakcij);
+			$sql = "UPDATE transaction SET fuzzy_value=$fuzzyVrednost WHERE transaction_id=$_SESSION[transaction];";
+			mysqli_query($con, $sql);
+		}
+	}
+	
+	
 	$sql = "SELECT id, name, image, instructions, source_url, likes FROM recipe WHERE id='$id' LIMIT 1";
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	 ?>		
