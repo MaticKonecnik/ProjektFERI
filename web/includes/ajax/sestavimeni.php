@@ -1,8 +1,6 @@
 <?php
-	include("includes/header.php");
-	include("includes/menu.php");
-
-	$budget = $_GET['budget'];
+	include '../database.php';
+	$budget = $_POST['budget'];
 	//polje za menu-je
 	$menu = array();
 	
@@ -74,7 +72,7 @@
 		array_push($random_menu, $menu[$rnd], $menu[$rnd+1], $menu[$rnd+2]);
 	}
 	echo '<div class="span_of_2 prikaz_vseh_receptov">';
-	echo '<div class="priporocanje_container">';
+	echo '<div class="priporocanje_container menu_container">';
 	for($i=0; $i<9; $i++){
 		if($i % 3 == 0){
 			$rnd = rand(0, (count($random_menu) / 3)-1);
@@ -85,7 +83,7 @@
 		$priporocanje = mysqli_fetch_array(mysqli_query($con, $sql_p));
 		if($i % 3 == 0 && $i != 0){
 			echo '</div>';
-			echo '<div class="priporocanje_container">';
+			echo '<div class="priporocanje_container menu_container">';
 		}
 		echo('<a href="recipe.php?id='.$priporocanje['id'].'" class="priporocanje" style="background-image:url(\''.$priporocanje['image'].'\');">');
 		echo('<span>'.$priporocanje['name'].'</span></a>'."\r\n");
@@ -93,6 +91,4 @@
 	echo '</div>';
 	echo '</div>';
 	echo '<div class="clear"></div>';
-	
-	include("includes/footer.php");
 ?>

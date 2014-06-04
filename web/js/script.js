@@ -13,6 +13,10 @@ $(document).ready(function() {
 	  	dodajKomentarje();
 		$("body,html").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
 	}
+	if(location.pathname.indexOf("makemenu.php") != -1)
+	{
+		meniji();
+	}
 	if(location.pathname.indexOf("profile.php") != -1)
 	{
 		naloziProfil();
@@ -127,4 +131,31 @@ function search(){
 			});
     }
 	});
+}
+
+function meniji(){
+	$('#vnesi_ceno').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){// če je enter
+			meniji_ajax();
+    }
+	});
+	$(".sestavi_meni_click").click(function(){
+		meniji_ajax();
+	});
+}
+
+function meniji_ajax()
+{
+	if($.isNumeric($("#vnesi_ceno").val()))
+	{
+		$.ajax({
+				type: "POST",
+				url: "includes/ajax/sestavimeni.php",
+				data: { budget: $("#vnesi_ceno").val() }
+				})
+				.done(function(msg) {
+					$("#skatla_za_prikaz_menijev").html(msg);
+				});
+	}
 }
