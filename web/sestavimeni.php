@@ -22,6 +22,7 @@
 		array_push($glavne, $ro[0], $ro['p']);
 	}
 	
+	//izberi vse sladice
 	$sladice = array();
 	$qu = "SELECT r.id, SUM(price) as p FROM recipe r INNER JOIN has_ingredient hi ON r.id=hi.recipe_id WHERE category_id = 3 GROUP BY recipe_id HAVING p < '$budget' ORDER BY p DESC";
 	$res = mysqli_query($con, $qu);
@@ -52,28 +53,7 @@
 			}
 		}
 	}
-	/*//izberi vse predjedi
-	$query = "SELECT r.id, SUM(price) as p FROM recipe r INNER JOIN has_ingredient hi ON r.id=hi.recipe_id WHERE category_id = 1 GROUP BY recipe_id HAVING p < '$budget' ORDER BY p DESC";
-	$result = mysqli_query($con, $query);
-	while($row = mysqli_fetch_array($result)){
-		$predjed_id = $row['0'];
-		$skupna_vsota = $row['p'];
-		//izberi vse glavne jedi
-		$q = "SELECT r.id, SUM(price) as p FROM recipe r INNER JOIN has_ingredient hi ON r.id=hi.recipe_id WHERE category_id = 2 GROUP BY recipe_id HAVING p + '$skupna_vsota' < '$budget' ORDER BY p DESC";
-		$re = mysqli_query($con, $q);
-		while($r = mysqli_fetch_array($re)){
-			$glavna_id = $r['0'];
-			$skupna_vsota += $r['p'];
-			//izberi vse sladice
-			$qu = "SELECT r.id, SUM(price) as p FROM recipe r INNER JOIN has_ingredient hi ON r.id=hi.recipe_id WHERE category_id = 3 GROUP BY recipe_id HAVING p + '$skupna_vsota' < '$budget' ORDER BY p DESC";
-			$res = mysqli_query($con, $qu);
-			while($rr = mysqli_fetch_array($res)){
-				$sladica_id = $rr['0'];
-				$skupna_vsota += $rr['p'];
-				array_push($menu, $predjed_id, $glavna_id, $sladica_id);
-			}
-		}
-	}*/
+	
 	echo '<div class="span_of_2 prikaz_vseh_receptov">';
 	echo '<div class="priporocanje_container">';
 	for($i=0; $i<count($menu); $i++){
