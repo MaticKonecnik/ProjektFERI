@@ -1598,17 +1598,24 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 /*sestavi menu*/
 .vnesi_ceno{
 	font-family: 'open_sansregular';
-	padding: 2px;
+	padding: 10px;
 	width: 40px;
 	text-align:center;
 	background: #ffffff;
 	outline: none;
 	color: #000;
-	font-size: 0.8725em;
+	font-size: 1.2em;
 	border: 1px solid #D6D6D6;
 	-webkit-appearance: none;
 	border-radius: 5px;
  	-webkit-border-radius: 5px;
  	-moz-border-radius: 5px;
  	-o-border-radius: 5px;
+}
+
+.vnesi_ceno_container
+{
+	width:50%;
+	text-align:center;
+	margin:auto;
 }

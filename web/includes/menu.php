@@ -2,7 +2,7 @@
 			<ul class="mcd-menu">
 				<li>
 					<a href="index.php"<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo(' class="active"'); ?>>
-						<i class="icon1"></i>
+						<i class="icon3"></i>
 						<strong>Začetna</strong>
 					</a>
 				</li>
@@ -14,14 +14,14 @@
 				</li>
 				<li>
 					<a href="recipeadd.php"<?php if(basename($_SERVER['PHP_SELF'])=="recipeadd.php") echo(' class="active"'); ?>>
-						<i class="icon3"></i>
+						<i class="icon4"></i>
 						<strong>Dodaj recept</strong>
 					</a>
 				</li>
 				<li>
-					<a href="">
-						<i class="icon4"></i>
-						<strong>Nekaj</strong>
+					<a href="makemenu.php"<?php if(basename($_SERVER['PHP_SELF'])=="makemenu.php") echo(' class="active"'); ?>>
+						<i class="icon1"></i>
+						<strong>Sestavi meni</strong>
 					</a>
 				</li>
 				<li>

@@ -29,7 +29,7 @@
 						</nav>
 				</div><!-- end slider -->
 			</div><!-- end slider -->
-            <div  class="grid_right">
+            <div class="grid_right">
 				<ul>
 					<li class="color1"><img src="images/pic3.jpg" alt=""/></li>
                     <li class="color2"><img src="images/pic4.jpg" alt=""/></li>
