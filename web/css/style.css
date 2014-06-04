@@ -1535,7 +1535,6 @@ li.tooltip img
     border-radius:4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-        
     -moz-box-shadow: 5px 5px 8px #CCC;
     -webkit-box-shadow: 5px 5px 8px #CCC;
     box-shadow: 5px 5px 8px #CCC;
@@ -1635,4 +1634,41 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
    -moz-border-radius: 8px;
    -o-border-radius: 8px;
    padding:15px 0px 15px 0px;
+}
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+	border-radius: 0px 8px 8px 0px;
+   -webkit-border-radius: 0px 8px 8px 0px;
+   -moz-border-radius: 0px 8px 8px 0px;
+   -o-border-radius: 0px 8px 8px 0px;
+}
+#owl-demo
+{
+	width:60.33333%;
+	margin:auto;
+	background:white;
+	border-radius: 8px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -o-border-radius: 8px;	
+}
+#owl-demo > div.owl-wrapper-outer > div div a h4
+{
+	font-size: 1.5em;
+	color: #898989;
+	text-transform: uppercase;
+	font-family: 'Verdana', sans-serif;
+	overflow-wrap: break-word;
+	text-align:center;
+}
+#owl-demo > div.owl-wrapper-outer > div div p
+{
+	font-size: 0.8725em;
+	color: #202020;
+	line-height: 1.8em;
+	margin-bottom: 4%;
+	padding:5px 15px;
 }

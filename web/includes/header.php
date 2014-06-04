@@ -30,14 +30,22 @@
 <title>Projekt</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<?php if(basename($_SERVER['PHP_SELF'])=="index.php") echo('<link rel="stylesheet" type="text/css" href="css/slider.css" />'."\n"); ?>
+<?php if(basename($_SERVER['PHP_SELF'])=="index.php")
+{
+	//echo('<link rel="stylesheet" type="text/css" href="css/slider.css" />'."\n");
+	echo('<link rel="stylesheet" href="owl-carousel/owl.carousel.css">'."\n");
+	echo('<link rel="stylesheet" href="owl-carousel/owl.theme.css">'."\n");
+} ?>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
 <?php
 	if(basename($_SERVER['PHP_SELF'])=="index.php")
 	{
-		echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/unslider.min.js"></script>'."\n");
+		/*echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/unslider.min.js"></script>'."\n");*/
+		echo('<link rel="stylesheet" href="owl-carousel/owl.carousel.css">'."\n");
+		echo('<link rel="stylesheet" href="owl-carousel/owl.theme.css">'."\n");
+		echo('<script src="owl-carousel/owl.carousel.js"></script>'."\n");
 	}
 	if(basename($_SERVER['PHP_SELF'])=="popular.php")
 		echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n");

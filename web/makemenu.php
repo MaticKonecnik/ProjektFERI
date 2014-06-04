@@ -16,6 +16,6 @@
 			</div><!-- end grid1_of_list2 -->
     <div class="clear"></div>
     <div id="skatla_za_prikaz_menijev"></div>
-    <?
+    <?php
 	include("includes/footer.php");
 ?>

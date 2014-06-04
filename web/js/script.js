@@ -25,10 +25,15 @@ $(document).ready(function() {
 });
 
 function init_slider() {
-	$('#da-slider').cslider({
-		autoplay : true,
-		bgincrement : 450
-	});
+	  $("#owl-demo").owlCarousel({
+      navigation : false, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true,
+	  autoPlay : true
+  });
+  $("#owl-demo > div.owl-wrapper-outer > div > div:last-child").remove();
+  $("#owl-demo > div.owl-controls.clickable > div > div:last-child").remove();
 }
 
 function loadKomentarji()
