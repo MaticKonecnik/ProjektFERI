@@ -11,7 +11,7 @@
 					<div class="clear"></div>
                     <form action="sestavimeni.php">
 			za
-            	<input type="number" min="1" class="vnesi_ceno" name="budget" placeholder="5" required>
+            	<input type="number" min="1" class="vnesi_ceno" name="budget" value="10" required>
             €
      </form>
 				</ul>
