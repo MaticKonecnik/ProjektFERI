@@ -36,13 +36,6 @@
 				</ul>
 			</div>
 			<div class="clear"></div>
-			<div class="grid_bottom">
-            <form action="sestavimeni.php">
-            Sestavi meni za
-            	<input type="number" min="1" class="vnesi_ceno" name="budget" placeholder="5" required>
-            €
-            </form>
-			</div>
 		</div><!-- end grids_of_2 -->
 <?php
 	include("includes/footer.php");
