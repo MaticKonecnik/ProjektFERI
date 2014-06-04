@@ -37,7 +37,7 @@
 			</div>
 			<div class="clear"></div>
 			<div class="grid_bottom">
-            <form action="sestavi_meni.php">
+            <form action="sestavimeni.php">
             Sestavi meni za
             	<input type="number" min="1" class="vnesi_ceno" name="budget" placeholder="5" required>
             €
