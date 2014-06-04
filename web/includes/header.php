@@ -57,9 +57,6 @@
 		echo('<script type="text/javascript" src="js/starRatings/rate-product-ajax.js"></script>'."\n");
 		echo ('<link href="js/starRatings/jquery.rating.css" type="text/css" rel="stylesheet" />'."\n");
     }
-  //<!-- Zakomentirana skirpta jer onda ne delaju komentari -->
- /* if(basename($_SERVER['PHP_SELF'])=="recipe.php") echo ('<script type="text/javascript" src="js/starRatings/jquery.js"></script>'."\n"); */
-//<!-- css stylsheet zvezdice -->
 ?>
 <script type="text/javascript" src="js/script.js"></script>
 </head>

@@ -1618,7 +1618,7 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	text-align:center;
 	margin:auto;
 }
-#skatla_za_prikaz_menijev
+#skatla_za_prikaz_menijev, #skatla_za_prikaz_receptov
 {
 	margin-top:25px;
 }
@@ -1671,4 +1671,24 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	line-height: 1.8em;
 	margin-bottom: 4%;
 	padding:5px 15px;
+}
+
+
+/*iskanje*/
+
+#iskanje_box
+{
+	font-family: 'open_sansregular';
+	padding: 15px;
+	display: block;
+	width: 60.3333%;
+	background: #ffffff;
+	margin:auto;
+	outline: none;
+	color: #000;
+	font-size: 0.8725em;
+	border: 1px solid #D6D6D6;
+	-webkit-appearance: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
 }

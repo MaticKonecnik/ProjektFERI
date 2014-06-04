@@ -17,6 +17,10 @@ $(document).ready(function() {
 	{
 		meniji();
 	}
+	if(location.pathname.indexOf("iskanje.php") != -1)
+	{
+		iskanje();
+	}
 	if(location.pathname.indexOf("profile.php") != -1)
 	{
 		naloziProfil();
@@ -163,4 +167,21 @@ function meniji_ajax()
 					$("#skatla_za_prikaz_menijev").html(msg);
 				});
 	}
+}
+
+function iskanje()
+{
+	$('#iskanje_box').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){// če je enter
+		$.ajax({
+			type: "GET",
+			url: "includes/ajax/iskanje.php",
+			data: { q: $("#iskanje_box").val() }
+			})
+			.done(function(msg) {
+				$("#skatla_za_prikaz_receptov").html(msg);
+			});
+    }
+	});
 }

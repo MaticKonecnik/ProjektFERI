@@ -25,9 +25,9 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
-						<i class="icon5"></i>
-						<strong>Nekaj</strong>
+                    <a href="iskanje.php"<?php if(basename($_SERVER['PHP_SELF'])=="iskanje.php") echo(' class="active"'); ?>>
+                        <i class="icon5"></i>
+                        <strong>Iskanje</strong>
 					</a>
 				</li>
 			</ul>
