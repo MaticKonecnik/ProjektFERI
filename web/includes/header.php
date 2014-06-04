@@ -72,6 +72,7 @@ if(!isset($id)){
 		}
 else{
 	if ($now > $_SESSION["expire"]){
+		session_destroy();
 		echo " <form method='post'> 
 			<div class='header_form' >
 			<input type='submit' value='Registriraj se' name='registracija'>

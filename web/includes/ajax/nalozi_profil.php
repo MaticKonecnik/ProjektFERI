@@ -37,8 +37,15 @@
 	  $queryy="SELECT * FROM recipe WHERE tk_id_user='$id'";
 	  $resultt = mysqli_query($con, $queryy);
 	  while($roww = mysqli_fetch_array($resultt)){
-	  echo('<a href="recipe.php?id='.$roww['id'].'" class="priporocanje" style="background-image:url(\''.$roww['image'].'\');">');
+	  if(isset($_SESSION['login']) && $id == $_SESSION['login']){
+			echo('<a href="recipe.php?id='.$roww['id'].'" class="priporocanje" style="background-image:url(\''.$roww['image'].'\');">');
 						echo('<span>'.$roww['name'].'</span></a>'."\r\n");
+				}
+		else
+		{
+			echo('<a href="recipe.php?id='.$roww['id'].'" class="priporocanje" style="background-image:url(\''.$roww['image'].'\');">');
+						echo('<span>'.$roww['name'].'</span></a>'."\r\n");
+			}
 	  }
 	?>
 </div>
