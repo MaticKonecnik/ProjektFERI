@@ -12,6 +12,7 @@ $(document).ready(function() {
 		loadKomentarji();
 	  	dodajKomentarje();
 		$("body,html").animate({ scrollTop:  $("#slika_en_recept").offset().top }, "slow");
+		get_ocena();
 	}
 	if(location.pathname.indexOf("makemenu.php") != -1)
 	{
@@ -183,5 +184,56 @@ function iskanje()
 				$("#skatla_za_prikaz_receptov").html(msg);
 			});
     }
+	});
+}
+
+//ocenjevanje z zvezdicami
+
+function nastavi_click_za_ocene()
+{
+	var original_width = $('.yellow_stars').width();
+	
+	/*$( ".white_stars" ).mousemove(function(e) {
+		var offset = $(this).offset();
+		var sirina = $('.white_stars').width();
+		var procenti = Math.round(((e.clientX - offset.left)/sirina)*100);
+		$('.yellow_stars').width(procenti);
+	});
+	$( ".white_stars" ).mouseout(function() {
+  		$(".white_stars").width(original_width);
+	});*/
+	
+	$('.white_stars').click(function(e) {
+    var offset = $(this).offset();
+	var sirina = $('.white_stars').width();
+	var procenti = (e.clientX - offset.left)/sirina;
+	//alert(procenti);
+	set_ocena(procenti);
+  	});
+}
+
+function get_ocena()
+{
+	var id = getUrlVars()["id"];
+	$.ajax({
+			type: "GET",
+			url: "includes/ajax/get_ocena.php",
+			data: { id: id }
+			})
+			.done(function(msg) {
+				$("#ocena_container").html(msg);
+				nastavi_click_za_ocene();
+	});
+}
+function set_ocena(ocena)
+{
+	var id = getUrlVars()["id"];
+	$.ajax({
+			type: "POST",
+			url: "includes/ajax/set_ocena.php",
+			data: { id: id, ocena: ocena }
+			})
+			.done(function(msg) {
+				get_ocena();
 	});
 }

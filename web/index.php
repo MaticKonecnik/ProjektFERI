@@ -29,8 +29,17 @@
 							<span class="da-arrows-next"></span>
 						</nav>
 				</div>
-
+				<div id="ingredient-container"></div>
 			<div class="clear"></div>
 <?php
+	$query = "SELECT DISTINCT(name) FROM ingredient i INNER JOIN has_ingredient hi ON i.id=hi.ingredient_id WHERE LENGTH(name) < 15 LIMIT 30";
+	$r = mysqli_query($con, $query);
+	$st=0;
+	echo '<form action="">';
+	while($roww = mysqli_fetch_array($r)){
+		echo '<input type="checkbox" name="ingredient[]" value="'.$roww[0].'">'.$roww[0];
+	}
+	echo '<input type="submit" value="Poišči" name="submit">';
+	echo '</form>';
 	include("includes/footer.php");
 ?>
