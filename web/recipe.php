@@ -169,8 +169,8 @@
 						$brojIteracij++;
 						
 					}
-				}
-				echo "</div>";			
+					echo "</div>";
+				}		
 				?>
      
                 <div class="clear"></div>
