@@ -193,7 +193,7 @@ function nastavi_click_za_ocene()
 {
 	var original_width = $('.yellow_stars').width();
 	
-	$( ".white_stars" ).mousemove(function(e) {
+	/*$( ".white_stars" ).mousemove(function(e) {
 		var offset = $(this).offset();
 		var sirina = $('.white_stars').width();
 		var procenti = Math.round(((e.clientX - offset.left)/sirina)*100);
@@ -201,14 +201,14 @@ function nastavi_click_za_ocene()
 	});
 	$( ".white_stars" ).mouseout(function() {
   		$(".white_stars").width(original_width);
-	});
+	});*/
 	
 	$('.white_stars').click(function(e) {
     var offset = $(this).offset();
 	var sirina = $('.white_stars').width();
 	var procenti = (e.clientX - offset.left)/sirina;
-	alert(procenti);
-	//set_ocena(procenti);
+	//alert(procenti);
+	set_ocena(procenti);
   	});
 }
 
