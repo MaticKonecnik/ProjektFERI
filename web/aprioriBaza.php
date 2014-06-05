@@ -1,6 +1,6 @@
 <?php
-include("includes/header.php");
-include("includes/menu.php");
+//include("includes/header.php");
+//include("includes/menu.php");
 include_once ("includes/database.php");
 
 /*
@@ -52,5 +52,9 @@ SUM(t.fuzzy_value) /COUNT(*) AS support
 FROM trans2 t
 GROUP BY t.name;
 */
+
+
+//trazenje apriori association rule
+//SELECT * FROM apriori_rule WHERE start_rule LIKE '%';
 
 ?>

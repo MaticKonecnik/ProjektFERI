@@ -204,11 +204,11 @@ body {
 @-webkit-keyframes moveFromLeft {
     from {
         opacity: 0;
-        -webkit-transform: translateX(200%);
-        -moz-transform: translateX(200%);
-        -ms-transform: translateX(200%);
-        -o-transform: translateX(200%);
-        transform: translateX(200%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+        transform: translateX(50%);
     }
     to {
         opacity: 1;
@@ -1221,6 +1221,7 @@ body {
 
 .sestavine
 {
+	margin-top:20px;
 	margin-right:10%;
 }
 
@@ -1534,7 +1535,6 @@ li.tooltip img
     border-radius:4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-        
     -moz-box-shadow: 5px 5px 8px #CCC;
     -webkit-box-shadow: 5px 5px 8px #CCC;
     box-shadow: 5px 5px 8px #CCC;
@@ -1545,6 +1545,8 @@ li.tooltip img
     overflow:auto;
     margin-bottom:5.33333%;
 	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
 }
 .priporocanje
 {
@@ -1553,10 +1555,11 @@ li.tooltip img
 	-moz-border-radius: 8px;
 	-o-border-radius: 8px;
 	width:30% !important;
-	display: inline-block;
-	margin-left: auto;
+	/*display: inline-block;*/
+	display:block;
+	float:left;
+	margin-left: 2.5%;
  	margin-right: auto;
-	width:30%;
 	height:150px; /*velikost slike*/
 	background-position:center;
 	background-repeat:no-repeat;
@@ -1568,9 +1571,10 @@ li.tooltip img
 }
 .priporocanje span
 {
-   background: rgba(160, 160, 160, 0.8);
+   background: rgba(0, 160, 0, 0.6);
    color:white;
    width:100%;
+   overflow:hidden;
    display:inline-block; 
    border-radius: 8px 8px 0px 0px;
    -webkit-border-radius: 8px 8px 0px 0px;
@@ -1578,3 +1582,113 @@ li.tooltip img
    -o-border-radius: 8px 8px 0px 0px;
 }
 
+
+/* všečki/priporočanje */
+div.span_list2 > ul.span_plus > li
+{
+	height:73px;
+}
+
+body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.span_list2 > ul.span_img
+{
+	height:172px;
+}
+
+/*sestavi menu*/
+#vnesi_ceno{
+	font-family: 'open_sansregular';
+	padding: 10px;
+	width: 40px;
+	text-align:center;
+	background: #ffffff;
+	outline: none;
+	color: #000;
+	font-size: 1.2em;
+	border: 1px solid #D6D6D6;
+	-webkit-appearance: none;
+	border-radius: 5px;
+ 	-webkit-border-radius: 5px;
+ 	-moz-border-radius: 5px;
+ 	-o-border-radius: 5px;
+}
+
+.vnesi_ceno_container
+{
+	width:60.33333%;
+	text-align:center;
+	margin:auto;
+}
+#skatla_za_prikaz_menijev, #skatla_za_prikaz_receptov
+{
+	margin-top:25px;
+}
+.sestavi_meni_click
+{
+	cursor:pointer;
+}
+.menu_container
+{
+	border:2px solid #71AF42;
+    border-radius: 8px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -o-border-radius: 8px;
+   padding:15px 0px 15px 0px;
+}
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+	border-radius: 0px 8px 8px 0px;
+   -webkit-border-radius: 0px 8px 8px 0px;
+   -moz-border-radius: 0px 8px 8px 0px;
+   -o-border-radius: 0px 8px 8px 0px;
+}
+#owl-demo
+{
+	width:60.33333%;
+	margin:auto;
+	background:white;
+	border-radius: 8px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -o-border-radius: 8px;	
+}
+#owl-demo > div.owl-wrapper-outer > div div a h4
+{
+	font-size: 1.5em;
+	color: #898989;
+	text-transform: uppercase;
+	font-family: 'Verdana', sans-serif;
+	overflow-wrap: break-word;
+	text-align:center;
+}
+#owl-demo > div.owl-wrapper-outer > div div p
+{
+	font-size: 0.8725em;
+	color: #202020;
+	line-height: 1.8em;
+	margin-bottom: 4%;
+	padding:5px 15px;
+}
+
+
+/*iskanje*/
+
+#iskanje_box
+{
+	font-family: 'open_sansregular';
+	padding: 15px;
+	display: block;
+	width: 60.3333%;
+	background: #ffffff;
+	margin:auto;
+	outline: none;
+	color: #000;
+	font-size: 0.8725em;
+	border: 1px solid #D6D6D6;
+	-webkit-appearance: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}

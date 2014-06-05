@@ -22,6 +22,7 @@
 					
 					$id=$row['id'];
 					$_SESSION["login"]=$id;
+
 					
 					//Dobivanje transakcije
 					$sql="SELECT MAX(transaction_id)+1 FROM  transaction;";
@@ -29,6 +30,10 @@
 					$row = mysqli_fetch_row($result);
 					$idTransaction = $row[0];
 					$_SESSION['transaction']=$idTransaction;
+
+					$_SESSION["start"]=time();
+					$_SESSION["expire"]=$_SESSION["start"]+ (30 * 60);
+
 					header('Location: index.php');
 				}
 				else{
