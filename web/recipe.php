@@ -45,14 +45,8 @@
 				<div class="span_of_list">
 					<div class="span1_of_1">
 						<h4><?php echo($row['name']); ?></h4>
-                        <form id="form3A">
-                        	<input name="test-3A-ocjena-1" class="star rate" value="1" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="2" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="3" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="4" type="radio">
-                            <input name="test-3A-ocjena-1" class="star rate" value="5" type="radio">
-                        </form>
-                         <?php $sql = "SELECT Ocjena($id)"; $row2 = mysqli_fetch_array(mysqli_query($con,$sql)); echo ($row2[0]); ?>
+                         <div id="ocena_container">
+                         </div>
                         <div class="grid1_of_list1 sestavine">
 							<div class="grid_text">	
 								<ul class="list1">
