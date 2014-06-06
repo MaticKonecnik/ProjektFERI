@@ -26,8 +26,8 @@ img{max-width:100%;}
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext);
 
 @font-face {
-     font-family: 'open_sansregular';
-      src:url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
+    font-family: 'Open Sans', sans-serif;
+      src:url('http://fonts.googleapis.com/css?family=Open+Sans') format('truetype');
 }
 html{
   height: 100%;
@@ -38,7 +38,7 @@ body {
 body {
 	background:url('../images/bg.jpg') no-repeat fixed;
 	background-size:100% 100%;
-	font-family: 'open_sansregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
 }
 .wrap{
@@ -60,7 +60,6 @@ body {
 	margin-bottom: 4%;
 }
 .mcd-menu {
-	font-family: 'Verdana', sans-serif;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -1727,6 +1726,10 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	position: relative;
 	left: 19.7%;
 	text-align:center;
+	background-color:rgba(200,200,200,0.3);
+	border-radius: 8px 8px 8px 8px;
+	-webkit-border-radius: 8px 8px 8px 8px;
+	margin-top:25px;
 }
 
 .roundedOne {
@@ -1827,25 +1830,18 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 
 #forma_za_sestevine input[type="submit"]
 {
-	width: 20%;
-	margin-right: 10px;
-	float: right;
+	width: 30%;
+	margin:20px;
 	background: #71AF42;
 	color: #ffffff;
 	border: 1px solid #69A23D;
 	text-align: center;
-	font-family: 'open_sansregular';
 	font-weight: 100;
 	cursor: pointer;
 	padding: 16px 38px;
 	outline: none;
 	font-size: 1em;
 	text-transform: uppercase;
-	-webkit-appearance: none;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -1854,5 +1850,4 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	-webkit-text-shadow: 0 1px 0 rgb(0, 0, 0);
 	-moz-text-shadow: 0 1px 0 rgb(0, 0, 0);
 	-o-text-shadow: 0 1px 0 rgb(0, 0, 0);
-}
 }
