@@ -393,14 +393,12 @@ body {
 	color: #797979;
 	text-transform: capitalize;
 	font-weight: 700;
-	font-family: 'Verdana', sans-serif;
 }
 .grid_text1 h5{
 	font-size:1.5em;
 	color: #797979;
 	text-transform: capitalize;
 	font-weight: 600;
-	font-family: 'Verdana', sans-serif;
 }
 .list1{
 	padding-bottom: 8px;
@@ -461,7 +459,6 @@ body {
 	background: #ffffff;
 	color: #555555;
 	text-transform: capitalize;
-	font-family: 'Verdana', sans-serif;
 }
 .list2 li:nth-child(1){
 	border-left:none;
@@ -509,7 +506,6 @@ body {
 .span_of_text h4{
 	font-size:2em;
 	color: #ffffff;
-	font-family: 'Verdana', sans-serif;
 }
 /* start contact_form */
 .contact_form {
@@ -522,7 +518,6 @@ body {
 }
 .contact_form span{
 	text-align: left;
-	font-family: 'open_sansregular';
 	font-size: 0.8925em;
 	color: #808080;
 	margin:20px 0 10px;
@@ -530,7 +525,6 @@ body {
 	-webkit-text-stroke: 0.5px;
 }
 .contact_form form input[type="text"], .contact_form form input[type="email"], .contact_form form input[type="password"], .contact_form form textarea {
-	font-family: 'open_sansregular';
 	padding: 15px;
 	display: block;
 	width: 90%;
@@ -560,7 +554,6 @@ body {
 	color: #ffffff;
 	border: 1px solid #69A23D;
 	text-align:center;
-	font-family: 'open_sansregular';
 	font-weight:100;
 	cursor: pointer;
 	padding: 16px 38px;
@@ -591,7 +584,6 @@ body {
 	color: #303030;
 	border: 1px solid rgb(192, 192, 192);
 	text-align:center;
-	font-family: 'open_sansregular';
 	font-weight:100;
 	cursor: pointer;
 	padding: 16px 38px;
@@ -643,7 +635,6 @@ body {
 	color: #ffffff;
 	border: 1px solid #69A23D;
 	text-align:center;
-	font-family: 'open_sansregular';
 	font-weight:100;
 	cursor: pointer;
 	padding: 16px 38px;
@@ -708,7 +699,6 @@ body {
 	font-size: 2.5em;
 	color: #898989;
 	text-transform: uppercase;
-	font-family: 'Verdana', sans-serif;
 	overflow-wrap: break-word;
 }
 .span1_of_2 p{
@@ -725,7 +715,6 @@ body {
 	line-height: 1.8em;
 	font-size: 0.8725em;
 	color: #EC2D00;
-	font-family: 'Verdana', sans-serif;
 	transition: 0.5s ease;
 	-moz-transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -781,7 +770,6 @@ body {
 	font-size: 2.5em;
 	color: #898989;
 	text-transform: capitalize;
-	font-family: 'Verdana', sans-serif;
 }
 .span_pea1{
 	float: right;
@@ -795,12 +783,10 @@ body {
 .span_pea1 li span{
 	font-size:6em;
 	color: #555555;
-	font-family: 'Verdana', sans-serif;
 }
 .span_pea1 li p{
 	font-size:1em;
 	color: #898989;
-	font-family: 'Verdana', sans-serif;
 }
 .span_plus{
 	text-align:center;
@@ -815,7 +801,6 @@ body {
 	border-bottom: none;
 }
 .span_plus li a{
-	font-family: 'Verdana', sans-serif;
 	display: block;
 	padding: 20px;
 	background: #d0d0d0;
@@ -866,7 +851,6 @@ body {
 	font-size: 0.8725em;
 	line-height: 1.8em;
 	font-weight: 100;
-	font-family: 'open_sansregular';
 }
 .copy p a{
 	color: #FF9177;
@@ -1239,7 +1223,6 @@ body {
 {
 	width:90%;
 	margin:0 auto;
-	font-family: 'open_sansregular';
 	padding: 15px;
 	display: block;
 	width: 90%;
@@ -1397,7 +1380,6 @@ body {
 	color: black;
 	font-weight: bold;
 	font-size: 14px;
-	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 }
 
 #userProfile td{
@@ -1781,6 +1763,10 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	background: linear-gradient(top, #222 0%, #45484d 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
 }
+.roundedOne input[type="checkbox"]
+{
+	display:none;
+}
 
 .roundedOne label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -1823,9 +1809,11 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 
 .roundedOne label span
 {
-	width:150px;
+	display:block;
+	width:70px;
 	position:relative;
 	left:30px;
+	text-align:left;
 }
 
 #forma_za_sestevine input[type="submit"]
