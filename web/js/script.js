@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	if(location.pathname.indexOf("index.php") != -1)
+	if(location.pathname.indexOf("index.php") != -1 || $("body > div > div > div.menu > ul > li:first-child > a").hasClass("active"))
 	{
   		init_slider();
 	}
@@ -39,6 +39,7 @@ function init_slider() {
   });
   $("#owl-demo > div.owl-wrapper-outer > div > div:last-child").remove();
   $("#owl-demo > div.owl-controls.clickable > div > div:last-child").remove();
+ // alert($( "#owl-demo > div.owl-controls.clickable > div > div:last-child" ).hasClass( "active" ));
 }
 
 function loadKomentarji()

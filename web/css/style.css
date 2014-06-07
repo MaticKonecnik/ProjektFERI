@@ -1577,7 +1577,6 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 
 /*sestavi menu*/
 #vnesi_ceno{
-	font-family: 'open_sansregular';
 	padding: 10px;
 	width: 40px;
 	text-align:center;
@@ -1641,7 +1640,6 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	font-size: 1.5em;
 	color: #898989;
 	text-transform: uppercase;
-	font-family: 'Verdana', sans-serif;
 	overflow-wrap: break-word;
 	text-align:center;
 }
@@ -1659,7 +1657,6 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 
 #iskanje_box
 {
-	font-family: 'open_sansregular';
 	padding: 15px;
 	display: block;
 	width: 60.3333%;

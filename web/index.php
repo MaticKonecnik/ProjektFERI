@@ -32,14 +32,14 @@
 				<div id="ingredient-container"></div>
 			<div class="clear"></div>
 <?php
-	$query = "SELECT DISTINCT(name) FROM ingredient i INNER JOIN has_ingredient hi ON i.id=hi.ingredient_id WHERE LENGTH(name) < 15 LIMIT 28";
+	$query = "SELECT DISTINCT(name), id FROM ingredient i INNER JOIN has_ingredient hi ON i.id=hi.ingredient_id WHERE LENGTH(name) < 15 LIMIT 28";
 	$r = mysqli_query($con, $query);
 	$st=0;
-	echo '<form action="" id="forma_za_sestevine">';
+	echo '<form action="#" id="forma_za_sestevine">';
 	while($roww = mysqli_fetch_array($r)){
 		echo('<div class="roundedOne">');
-		echo('<input type="checkbox" value="'.$roww[0].'" id="roundedOne_'.$roww[0].'" name="ingredient[]" />');
-		echo('<label for="roundedOne_'.$roww[0].'"><span>'.$roww[0].'</span></label>');
+		echo('<input type="checkbox" value="'.$roww[1].'" id="roundedOne_'.$roww[1].'" name="ingredient[]" />');
+		echo('<label for="roundedOne_'.$roww[1].'"><span>'.$roww[0].'</span></label>');
 		echo('</div>');
 	}
 	echo '<div class="clear"></div><input type="submit" value="Poišči" name="submit">';
