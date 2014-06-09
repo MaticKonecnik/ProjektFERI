@@ -1500,18 +1500,18 @@ body {
 li.tooltip {outline:none; }
 li.tooltip strong {line-height:30px;}
 li.tooltip:hover {text-decoration:none;} 
-li.tooltip img {
+li.tooltip figure {
     z-index:10;display:none; padding:14px 20px;
     margin-top:-30px; margin-left:28px;
     width:240px; line-height:16px;
 	max-width:100%;
 	height:auto;
 }
-li.tooltip:hover img{
+li.tooltip:hover figure{
     display:inline; position:absolute; color:#111;
     border:1px solid #DCA; background:#fffAF0;}
 .callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
-li.tooltip img
+li.tooltip figure
 {
     border-radius:4px;
     -moz-border-radius: 4px;

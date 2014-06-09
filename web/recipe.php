@@ -51,15 +51,15 @@
 							<div class="grid_text">	
 								<ul class="list1">
                         <?php
-                        	$sql = "SELECT ingredient.name AS naziv, ingredient.picture AS slika, has_ingredient.type AS enota, has_ingredient.quantity AS kolicina FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
+                        	$sql = "SELECT ingredient.name AS naziv, ingredient.picture AS slika, has_ingredient.type AS enota, has_ingredient.quantity AS kolicina, has_ingredient.price AS cena FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
 							$result = mysqli_query($con,$sql);
 							$stevec = 0;
 							while($sestavine = mysqli_fetch_array($result))
 							{
 								if($stevec%2==0)
-									echo('<li class="active tooltip"><img src="'.$sestavine['slika'].'"><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+									echo('<li class="active tooltip"><figure><img src="'.$sestavine['slika'].'"><figcaption>'.$sestavine['cena'].'€</figcaption></figure><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								else
-									echo('<li class="tooltip"><img src="'.$sestavine['slika'].'"><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+									echo('<li class="tooltip"><figure><img src="'.$sestavine['slika'].'"><figcaption>'.$sestavine['cena'].'€</figcaption></figure><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								$stevec++;
 							}
 						?>                                 

@@ -32,13 +32,14 @@
 
 </table>
 <div class="clear"></div>
+<div id="skatla_za_prikaz_menijev">
 <div class="priporocanje_container">
 	<?php
 	  $queryy="SELECT * FROM recipe WHERE tk_id_user='$id'";
 	  $resultt = mysqli_query($con, $queryy);
 	  while($roww = mysqli_fetch_array($resultt)){
 	  if(isset($_SESSION['login']) && $id == $_SESSION['login']){
-			echo('<a href="recipe.php?id='.$roww['id'].'" class="priporocanje" style="background-image:url(\''.$roww['image'].'\');">');
+			echo('<a href="recipeedit.php?id='.$roww['id'].'" class="priporocanje" style="background-image:url(\''.$roww['image'].'\');">');
 						echo('<span>'.$roww['name'].'</span></a>'."\r\n");
 				}
 		else
@@ -48,6 +49,7 @@
 			}
 	  }
 	?>
+</div>
 </div>
 <div id="underlay"></div>
 <div id="lightbox">	
