@@ -56,10 +56,18 @@
 							$stevec = 0;
 							while($sestavine = mysqli_fetch_array($result))
 							{
-								if($stevec%2==0)
-									echo('<li class="active tooltip"><figure><img src="'.$sestavine['slika'].'"><figcaption>'.$sestavine['cena'].'€</figcaption></figure><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+								$cenases=$sestavine['cena'];
+								if ($cenases==NULL){
+									$cena="";
+								}
 								else
-									echo('<li class="tooltip"><figure><img src="'.$sestavine['slika'].'"><figcaption>'.$sestavine['cena'].'€</figcaption></figure><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+								{
+									$cena=$cenases."€";
+								}
+								if($stevec%2==0)
+									echo('<li class="active tooltip"><figure><img src="'.$sestavine['slika'].'"><figcaption>'.$cena.'</figcaption></figure><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
+								else
+									echo('<li class="tooltip"><figure><img src="'.$sestavine['slika'].'"><figcaption>'.$cena.'</figcaption></figure><a href="#">'.$sestavine['naziv'].' <span>'.$sestavine['kolicina'].' '.$sestavine['enota'].'</span> </a></li>');
 								$stevec++;
 							}
 						?>                                 
