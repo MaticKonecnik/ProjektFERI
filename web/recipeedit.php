@@ -21,8 +21,8 @@ if($submit){
 	$name=$_POST['name'];
 	$instructions=$_POST['instructions'];
 	
-	$query = sprintf("UPDATE recipe SET name='%s', instructions='%s' WHERE id = '$id'",
-			mysqli_real_escape_string($con, $name),
+	$query = sprintf("UPDATE recipe SET name='%s', instructions='%s' WHERE id = '$id'");
+			mysqli_real_escape_string($con, $name);
 			mysqli_real_escape_string($con, $instructions);
 	if(!mysqli_query($con, $query)){
 		die(mysqli_error($con));

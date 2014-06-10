@@ -50,6 +50,7 @@
                         <div class="grid1_of_list1 sestavine">
 							<div class="grid_text">	
 								<ul class="list1">
+
                         <?php
                         	$sql = "SELECT ingredient.name AS naziv, ingredient.picture AS slika, has_ingredient.type AS enota, has_ingredient.quantity AS kolicina, has_ingredient.price AS cena FROM ingredient, has_ingredient WHERE has_ingredient.ingredient_id=ingredient.id AND has_ingredient.recipe_id='$id'";
 							$result = mysqli_query($con,$sql);
@@ -80,6 +81,7 @@
 						<p><?php echo($row['instructions']); ?></p>
                         <a class="arrow" href="<?php echo($row['source_url']); ?>"><span>Izvorna stran recepta...</span></a>
 					</div>	
+					<div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 					<div class="clear"></div>
 				</div>	  
                                                           
