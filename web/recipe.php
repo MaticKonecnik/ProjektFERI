@@ -81,8 +81,8 @@
 						<p><?php echo($row['instructions']); ?></p>
                         <a class="arrow" href="<?php echo($row['source_url']); ?>"><span>Izvorna stran recepta...</span></a>
 					</div>	
-					<div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 					<div class="clear"></div>
+					<div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 				</div>	  
                                                           
 
