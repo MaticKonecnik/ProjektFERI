@@ -37,8 +37,8 @@ function init_slider() {
       singleItem : true,
 	  autoPlay : true
   });
-  $("#owl-demo > div.owl-wrapper-outer > div > div:last-child").remove();
-  $("#owl-demo > div.owl-controls.clickable > div > div:last-child").remove();
+ // $("#owl-demo > div.owl-wrapper-outer > div > div:last-child").remove();
+ // $("#owl-demo > div.owl-controls.clickable > div > div:last-child").remove();
  // alert($( "#owl-demo > div.owl-controls.clickable > div > div:last-child" ).hasClass( "active" ));
 }
 

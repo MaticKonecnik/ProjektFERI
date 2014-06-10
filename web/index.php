@@ -24,10 +24,7 @@
 							</div>
 						<?php }
 					?>
-						<nav class="da-arrows">
-							<span class="da-arrows-prev"></span>
-							<span class="da-arrows-next"></span>
-						</nav>
+						
 				</div>
 				<div id="ingredient-container"></div>
 			<div class="clear"></div>
