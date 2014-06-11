@@ -44,9 +44,11 @@
 				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" id="slika_en_recept"/></span>
 				<div class="span_of_list">
 					<div class="span1_of_1">
+					
 						<h4><?php echo($row['name']); ?></h4>
                          <div id="ocena_container">
                          </div>
+						 <div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         <div class="grid1_of_list1 sestavine">
 							<div class="grid_text">	
 								<ul class="list1">
@@ -82,7 +84,7 @@
                         <a class="arrow" href="<?php echo($row['source_url']); ?>"><span>Izvorna stran recepta...</span></a>
 					</div>	
 					<div class="clear"></div>
-					<div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+					
 				</div>	  
                                                           
 
