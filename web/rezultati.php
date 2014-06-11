@@ -2,15 +2,19 @@
 	include("includes/header.php");
 	include("includes/menu.php");
 	
-	$sestevine = $_GET['ingredient'];
 	$sql_pogoj = "";
-	for($i = 0, $l = count($sestevine); $i < $l; ++$i)
+	if(isset($_GET['ingredient']))
 	{
-		if( $i == 0)
-			$sql_pogoj .= " AND ";
- 		$sql_pogoj .= "has_ingredient.ingredient_id = " . $sestevine[$i];
-		if( $i < $l-1)
-			$sql_pogoj .= " AND ";
+		$sql_pogoj .= ", has_ingredient WHERE recipe.id = has_ingredient.recipe_id";
+		$sestevine = $_GET['ingredient'];
+		for($i = 0, $l = count($sestevine); $i < $l; ++$i)
+		{
+			if( $i == 0)
+				$sql_pogoj .= " AND ";
+			$sql_pogoj .= "has_ingredient.ingredient_id = " . $sestevine[$i];
+			if( $i < $l-1)
+				$sql_pogoj .= " AND ";
+		}
 	}
 	
 	$limit = 25;
@@ -21,11 +25,11 @@
 	$to = $current_page * $limit;
 	$from = $to - $limit;
 	
-	$sql = "SELECT COUNT(*) AS stevec FROM recipe, has_ingredient WHERE recipe.id = has_ingredient.recipe_id $sql_pogoj";
+	$sql = "SELECT COUNT(*) AS stevec FROM recipe $sql_pogoj";
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	$total_pages = round(((float)$row['stevec'] / (float)$limit), 0, PHP_ROUND_HALF_UP);
 	
-	$sql = "SELECT id, name, image, instructions FROM recipe, has_ingredient WHERE recipe.id = has_ingredient.recipe_id $sql_pogoj LIMIT $from, $limit";
+	$sql = "SELECT id, name, image, instructions FROM recipe $sql_pogoj LIMIT $from, $limit";
 	$result = mysqli_query($con,$sql);
 
 	while($row = mysqli_fetch_array($result))
@@ -62,7 +66,8 @@
 						continue;
 					if($i > $current_page+$pagination_width || ($i == $current_page-$pagination_width && $current_page!=($pagination_width+1)))
 						echo('<span>...</span>');
-				 	echo('<a href="recipes.php?page='.$i.'" class="page gradient">'.$i.'</a>');
+					$QS = http_build_query($_GET + array("page"=>$i));
+				 	echo('<a href="'.$_SERVER['PHP_SELF'].'?' . $QS .'" class="page gradient">'.$i.'</a>');
 				 }	
 			}
 			echo('</div>');
