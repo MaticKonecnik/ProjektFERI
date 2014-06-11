@@ -10,11 +10,12 @@
 		for($i = 0, $l = count($sestevine); $i < $l; ++$i)
 		{
 			if( $i == 0)
-				$sql_pogoj .= " AND ";
+				$sql_pogoj .= " AND (";
 			$sql_pogoj .= "has_ingredient.ingredient_id = " . $sestevine[$i];
 			if( $i < $l-1)
-				$sql_pogoj .= " AND ";
+				$sql_pogoj .= " OR ";
 		}
+		$sql_pogoj .= ") GROUP BY recipe_id";
 	}
 	
 	$limit = 25;
@@ -29,7 +30,7 @@
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	$total_pages = round(((float)$row['stevec'] / (float)$limit), 0, PHP_ROUND_HALF_UP);
 	
-	$sql = "SELECT id, name, image, instructions FROM recipe $sql_pogoj LIMIT $from, $limit";
+	$sql = "SELECT id, name, image, instructions FROM (SELECT recipe_id, COUNT(*) as count_ FROM recipe $sql_pogoj HAVING count_ = $l) X, recipe WHERE X.recipe_id = recipe.id LIMIT $from, $limit";
 	$result = mysqli_query($con,$sql);
 
 	while($row = mysqli_fetch_array($result))
