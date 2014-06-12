@@ -26,7 +26,7 @@
 	$to = $current_page * $limit;
 	$from = $to - $limit;
 	
-	$sql = "SELECT COUNT(*) AS stevec FROM recipe $sql_pogoj";
+	$sql = "SELECT COUNT(*) AS stevec FROM (SELECT recipe_id, COUNT(*) as count_ FROM recipe $sql_pogoj HAVING count_ = $l) X, recipe WHERE X.recipe_id = recipe.id";
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	$total_pages = round(((float)$row['stevec'] / (float)$limit), 0, PHP_ROUND_HALF_UP);
 	
