@@ -26,8 +26,15 @@
 					?>
 						
 				</div>
+				<a href="virtual_kitchen.php">
+					<div class="grid1_of_list virtual_kitchen_entry_button">
+						<img src="images/virtual.png" alt="" />
+						<h4>Step into the virtual kitchen...</h4>
+					</div>
+				</a>
+				<div class="clear"></div>
 				<div id="ingredient-container"></div>
-			<div class="clear"></div>
+				<div class="clear"></div>
 <?php
 	$query = "SELECT DISTINCT(name), id FROM ingredient i INNER JOIN has_ingredient hi ON i.id=hi.ingredient_id WHERE LENGTH(name) < 15 LIMIT 28";
 	$r = mysqli_query($con, $query);

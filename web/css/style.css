@@ -1836,3 +1836,26 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	-moz-text-shadow: 0 1px 0 rgb(0, 0, 0);
 	-o-text-shadow: 0 1px 0 rgb(0, 0, 0);
 }
+
+.virtual_kitchen_entry_button
+{
+	width: 56.83333%;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	margin:0 auto;
+	margin-top: 20px;
+	padding: 20px;
+}
+.virtual_kitchen_entry_button img
+{
+	width: 150px;
+	height: 150px;
+}
+
+#canvas_wrapper
+{
+	height: 600px;
+	margin: 0 auto;
+}
