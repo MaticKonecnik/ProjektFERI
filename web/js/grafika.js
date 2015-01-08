@@ -73,20 +73,17 @@ $(document).ready(function() {
 	floor.rotation.x = Math.PI / 2;
 	scene.add(floor);
 
-// cube
-	var geometry = new THREE.BoxGeometry( 50, 50, 50 );
-	var material = new THREE.MeshBasicMaterial( { color: 0x71AF42 } );
-	var cube = new THREE.Mesh( geometry, material );
-	cube.position.set(0,50,0);
-	scene.add(cube);
+// MODEL
 
-
+	var loader = new THREE.JSONLoader();
+	loader.load( "models/cooker.json", function ( geometry, materials ) {
+		var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+		mesh.scale.multiplyScalar( 100 );
+		scene.add( mesh );
+	} );
 
 var render = function () {
 	requestAnimationFrame( render );
-
-	cube.rotation.x += 0.1;
-	cube.rotation.y += 0.1;
 
 	controls.update();
 	stats.update();
