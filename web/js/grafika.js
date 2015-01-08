@@ -32,6 +32,31 @@ $(document).ready(function() {
 	hemiLight.position.y = 500;
 	scene.add( hemiLight );
 
+// SKYDOME
+
+	var vertexShader = document.getElementById( 'vertexShader' ).textContent;
+	var fragmentShader = document.getElementById( 'fragmentShader' ).textContent;
+	var uniforms = {
+		topColor: 	 { type: "c", value: new THREE.Color( 0x0077ff ) },
+		bottomColor: { type: "c", value: new THREE.Color( 0xffffff ) },
+		offset:		 { type: "f", value: 400 },
+		exponent:	 { type: "f", value: 0.6 }
+	}
+	uniforms.topColor.value.copy( hemiLight.color );
+
+	//scene.fog.color.copy( uniforms.bottomColor.value );
+
+	var skyGeo = new THREE.SphereGeometry( 4000, 32, 15 );
+	var skyMat = new THREE.ShaderMaterial( {
+		uniforms: uniforms,
+		vertexShader: vertexShader,
+		fragmentShader: fragmentShader,
+		side: THREE.BackSide
+	} );
+
+	var sky = new THREE.Mesh( skyGeo, skyMat );
+	scene.add( sky );
+
 
 // FLOOR
 	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/Checkerboard.jpg' );
