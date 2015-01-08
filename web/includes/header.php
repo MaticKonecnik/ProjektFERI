@@ -53,6 +53,7 @@
 	{
 		echo('<script type="text/javascript" src="js/three.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/OrbitControls.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/stats.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika.js"></script>'."\n");
 	}
 	if(basename($_SERVER['PHP_SELF'])=="registration.php")

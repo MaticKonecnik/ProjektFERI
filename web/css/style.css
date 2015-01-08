@@ -1866,3 +1866,8 @@ body > div > div > div.span_of_2.prikaz_vseh_receptov > div:nth-child(4) > div.s
 	-moz-border-radius: 10px;
 	-o-border-radius: 10px;
 }
+
+#stats { position: absolute; top:0; left: 0 }
+#stats #fps { background: transparent !important }
+#stats #fps #fpsText { color: #abc !important }
+#stats #fps #fpsGraph { display: none }

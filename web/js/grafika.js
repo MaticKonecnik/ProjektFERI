@@ -21,6 +21,10 @@ $(document).ready(function() {
 // CONTROLS
 	controls = new THREE.OrbitControls( camera, renderer.domElement );
 
+// STATS
+	var stats = new Stats();
+	$("#canvas_wrapper").append(stats.domElement);
+
 // LIGHT
 	var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.475 );
 	directionalLight.position.set( 100, 100, -100 );
@@ -85,6 +89,7 @@ var render = function () {
 	cube.rotation.y += 0.1;
 
 	controls.update();
+	stats.update();
 	renderer.render(scene, camera);
 };
 
