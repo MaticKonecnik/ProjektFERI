@@ -54,6 +54,7 @@
 		echo('<script type="text/javascript" src="js/grafika/libs/three.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/OrbitControls.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/stats.min.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/utils.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/grafika.js"></script>'."\n");
 	}
 	if(basename($_SERVER['PHP_SELF'])=="registration.php")
