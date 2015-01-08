@@ -65,4 +65,46 @@ var render = function () {
 
 render();
 
+// FullScreen
+
+var fullscreen = false;
+$("#canvas_wrapper").dblclick(function() {
+	if(!fullscreen)
+		FullScreenOn();
+  	else
+		FullScreenOff();
+});
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) // esc
+  	FullScreenOff();
+});
+
+function FullScreenOn()
+{
+	fullscreen = true;
+	$("#canvas_wrapper").css({
+		position: 'fixed',
+		width: '100%',
+		height: '100%',
+		left: '0px',
+		top: '0px',
+		background: 'lightblue'
+	});
+  	renderer.setSize( $("#canvas_wrapper").width(), $("#canvas_wrapper").height());
+}
+function FullScreenOff()
+{
+	fullscreen = false;
+	$("#canvas_wrapper").css({
+		position: '',
+		width: '',
+		height: '600px',
+		left: '',
+		top: '',
+		background: ''
+	});
+  	renderer.setSize( $("#canvas_wrapper").width(), $("#canvas_wrapper").height());	
+}
+
 });
