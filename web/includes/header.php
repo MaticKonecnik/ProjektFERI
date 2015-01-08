@@ -51,10 +51,10 @@
 		echo('<script type="text/javascript" src="js/jquery.cslider.js"></script>'."\n");
 	if(basename($_SERVER['PHP_SELF'])=="virtual_kitchen.php")
 	{
-		echo('<script type="text/javascript" src="js/three.min.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/OrbitControls.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/stats.min.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/grafika.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/three.min.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/OrbitControls.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/stats.min.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/grafika.js"></script>'."\n");
 	}
 	if(basename($_SERVER['PHP_SELF'])=="registration.php")
 		echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n");
