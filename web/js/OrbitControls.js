@@ -351,19 +351,21 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 		switch ( event.keyCode ) {
 
-			/*case scope.keys.UP:
-				scope.pan( new THREE.Vector3( 0, 1, 0 ) );
+			case scope.keys.UP:
+				camera.translateZ( - 10 );
 				break;
 			case scope.keys.BOTTOM:
-				scope.pan( new THREE.Vector3( 0, - 1, 0 ) );
+				camera.translateZ( + 10 );
 				break;
 			case scope.keys.LEFT:
-				scope.pan( new THREE.Vector3( - 1, 0, 0 ) );
+				camera.translateX( + 10 );
+				//scope.pan( new THREE.Vector3( - 5, 0, 0 ) );
 				break;
 			case scope.keys.RIGHT:
-				scope.pan( new THREE.Vector3( 1, 0, 0 ) );
+				camera.translateX( - 10 );
+				//scope.pan( new THREE.Vector3( 5, 0, 0 ) );
 				break;
-			*/
+			
 			case scope.keys.ROTATE:
 				state = STATE.ROTATE;
 				break;

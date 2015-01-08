@@ -15,7 +15,7 @@ $(document).ready(function() {
 	FAR = 15000;
 	camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
 	scene.add(camera);
-	camera.position.set(0,150,400);
+	camera.position.set(0,200,600);
 	camera.lookAt(scene.position);
 
 // CONTROLS
@@ -89,6 +89,7 @@ var render = function () {
 };
 
 render();
+FullScreenOn();
 
 // FullScreen
 
