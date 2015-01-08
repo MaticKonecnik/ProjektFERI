@@ -81,6 +81,11 @@ $(document).ready(function() {
 		mesh.scale.multiplyScalar( 100 );
 		scene.add( mesh );
 	} );
+	loader.load( "models/Bar.json", function ( geometry, materials ) {
+		var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+		mesh.scale.multiplyScalar( 100 );
+		scene.add( mesh );
+	} );
 
 var render = function () {
 	requestAnimationFrame( render );
