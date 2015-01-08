@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 // SCENE
 	var scene = new THREE.Scene(),
-	renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.WebGLRenderer( { alpha: true } );
 	renderer.setSize( $("#canvas_wrapper").width(), $("#canvas_wrapper").height());
 	$("#canvas_wrapper").append(renderer.domElement);
 
@@ -12,8 +12,8 @@ $(document).ready(function() {
 	VIEW_ANGLE = 45,
 	ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
 	NEAR = 0.1,
-	FAR = 1000;
-	camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
+	FAR = 15000;
+	camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
 	scene.add(camera);
 	camera.position.set(0,150,400);
 	camera.lookAt(scene.position);
@@ -32,6 +32,7 @@ $(document).ready(function() {
 	hemiLight.position.y = 500;
 	scene.add( hemiLight );
 
+
 // FLOOR
 	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/Checkerboard.jpg' );
 	floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
@@ -45,7 +46,7 @@ $(document).ready(function() {
 
 // cube
 	var geometry = new THREE.BoxGeometry( 50, 50, 50 );
-	var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+	var material = new THREE.MeshBasicMaterial( { color: 0x71AF42 } );
 	var cube = new THREE.Mesh( geometry, material );
 	cube.position.set(0,50,0);
 	scene.add(cube);
