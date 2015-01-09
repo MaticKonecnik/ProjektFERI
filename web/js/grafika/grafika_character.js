@@ -112,7 +112,6 @@ var Character = Class.extend({
         // COLLISION
         return false;
     }
-
     
 });
 
@@ -121,4 +120,41 @@ user = new Character({
         });
 
 scene.add(user.mesh);
-setFocus(user.mesh);
+
+
+$("body").keydown(function (e) {
+	switch(e.keyCode)
+	{
+		case 37:
+	        controls.left = true;
+	        break;
+	    case 38:
+	        controls.up = true;
+	        break;
+	    case 39:
+	        controls.right = true;
+	        break;
+	    case 40:
+	        controls.down = true;
+	        break;
+	}
+	user.setDirection(controls);
+});
+$("body").keyup(function (e) {
+	switch(e.keyCode)
+	{
+		case 37:
+	        controls.left = false;
+	        break;
+	    case 38:
+	        controls.up = false;
+	        break;
+	    case 39:
+	        controls.right = false;
+	        break;
+	    case 40:
+	        controls.down = false;
+	        break;
+	}
+	user.setDirection(controls);
+});
