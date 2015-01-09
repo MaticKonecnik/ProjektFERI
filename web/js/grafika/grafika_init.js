@@ -122,6 +122,9 @@ var render = function () {
 	controls.update();
 	stats.update();
 	renderer.render(scene, camera);
+	if (typeof user !== 'undefined')
+		user.motion();
+
 };
 
 render();

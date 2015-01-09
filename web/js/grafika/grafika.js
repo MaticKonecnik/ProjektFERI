@@ -1,4 +1,4 @@
-var scene, renderer;
+var scene, renderer, user;
 
 $(document).ready(function() {
 $.getScript('js/grafika/grafika_init.js', function() {
