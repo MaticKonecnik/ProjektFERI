@@ -116,44 +116,44 @@ var Character = Class.extend({
 });
 
 user = new Character({
-            color: 0x7A43B6
-        });
+	color: 0x7A43B6
+});
 
 scene.add(user.mesh);
-
 
 $("body").keydown(function (e) {
 	switch(e.keyCode)
 	{
 		case 37:
-	        controls.left = true;
-	        break;
-	    case 38:
-	        controls.up = true;
-	        break;
-	    case 39:
 	        controls.right = true;
 	        break;
-	    case 40:
+	    case 38:
 	        controls.down = true;
+	        break;
+	    case 39:
+	        controls.left = true;
+	        break;
+	    case 40:
+			controls.up = true;
 	        break;
 	}
 	user.setDirection(controls);
 });
+
 $("body").keyup(function (e) {
 	switch(e.keyCode)
 	{
 		case 37:
-	        controls.left = false;
-	        break;
-	    case 38:
-	        controls.up = false;
-	        break;
-	    case 39:
 	        controls.right = false;
 	        break;
-	    case 40:
+	    case 38:
 	        controls.down = false;
+	        break;
+	    case 39:
+	        controls.left = false;
+	        break;
+	    case 40:
+			controls.up = false;
 	        break;
 	}
 	user.setDirection(controls);
