@@ -11,13 +11,16 @@
 	ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
 	NEAR = 0.1,
 	FAR = 15000;
-	camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
-	scene.add(camera);
+	camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+	cameraClone = camera.clone();
 	camera.position.set(0,200,600);
+	camera.up.set(0, 1, 0);
+	scene.add(camera);
 	camera.lookAt(scene.position);
+	
 
 // CONTROLS
-	controls = new THREE.OrbitControls( camera, renderer.domElement );
+	controls = new THREE.OrbitControls(cameraClone, renderer.domElement);
 
 // STATS
 	var stats = new Stats();
@@ -122,9 +125,11 @@ var render = function () {
 	controls.update();
 	stats.update();
 	renderer.render(scene, camera);
-	if (typeof user !== 'undefined')
+	if (typeof user !== 'undefined'){
 		user.motion();
-
+		camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
+        camera.lookAt(user.mesh.position);
+	}
 };
 
 render();

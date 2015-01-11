@@ -125,16 +125,16 @@ $("body").keydown(function (e) {
 	switch(e.keyCode)
 	{
 		case 37:
-	        controls.right = true;
+			controls.left = true;
 	        break;
 	    case 38:
-	        controls.down = true;
+			controls.up = true;
 	        break;
 	    case 39:
-	        controls.left = true;
+	        controls.right = true;
 	        break;
 	    case 40:
-			controls.up = true;
+			controls.down = true;
 	        break;
 	}
 	user.setDirection(controls);
@@ -144,16 +144,16 @@ $("body").keyup(function (e) {
 	switch(e.keyCode)
 	{
 		case 37:
-	        controls.right = false;
+			controls.left = false;
 	        break;
 	    case 38:
-	        controls.down = false;
+			controls.up = false;
 	        break;
 	    case 39:
-	        controls.left = false;
+	        controls.right = false;
 	        break;
 	    case 40:
-			controls.up = false;
+			controls.down = false;
 	        break;
 	}
 	user.setDirection(controls);
