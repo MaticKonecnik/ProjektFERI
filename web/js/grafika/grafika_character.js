@@ -126,27 +126,16 @@ $("body").keydown(function (e) {
 	switch(e.keyCode)
 	{
 		case 37:
-<<<<<<< HEAD
 			controls.left = true;
 	        break;
 	    case 38:
-			controls.up = true;
-=======
-	        controls.left = true;
-	        break;
-	    case 38:
 	        controls.up = true;
->>>>>>> parent of ad8360e... Popravek smeri
 	        break;
 	    case 39:
 	        controls.right = true;
 	        break;
 	    case 40:
-<<<<<<< HEAD
 			controls.down = true;
-=======
-	        controls.down = true;
->>>>>>> parent of ad8360e... Popravek smeri
 	        break;
 	}
 	user.setDirection(controls);
@@ -155,27 +144,16 @@ $("body").keyup(function (e) {
 	switch(e.keyCode)
 	{
 		case 37:
-<<<<<<< HEAD
 			controls.left = false;
 	        break;
 	    case 38:
-			controls.up = false;
-=======
-	        controls.left = false;
-	        break;
-	    case 38:
 	        controls.up = false;
->>>>>>> parent of ad8360e... Popravek smeri
 	        break;
 	    case 39:
 	        controls.right = false;
 	        break;
 	    case 40:
-<<<<<<< HEAD
 			controls.down = false;
-=======
-	        controls.down = false;
->>>>>>> parent of ad8360e... Popravek smeri
 	        break;
 	}
 	user.setDirection(controls);
