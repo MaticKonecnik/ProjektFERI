@@ -32,5 +32,10 @@ header('Cache-Control: must-revalidate');
 header('Pragma: public');
 header('Content-Length: ' . filesize('newfile.txt'));
 readfile('newfile.txt');
+
+unlink("newfile.txt");
 exit;
+
+
+
 ?>

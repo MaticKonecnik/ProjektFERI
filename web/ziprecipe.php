@@ -34,5 +34,7 @@ header('Cache-Control: must-revalidate');
 header('Pragma: public');
 header('Content-Length: ' . filesize('newfile.txt.zip'));
 readfile('newfile.txt.zip');
-
+unlink("newfile.txt");
+unlink("newfile.txt.zip");
+exit;
 ?>
