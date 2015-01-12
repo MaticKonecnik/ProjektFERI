@@ -52,7 +52,7 @@
 						 <div>
 						 <a href="<?php echo('pdfrecipe.php?id='.$row['id']); ?>"><img src="images/pdf.png" width="50"/></a>
 						 <a href="<?php echo('txtrecipe.php?id='.$row['id']); ?>"><img src="images/txt.png" width="50"/></a>
-						 <img src="images/zip.png" width="50"/>
+						 <a href="<?php echo('ziprecipe.php?id='.$row['id']); ?>"><img src="images/zip.png" width="50"/></a>
 						 </div>
 						 <div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         <div class="grid1_of_list1 sestavine">
