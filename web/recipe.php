@@ -41,14 +41,18 @@
 	$row = mysqli_fetch_array(mysqli_query($con,$sql));
 	 ?>		
 			<div class="span_of_2 prikaz_vseh_receptov">
-				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" id="slika_en_recept"/></span>
+				<span class="span_of_img"><img src="<?php echo($row['image']); ?>" alt="" id="slika_en_recept"/>
+				</span>
 				<div class="span_of_list">
 					<div class="span1_of_1">
 					
 						<h4><?php echo($row['name']); ?></h4>
                          <div id="ocena_container">
                          </div>
-						 <a href="<?php echo('pdfrecipe.php?id='.$row['id']); ?>">Download</a><br/>
+						 <div>
+						 <a href="<?php echo('pdfrecipe.php?id='.$row['id']); ?>"><img src="images/pdf.png" width="50"/></a>
+						 <img src="images/zip.png" width="50"/>
+						 </div>
 						 <div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         <div class="grid1_of_list1 sestavine">
 							<div class="grid_text">	

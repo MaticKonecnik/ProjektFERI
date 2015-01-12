@@ -31,7 +31,7 @@ $pdf->Ln();
 $pdf->Ln();
 
 $pdf->SetFont('Arial','U',16);
-$pdf->Cell(100, 10, 'Instrukcije:' );
+$pdf->Cell(100, 10, 'Priprava:' );
 $pdf->Ln();
 $pdf->SetFont('Arial','I',10);
 $converted = iconv('UTF-8', 'ASCII//TRANSLIT', $row['instructions']);
