@@ -1,7 +1,4 @@
 var loader = new THREE.JSONLoader();
-var texture = new THREE.Texture();
-var manager = new THREE.LoadingManager();
-var objLoader = new THREE.OBJLoader( manager );
 
 //štedilnik
 loader.load( "models/cooker.json", function ( geometry, materials ) {
@@ -13,12 +10,23 @@ loader.load( "models/cooker.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-objLoader.load( "models/Country-Kitchen.obj", function ( object ) {
-	object.traverse( function ( child ) {
-		if ( child instanceof THREE.Mesh ) {
-			child.material.map = texture;
+
+/*// prepare loader and load the model
+THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+var oLoader = new THREE.OBJMTLLoader();
+oLoader.load('models/CountryKitchen/Country-Kitchen.obj', 'models/CountryKitchen/Country-Kitchen.mtl', function(object, materials) {
+	// var material = new THREE.MeshFaceMaterial(materials);
+	var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+	object.traverse( function(child) {
+		if (child instanceof THREE.Mesh) {
+			// apply custom material
+			child.material = material2;
+			// enable casting shadows
+			child.castShadow = true;
+			child.receiveShadow = true;
 		}
-	} );
-	object.position.y = - 80;
-	scene.add( object );
-}, onProgress, onError );
+	});
+	object.scale.multiplyScalar(100);
+	scene.add(object);
+	obstacles.push(object);
+});*/
