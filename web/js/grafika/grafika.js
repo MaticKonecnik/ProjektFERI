@@ -1,4 +1,5 @@
 var scene, renderer, user;
+var obstacles = [];
 
 $(document).ready(function() {
 $.getScript('js/grafika/grafika_init.js', function() {

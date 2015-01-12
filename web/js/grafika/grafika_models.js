@@ -7,4 +7,5 @@ loader.load( "models/cooker.json", function ( geometry, materials ) {
 	mesh.rotation.y = Math.PI / 2;
 	mesh.translateX(-100);
 	scene.add( mesh );
+	obstacles.push(mesh);
 } );
