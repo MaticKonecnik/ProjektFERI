@@ -71,8 +71,29 @@ function roundRect(ctx, x, y, w, h, r)
 	ctx.stroke();   
 }
 
+var spritey1 = makeTextSprite( "Razumljivo? " + redner_iteration/60, 
+	{
+		fontsize: 32,
+		fontface: "Georgia",
+		borderColor: {r:0, g:0, b:255, a:1.0}
+	});
+	spritey1.position.set(40,105,10);
+	scene.add(spritey1);
 
-var spritey = makeTextSprite( " Razumljivo? ", 
-		{ fontsize: 32, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
-spritey.position.set(55,105,55);
-scene.add( spritey );
+var spritey2 = makeTextSprite( " Razumljivo! ", 
+	{
+		fontsize: 24,
+		borderColor: {r:255, g:0, b:0, a:1.0},
+		backgroundColor: {r:255, g:100, b:100, a:0.8}
+	} );
+spritey2.position.set(-80,105,55);
+scene.add( spritey2 );
+
+update_text = function()
+{
+	scene.remove(spritey1);
+	if(redner_iteration%120==0)
+	scene.add(spritey1);
+	console.log(redner_iteration/60);
+
+}
