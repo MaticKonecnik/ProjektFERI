@@ -48,6 +48,7 @@
 						<h4><?php echo($row['name']); ?></h4>
                          <div id="ocena_container">
                          </div>
+						 <a href="<?php echo('pdfrecipe.php?id='.$row['id']); ?>">Download</a><br/>
 						 <div class="fb-like" data-href="http://localhost/ProjektFERI/web/recipes.php" data-width="200px" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                         <div class="grid1_of_list1 sestavine">
 							<div class="grid_text">	
