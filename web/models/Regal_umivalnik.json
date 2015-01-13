@@ -38,7 +38,6 @@
 					"colorSpecular": [0.10000000149011612, 0.10000000149011612, 0.10000000149011612],
 					"depthTest": true,
 					"depthWrite": true,
-					"mapBump": "MAPLE-wh.jpg",
 					"mapBumpScale": 0.009999999776482582,
 					"mapBumpWrap": ["repeat", "repeat"],
 					"shading": "Lambert",

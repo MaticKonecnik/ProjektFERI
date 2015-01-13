@@ -3,16 +3,17 @@ var loader = new THREE.JSONLoader();
 //štedilnik
 loader.load( "models/cooker.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
-	mesh.scale.multiplyScalar( 100 );
+	//mesh.scale.multiplyScalar(90);
+	mesh.scale.set(100, 90, 90);
 	mesh.rotation.y = Math.PI / 2;
-	mesh.translateX(-200);
-	mesh.translateZ(-110);
+	mesh.translateX(-202);
+	mesh.translateZ(-111);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
 
 //regal in umivalnik
-loader.load( "models/Kitchen1.json", function ( geometry, materials ) {
+loader.load( "models/Regal_umivalnik.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.scale.multiplyScalar( 100 );
 	mesh.rotation.y = Math.PI / 2;
@@ -21,10 +22,20 @@ loader.load( "models/Kitchen1.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-/*//hladilnik
-loader.load( "models/Fridge.json", function ( geometry, materials ) {
+/*//pločevinka
+loader.load( "models/can.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
-	mesh.scale.multiplyScalar( 100 );
+	mesh.scale.multiplyScalar(10);
+	mesh.rotation.y = Math.PI / 2;
+	mesh.translateX(-100);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );*/
+
+/*//hladilnik
+loader.load( "models/FRIG.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	//mesh.scale.multiplyScalar( 100 );
 	mesh.rotation.y = Math.PI / 2;
 	mesh.translateX(-200);
 	mesh.translateZ(110);
