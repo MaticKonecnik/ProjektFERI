@@ -22,15 +22,59 @@ loader.load( "models/Regal_umivalnik.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-/*//pločevinka
-loader.load( "models/can.json", function ( geometry, materials ) {
+//miza
+loader.load( "models/KitchenTable.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
-	mesh.scale.multiplyScalar(10);
-	mesh.rotation.y = Math.PI / 2;
-	mesh.translateX(-100);
+	mesh.scale.set(60, 70, 90);
+	//mesh.rotation.y = Math.PI / 2;
+	mesh.translateX(80);
 	scene.add( mesh );
 	obstacles.push(mesh);
-} );*/
+} );
+
+//stol
+loader.load( "models/Chair.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(100);
+	mesh.rotation.y = Math.PI / 2;
+	mesh.translateX(-40);
+	mesh.translateZ(60);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
+//stol
+loader.load( "models/Chair.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(100);
+	mesh.rotation.y = Math.PI / 2;
+	mesh.translateX(-40);
+	mesh.translateZ(110);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
+//stol
+loader.load( "models/Chair.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(100);
+	mesh.rotation.y = 3 * Math.PI / 2;
+	mesh.translateX(-30);
+	mesh.translateZ(-100);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
+//stol
+loader.load( "models/Chair.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(100);
+	mesh.rotation.y = 3 * Math.PI / 2;
+	mesh.translateX(-30);
+	mesh.translateZ(-50);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
 
 /*//hladilnik
 loader.load( "models/FRIG.json", function ( geometry, materials ) {

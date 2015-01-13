@@ -38,7 +38,6 @@
 					"colorSpecular": [0.5, 0.5, 0.5],
 					"depthTest": true,
 					"depthWrite": true,
-					"mapBump": "wood(krem_dark).jpg",
 					"mapBumpScale": 0.10000000149011612,
 					"mapBumpWrap": ["repeat", "repeat"],
 					"shading": "Lambert",
