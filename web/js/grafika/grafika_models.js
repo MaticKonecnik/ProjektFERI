@@ -21,6 +21,17 @@ loader.load( "models/Kitchen1.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+/*//hladilnik
+loader.load( "models/Fridge.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar( 100 );
+	mesh.rotation.y = Math.PI / 2;
+	mesh.translateX(-200);
+	mesh.translateZ(110);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );*/
+
 
 /*// prepare loader and load the model
 THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
