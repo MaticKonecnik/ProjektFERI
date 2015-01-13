@@ -5,7 +5,18 @@ loader.load( "models/cooker.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.scale.multiplyScalar( 100 );
 	mesh.rotation.y = Math.PI / 2;
-	mesh.translateX(-100);
+	mesh.translateX(-200);
+	mesh.translateZ(-110);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
+//regal in umivalnik
+loader.load( "models/Kitchen1.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar( 100 );
+	mesh.rotation.y = Math.PI / 2;
+	mesh.translateX(-200);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
