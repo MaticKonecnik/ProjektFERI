@@ -71,14 +71,7 @@ function roundRect(ctx, x, y, w, h, r)
 	ctx.stroke();   
 }
 
-var spritey1 = makeTextSprite( "Razumljivo? " + redner_iteration/60, 
-	{
-		fontsize: 32,
-		fontface: "Georgia",
-		borderColor: {r:0, g:0, b:255, a:1.0}
-	});
-	spritey1.position.set(40,105,10);
-	scene.add(spritey1);
+var seznam_objektov = [];
 
 var spritey2 = makeTextSprite( " Razumljivo! ", 
 	{
@@ -86,14 +79,47 @@ var spritey2 = makeTextSprite( " Razumljivo! ",
 		borderColor: {r:255, g:0, b:0, a:1.0},
 		backgroundColor: {r:255, g:100, b:100, a:0.8}
 	} );
-spritey2.position.set(-80,105,55);
-scene.add( spritey2 );
+	spritey2.position.set(-80,105,55);
+	//scene.add( spritey2 );
+	seznam_objektov[0] = spritey2;
+
+var temperatura = 21.4;
+var interval = 5;
+
+function loadTemperatura()
+{
+	$.ajax({
+	type: "GET",
+	url: "includes/ajax/load_temperatura.php",
+	data: {}
+	})
+	.done(function(msg) {
+		temperatura = msg;
+		//console.log(msg);
+	});
+}
 
 update_text = function()
 {
-	scene.remove(spritey1);
-	if(redner_iteration%120==0)
-	scene.add(spritey1);
-	console.log(redner_iteration/60);
+	seznam_objektov.forEach(function(entry) { // zbriši vse
+		scene.remove(entry);
+	});
 
+	delete seznam_objektov[1];
+	seznam_objektov[1] = (makeTextSprite(temperatura + "°C", 
+	{
+		fontsize: 32,
+		fontface: "Georgia",
+		borderColor: {r:0, g:0, b:255, a:1.0}
+	}));
+	seznam_objektov[1].position.set(40,105,5);
+
+	seznam_objektov.forEach(function(entry) { // dodaj vse
+    	scene.add(entry);
+	});
+
+	//console.log(redner_iteration/60);
+	if(redner_iteration%(60*5)===0)
+		loadTemperatura();
 }
+
