@@ -64,15 +64,49 @@
 
 
 // FLOOR
+	var floorWidth = 1000, floorHeight = 1000;
 	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/Checkerboard.jpg' );
 	floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
 	floorTexture.repeat.set( 10, 10 );
 	var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
-	var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+	var floorGeometry = new THREE.PlaneBufferGeometry(floorWidth, floorHeight);
 	var floor = new THREE.Mesh(floorGeometry, floorMaterial);
 	floor.position.y = 0;
 	floor.rotation.x = Math.PI / 2;
 	scene.add(floor);
+
+
+//WALLS
+	var height = 150;
+	var wallTexture = new THREE.ImageUtils.loadTexture( 'images/Wall_texture.jpg' );
+	wallTexture.wrapS = wallTexture.wrapT = THREE.RepeatWrapping; 
+	wallTexture.repeat.set( 10, 2 );
+	var wallMaterial = new THREE.MeshBasicMaterial( { map: wallTexture, side: THREE.DoubleSide } );
+	var	walls_geometry =
+		[
+			new THREE.PlaneBufferGeometry(floorHeight, height),
+			new THREE.PlaneBufferGeometry(floorWidth, height),
+			new THREE.PlaneBufferGeometry(floorHeight, height),
+			new THREE.PlaneBufferGeometry(floorWidth, height)
+		];
+	var walls = [];
+	for (var i = 0; i < walls_geometry.length; ++i)
+	{
+		walls.push(new THREE.Mesh(walls_geometry[i], wallMaterial));
+		walls[i].position.y = height / 2;
+		scene.add(walls[i]);
+		obstacles.push(walls[i]);
+	}
+	walls[0].rotation.y = -Math.PI / 2;
+	walls[0].position.x = floorWidth / 2;
+	walls[1].rotation.y = Math.PI;
+	walls[1].position.z = floorHeight / 2;
+	walls[2].rotation.y = Math.PI / 2;
+	walls[2].position.x = -floorWidth / 2;
+	walls[3].position.z = -floorHeight / 2;
+	
+	walls[3].material = walls[3].material.clone();
+	walls[3].material.visible = false;
 
 // FULLSCREEN
 	var fullscreen = false;
