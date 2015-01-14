@@ -76,18 +76,16 @@ loader.load( "models/Chair.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-/*//mikrovalovna
+//mikrovalovna
 loader.load( "models/mikrovalna.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
-	//mesh.scale.multiplyScalar( 100 );
 	mesh.rotation.y = Math.PI;
-	//mesh.translateX(-200);
-	mesh.position.y = 90;
-	mesh.translateZ(-160);
-	mesh.translateX(75);
+	mesh.position.y = 76;
+	mesh.translateZ(-190);
+	mesh.translateX(34);
 	scene.add( mesh );
 	obstacles.push(mesh);
-} );*/
+} );
 
 
 /*// prepare loader and load the model
