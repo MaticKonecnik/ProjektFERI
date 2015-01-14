@@ -132,13 +132,8 @@ loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-<<<<<<< HEAD
 //omare
-loader.load( "models/Kitchen_Cabinet_Library.json", function ( geometry, materials ) {
-=======
-//Kuhinja2
 loader.load( "models/Kuhinja/kuhinja2.json", function ( geometry, materials ) {
->>>>>>> origin/master
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.rotation.y = Math.PI *0.5;
 	//mesh.scale.set(50, 75, 80);
