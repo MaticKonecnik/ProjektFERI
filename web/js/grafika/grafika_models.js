@@ -27,7 +27,7 @@ loader.load( "models/KitchenTable.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.scale.set(60, 70, 90);
 	//mesh.rotation.y = Math.PI / 2;
-	mesh.translateX(80);
+	mesh.translateX(120);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -38,7 +38,7 @@ loader.load( "models/Chair.json", function ( geometry, materials ) {
 	mesh.scale.multiplyScalar(100);
 	mesh.rotation.y = Math.PI / 2;
 	mesh.translateX(-40);
-	mesh.translateZ(60);
+	mesh.translateZ(100);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -49,7 +49,7 @@ loader.load( "models/Chair.json", function ( geometry, materials ) {
 	mesh.scale.multiplyScalar(100);
 	mesh.rotation.y = Math.PI / 2;
 	mesh.translateX(-40);
-	mesh.translateZ(110);
+	mesh.translateZ(150);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -60,7 +60,7 @@ loader.load( "models/Chair.json", function ( geometry, materials ) {
 	mesh.scale.multiplyScalar(100);
 	mesh.rotation.y = 3 * Math.PI / 2;
 	mesh.translateX(-30);
-	mesh.translateZ(-100);
+	mesh.translateZ(-140);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -71,7 +71,7 @@ loader.load( "models/Chair.json", function ( geometry, materials ) {
 	mesh.scale.multiplyScalar(100);
 	mesh.rotation.y = 3 * Math.PI / 2;
 	mesh.translateX(-30);
-	mesh.translateZ(-50);
+	mesh.translateZ(-90);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -92,7 +92,7 @@ loader.load( "models/pizza.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.scale.multiplyScalar(2);
 	mesh.position.y = 55;
-	mesh.translateX(78);
+	mesh.translateX(118);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -105,6 +105,18 @@ loader.load( "models/hladilnik.json", function ( geometry, materials ) {
 	mesh.position.y = 35;
 	mesh.translateX(-110);
 	mesh.translateZ(-202);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
+//pribor
+loader.load( "models/DinnerWare.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	//mesh.rotation.y = Math.PI /;
+	mesh.scale.set(25, 0, 30);
+	mesh.position.y = 52;
+	mesh.translateX(164);
+	mesh.translateZ(8);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
