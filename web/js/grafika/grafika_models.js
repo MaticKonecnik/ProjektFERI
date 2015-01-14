@@ -112,13 +112,11 @@ loader.load( "models/hladilnik.json", function ( geometry, materials ) {
 //pribor
 loader.load( "models/DinnerWare.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
-	//mesh.rotation.y = Math.PI /;
-	mesh.scale.set(25, 0, 30);
+	mesh.scale.set(25, 1, 30);
 	mesh.position.y = 52;
 	mesh.translateX(164);
 	mesh.translateZ(8);
 	scene.add( mesh );
-	obstacles.push(mesh);
 } );
 
 
