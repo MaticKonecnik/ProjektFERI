@@ -132,6 +132,19 @@ loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+// kabineti
+loader.load( "models/Kitchen_Cabinet_Library.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.rotation.y = Math.PI *0.5;
+	mesh.scale.set(50, 75, 80);
+	mesh.position.x = -240;
+	mesh.position.z = 215
+	mesh.translateX(164);
+	mesh.translateZ(8);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
 /*// prepare loader and load the model
 THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 var oLoader = new THREE.OBJMTLLoader();
