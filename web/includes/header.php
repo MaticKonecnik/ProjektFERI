@@ -57,6 +57,7 @@
 		echo('<script type="text/javascript" src="js/grafika/libs/DDSLoader.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/MTLLoader.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/OBJMTLLoader.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/CSS3DRenderer.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/stats.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/utils.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/grafika.js"></script>'."\n");
