@@ -77,7 +77,7 @@
 
 
 //WALLS
-	var height = 150;
+	var height = 200;
 	var wallTexture = new THREE.ImageUtils.loadTexture( 'images/Wall_texture.jpg' );
 	wallTexture.wrapS = wallTexture.wrapT = THREE.RepeatWrapping; 
 	wallTexture.repeat.set( 10, 2 );

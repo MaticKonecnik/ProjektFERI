@@ -125,22 +125,28 @@ loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.rotation.y = Math.PI;
 	mesh.scale.multiplyScalar(120);
-	mesh.position.y = 55;
-	mesh.translateX(-130);
-	mesh.translateZ(10);
+	mesh.position.y = 80;
+	mesh.translateX(220);
+	mesh.translateZ(-130);
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
 
+<<<<<<< HEAD
 //omare
 loader.load( "models/Kitchen_Cabinet_Library.json", function ( geometry, materials ) {
+=======
+//Kuhinja2
+loader.load( "models/Kuhinja/kuhinja2.json", function ( geometry, materials ) {
+>>>>>>> origin/master
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.rotation.y = Math.PI *0.5;
-	mesh.scale.set(50, 75, 80);
-	mesh.position.x = -240;
-	mesh.position.z = 215
-	mesh.translateX(164);
-	mesh.translateZ(8);
+	//mesh.scale.set(50, 75, 80);
+	//mesh.scale.multiplyScalar(50);
+	mesh.scale.set(45,55,40);
+	mesh.position.x = -230;
+	mesh.position.z = 60;
+	mesh.position.y = 85;
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
