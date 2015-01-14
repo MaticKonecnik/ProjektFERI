@@ -121,6 +121,19 @@ loader.load( "models/DinnerWare.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+
+//sofa
+loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.rotation.y = Math.PI;
+	mesh.scale.multiplyScalar(120);
+	mesh.position.y = 55;
+	mesh.translateX(-130);
+	mesh.translateZ(10);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
 /*// prepare loader and load the model
 THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 var oLoader = new THREE.OBJMTLLoader();
