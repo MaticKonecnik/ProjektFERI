@@ -83,7 +83,7 @@ var spritey2 = makeTextSprite( " Razumljivo! ",
 	//scene.add( spritey2 );
 	seznam_objektov[0] = spritey2;
 
-var temperatura = 21.4;
+var temperatura = 21;
 var interval = 5;
 
 function loadTemperatura()
@@ -113,7 +113,7 @@ update_text = function()
 		borderColor: {r:0, g:0, b:255, a:0.0},
 		backgroundColor: {r:255, g:100, b:100, a:0.8}
 	}));
-	seznam_objektov[1].position.set(30,90,235);
+	seznam_objektov[1].position.set(73,110,160);
 
 	seznam_objektov.forEach(function(entry) { // dodaj vse
     	scene.add(entry);
