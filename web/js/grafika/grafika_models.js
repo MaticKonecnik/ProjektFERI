@@ -120,7 +120,7 @@ loader.load( "models/DinnerWare.json", function ( geometry, materials ) {
 } );
 
 
-//sofa
+//sadje
 loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.rotation.y = Math.PI;
@@ -132,7 +132,7 @@ loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-// kabineti
+//omare
 loader.load( "models/Kitchen_Cabinet_Library.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.rotation.y = Math.PI *0.5;
