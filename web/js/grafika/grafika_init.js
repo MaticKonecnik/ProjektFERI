@@ -64,7 +64,7 @@
 
 
 // FLOOR
-	var floorWidth = 1000, floorHeight = 1000;
+	var floorWidth = 700, floorHeight = 500;
 	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/Checkerboard.jpg' );
 	floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
 	floorTexture.repeat.set( 10, 10 );

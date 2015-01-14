@@ -76,10 +76,10 @@ var seznam_objektov = [];
 var spritey2 = makeTextSprite( " Razumljivo! ", 
 	{
 		fontsize: 24,
-		borderColor: {r:255, g:0, b:0, a:1.0},
+		borderColor: {r:255, g:0, b:0, a:0.0},
 		backgroundColor: {r:255, g:100, b:100, a:0.8}
 	} );
-	spritey2.position.set(-80,105,55);
+	spritey2.position.set(-135,80,235);
 	//scene.add( spritey2 );
 	seznam_objektov[0] = spritey2;
 
@@ -110,9 +110,10 @@ update_text = function()
 	{
 		fontsize: 32,
 		fontface: "Georgia",
-		borderColor: {r:0, g:0, b:255, a:1.0}
+		borderColor: {r:0, g:0, b:255, a:0.0},
+		backgroundColor: {r:255, g:100, b:100, a:0.8}
 	}));
-	seznam_objektov[1].position.set(40,105,5);
+	seznam_objektov[1].position.set(30,90,235);
 
 	seznam_objektov.forEach(function(entry) { // dodaj vse
     	scene.add(entry);
