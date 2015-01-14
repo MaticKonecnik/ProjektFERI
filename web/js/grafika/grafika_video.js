@@ -2,7 +2,7 @@
 //var keyboard = new THREEx.KeyboardState();
 // custom global variables
 var video, videoImage, videoImageContext, videoTexture;
-
+var controls;
 
 
 function init_video(){
@@ -39,26 +39,18 @@ function init_video(){
 	
 }
 
-function update_video()
-{
-	if ( keyboard.pressed("p") )
-		video.play();
-		
-	if ( keyboard.pressed("space") )
-		video.pause();
-
-	if ( keyboard.pressed("s") ) // stop video
-	{
-		video.pause();
-		video.currentTime = 0;
-	}
-	
-	if ( keyboard.pressed("r") ) // rewind video
-		video.currentTime = 0;
-	
-	controls.update();
-	stats.update();
+$('body').bind('keypress', function(e) {
+if(e.keyCode==32){ //space
+	video.pause();
 }
+if (e.keyCode==112){ //p
+	video.play();
+}
+if(e.keyCode==115){ //s
+	video.pause();
+	video.currentTime = 0;
+}
+});
+
 
 init_video();
-update_video();
