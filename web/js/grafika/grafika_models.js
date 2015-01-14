@@ -87,6 +87,27 @@ loader.load( "models/mikrovalna.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+//pizza
+loader.load( "models/pizza.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(2);
+	mesh.position.y = 55;
+	mesh.translateX(78);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
+//hladilnik
+loader.load( "models/hladilnik.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.rotation.y = Math.PI;
+	mesh.scale.multiplyScalar(90);
+	mesh.position.y = 35;
+	mesh.translateX(-110);
+	mesh.translateZ(-202);
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
 
 /*// prepare loader and load the model
 THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
