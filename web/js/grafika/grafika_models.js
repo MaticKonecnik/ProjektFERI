@@ -83,9 +83,10 @@ loader.load( "models/mikrovalna.json", function ( geometry, materials ) {
 	mesh.rotation.y = Math.PI;
 	mesh.position.y = 76;
 	mesh.translateZ(-190);
-	mesh.translateX(34);
+	mesh.translateX(34);	
 	scene.add( mesh );
 	obstacles.push(mesh);
+	
 } );
 
 //pizza
