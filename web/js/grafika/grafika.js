@@ -8,5 +8,6 @@ $.getScript('js/grafika/grafika_init.js', function() {
 	$.getScript('js/grafika/grafika_character.js', function() {});
 	$.getScript('js/grafika/grafika_2D_text.js', function() {});
 	$.getScript('js/grafika/grafika_video.js', function() {});
+	$.getScript('js/grafika/grafika_plocica.js', function() {});
 });
 });
