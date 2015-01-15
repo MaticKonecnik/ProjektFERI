@@ -1,4 +1,4 @@
-var scene, renderer, user;
+var scene, renderer, user, video;
 var obstacles = [];
 function update_text(){};
 

@@ -156,21 +156,29 @@
 var redner_iteration = 1;
 
 var render = function () {
-	requestAnimationFrame( render );
-	controls.update();
-	stats.update();
-	renderer.render(scene, camera);
-	if (typeof user !== 'undefined')
-	{
-		user.motion();
-		camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
-        camera.lookAt(user.mesh.position);
-	}
-	redner_iteration++;
-	if(redner_iteration%60===0) //vsako sekundo naredi
-	{
-		update_text();
-	}
+requestAnimationFrame( render );
+controls.update();
+stats.update();
+renderer.render(scene, camera);
+if (typeof user !== 'undefined')
+{
+user.motion();
+camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
+camera.lookAt(user.mesh.position);
+}
+redner_iteration++;
+if(redner_iteration%60===0) //vsako sekundo naredi
+{
+update_text();
+}
+if(typeof video !== "undefined")
+if ( video.readyState === video.HAVE_ENOUGH_DATA )
+{
+videoImageContext.drawImage( video, 0, 0 );
+if ( videoTexture )
+videoTexture.needsUpdate = true;
+}
+
 };
 
 render();
