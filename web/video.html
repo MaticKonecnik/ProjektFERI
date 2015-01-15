@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kul video</title>
+	<script type="text/javascript">
+		function videoFunkcija()
+		{
+			var video =  document.createElement("video");
+			var source = document.createElement("source"); 
+			source.type = "video/mp4";
+			source.src = "videos/mov_bbb.mp4";
+			video.appendChild(source);
+			video.load();
+			video.play();
+			console.log(video);
+
+			videoImage = document.createElement( 'canvas' );
+			videoImage.width = 200;
+			videoImage.height = 100;
+
+			document.getElementById("container").appendChild(video);
+		}
+	</script>
+</head>
+<body onload="videoFunkcija();">
+	<div id="container"></div>
+	
+</body>
+</html>

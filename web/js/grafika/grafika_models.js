@@ -12,6 +12,7 @@ loader.load( "models/cooker.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+
 //regal in umivalnik
 loader.load( "models/Regal_umivalnik.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );

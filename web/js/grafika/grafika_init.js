@@ -171,6 +171,13 @@ var render = function () {
 	{
 		update_text();
 	}
+	if(typeof video !== "undefined")
+	if ( video.readyState === video.HAVE_ENOUGH_DATA ) 
+	{
+		videoImageContext.drawImage( video, 0, 0 );
+		if ( videoTexture ) 
+			videoTexture.needsUpdate = true;
+	}
 };
 
 render();
