@@ -160,22 +160,42 @@ loader.load( "models/cajnik.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-/*// prepare loader and load the model
-THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+/*
+loader.load( "models/InteraktivnaPloca/untitled.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(1);
+	mesh.rotation.y = Math.PI * 1;
+	mesh.position.x = 0;
+	mesh.position.z = 0;
+	mesh.position.y = 20;
+	mesh.overdraw = true;
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+*/
+
+
+// prepare loader and load the model
+//THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 var oLoader = new THREE.OBJMTLLoader();
-oLoader.load('models/CountryKitchen/Country-Kitchen.obj', 'models/CountryKitchen/Country-Kitchen.mtl', function(object, materials) {
-	// var material = new THREE.MeshFaceMaterial(materials);
-	var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+oLoader.load('models/InteraktivnaPloca/desk/Plocica.obj', 'models/InteraktivnaPloca/desk/Plocica.mtl', function(object, materials) {
+	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
+	var material = new THREE.MeshFaceMaterial(materials);
+	//var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
 	object.traverse( function(child) {
 		if (child instanceof THREE.Mesh) {
 			// apply custom material
-			child.material = material2;
+			//child.material = material2;
 			// enable casting shadows
-			child.castShadow = true;
-			child.receiveShadow = true;
 		}
 	});
-	object.scale.multiplyScalar(100);
-	scene.add(object);
-	obstacles.push(object);
-});*/
+	
+	object.rotation.y = Math.PI * 1;
+	object.scale.multiplyScalar(0.4);
+	
+	object.position.z = 170;
+	object.position.x = 105;
+	object.position.y = 80;
+	
+	scene.add(object);	
+});
