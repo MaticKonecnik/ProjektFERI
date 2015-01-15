@@ -171,6 +171,39 @@ $("body").keydown(function (e) {
 	    case 40:
 			controls.down = true;
 	        break;
+		
+		case 65:
+			controls.left = true;
+			break;
+		case 87:
+			controls.up = true;
+			break;
+		case 68:
+			controls.right = true;
+			break;
+		case 83:
+			controls.down = true;
+			break;
+		//e
+		case 69:
+			controls.up = true;
+			controls.right = true;
+			break;
+		//q
+		case 81:
+			controls.up = true;
+			controls.left = true;
+			break;
+		//y
+		case 89:
+			controls.down = true;
+			controls.left = true;
+			break;
+		//c
+		case 67:
+			controls.down = true;
+			controls.right = true;
+			break;
 	}
 	user.setDirection(controls);
 });
@@ -190,6 +223,39 @@ $("body").keyup(function (e) {
 	    case 40:
 			controls.down = false;
 	        break;
+			
+		case 65:
+			controls.left = false;
+			break;
+		case 87:
+			controls.up = false;
+			break;
+		case 68:
+			controls.right = false;
+			break;
+		case 83:
+			controls.down = false;
+			break;
+		//e
+		case 69:
+			controls.up = false;
+			controls.right = false;
+			break;
+		//q
+		case 81:
+			controls.up = false;
+			controls.left = false;
+			break;
+		//y
+		case 89:
+			controls.down = false;
+			controls.left = false;
+			break;
+		//c
+		case 67:
+			controls.down = false;
+			controls.right = false;
+			break;
 	}
 	user.setDirection(controls);
 });
