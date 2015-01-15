@@ -31,7 +31,7 @@
 	directionalLight.position.set( 100, 100, -100 );
 	scene.add( directionalLight );
 
-	var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 1.25 );
+	var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.5 );
 	hemiLight.color.setHSL( 0.6, 1, 0.75 );
 	hemiLight.groundColor.setHSL( 0.1, 0.8, 0.7 );
 	hemiLight.position.y = 500;
