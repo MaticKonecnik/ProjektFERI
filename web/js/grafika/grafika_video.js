@@ -68,11 +68,7 @@ function init_video(){
 	video = document.createElement( 'video' );
 	// video.id = 'video';
 	// video.type = ' video/ogg; codecs="theora, vorbis" ';
-<<<<<<< HEAD
-	video.src = "videos/mov_bbb.mp4";
-=======
 	video.src = "videos/Pancakes.mp4";
->>>>>>> 2a38ea2d13c18fd2828da618e24d79e79c66e27d
 	video.load(); // must call after setting/changing source
 	video.play();
 
