@@ -146,6 +146,20 @@ loader.load( "models/Kuhinja/kuhinja2.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+
+//Cajnik
+loader.load( "models/cajnik.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.rotation.y = Math.PI *0.5;
+	mesh.scale.multiplyScalar(10);
+	mesh.rotation.y = Math.PI;
+	mesh.position.x = -126;
+	mesh.position.z = 234;
+	mesh.position.y = 57;
+	scene.add( mesh );
+	obstacles.push(mesh);
+} );
+
 /*// prepare loader and load the model
 THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 var oLoader = new THREE.OBJMTLLoader();
