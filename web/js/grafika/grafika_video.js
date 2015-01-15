@@ -4,65 +4,8 @@
 var videoImage, videoImageContext, videoTexture;
 var controls;
 
-
+/*
 function init_video(){
-	 
-	/*var video =  document.createElement("video");
-	var source = document.createElement("source"); 
-	source.type = "video/mp4";
-	source.src = "videos/mov_bbb.mp4";
-	video.appendChild(source);
-	video.width	= 320;
-	video.height= 240;
-	video.load();
-	video.play();
-
-	// find out which file formats i can read
-	var canPlayMp4	= document.createElement('video').canPlayType('video/mp4') !== '' ? true : false
-	var canPlayOgg	= document.createElement('video').canPlayType('video/ogg') !== '' ? true : false
-	if( canPlayMp4 ){
-		var url	= 'videos/mov_bbb.mp4'
-	}else alert('cant play mp4')
-
-	/*	// create the videoTexture
-	var videoTexture= new THREEx.VideoTexture(url)
-	var video	= videoTexture.video
-	updateFcts.push(function(delta, now){
-		videoTexture.update(delta, now)
-	})
-
-	var material	= new THREE.MeshBasicMaterial({
-		map	: videoTexture.texture
-	});
-	
-	var movieGeometry = new THREE.PlaneBufferGeometry( 200, 100, 4, 4 );
-	var movieScreen = new THREE.Mesh( movieGeometry, material );
-	movieScreen.position.set(240,125,0);
-	
-	movieScreen.rotation.y=Math.PI/3;	
-	scene.add(movieScreen);*/
-
-	// create the videoTexture
-	/*var videoTexture= new THREEx.VideoTexture(url)
-	var video	= videoTexture.video
-	updateFcts.push(function(delta, now){
-		videoTexture.update(delta, now)
-	})
-		console.log(video);
-	
-	// use the texture in a THREE.Mesh
-	var geometry	= new THREE.CubeGeometry(1,1,1);
-	var material	= new THREE.MeshBasicMaterial({
-		map	: videoTexture.texture
-	});
-	var mesh	= new THREE.Mesh( geometry, material );
-	scene.add( mesh );
-	updateFcts.push(function(delta, now){
-		mesh.rotation.x += 1 * delta;
-		mesh.rotation.y += 2 * delta;		
-	})
-	console.log(video);
-	video.play();*/
 
 	// create the video element
 	video = document.createElement( 'video' );
@@ -124,3 +67,4 @@ $('body').bind('keypress', function(e) {
 
 animate();
 init_video();
+*/
