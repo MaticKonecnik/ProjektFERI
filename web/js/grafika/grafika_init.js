@@ -7,7 +7,7 @@
 // CAMERA
 	var SCREEN_WIDTH = $("#canvas_wrapper").width(),
 	SCREEN_HEIGHT = $("#canvas_wrapper").height(),
-	VIEW_ANGLE = 45,
+	VIEW_ANGLE = 60,
 	ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
 	NEAR = 0.1,
 	FAR = 15000;
@@ -77,7 +77,7 @@
 
 
 //WALLS
-	var height = 200;
+	var height = 250;
 	var wallTexture = new THREE.ImageUtils.loadTexture( 'images/Wall_texture.jpg' );
 	wallTexture.wrapS = wallTexture.wrapT = THREE.RepeatWrapping; 
 	wallTexture.repeat.set( 10, 2 );
