@@ -29,6 +29,7 @@ loader.load( "models/KitchenTable.json", function ( geometry, materials ) {
 	mesh.scale.set(60, 70, 90);
 	//mesh.rotation.y = Math.PI / 2;
 	mesh.translateX(120);
+	mesh.castShadow = true;
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -161,21 +162,6 @@ loader.load( "models/cajnik.json", function ( geometry, materials ) {
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
-
-/*
-loader.load( "models/InteraktivnaPloca/untitled.json", function ( geometry, materials ) {
-	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
-	mesh.scale.multiplyScalar(1);
-	mesh.rotation.y = Math.PI * 1;
-	mesh.position.x = 0;
-	mesh.position.z = 0;
-	mesh.position.y = 20;
-	mesh.overdraw = true;
-	scene.add( mesh );
-	obstacles.push(mesh);
-} );
-*/
-
 
 // prepare loader and load the model
 //THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
