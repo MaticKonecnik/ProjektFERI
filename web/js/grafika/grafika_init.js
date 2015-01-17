@@ -190,7 +190,7 @@
 	element.style.height = elementHeight + "px";
 	
 	var cssObject = new THREE.CSS3DObject( element );
-	cssObject.position.x = planeMesh.position.x - 20;
+	cssObject.position.x = planeMesh.position.x;
 	cssObject.position.y = planeMesh.position.y;
 	cssObject.position.z = planeMesh.position.z;
 	cssObject.rotation.y = Math.PI * 1.5;
@@ -208,14 +208,32 @@
 	rendererCSS.domElement.style.padding  = 0;
 	document.body.appendChild( rendererCSS.domElement );
 	// when window resizes, also resize this renderer
-	THREEx.WindowResize(rendererCSS, camera);
+	//THREEx.WindowResize(rendererCSS, camera);
 	
 	renderer.domElement.style.position = 'absolute';
 	renderer.domElement.style.top      = 0;
 	// make sure original renderer appears on top of CSS renderer
 	renderer.domElement.style.zIndex   = 1;
 	rendererCSS.domElement.appendChild( renderer.domElement );
+
 	
+//HTML Mixer
+	//create THREEx.HtmlMixer	
+	var mixerContext= new THREEx.HtmlMixer.Context(renderer, scene, camera)
+	// set up rendererCss
+	var rendererCss		= mixerContext.rendererCss;
+	rendererCss.setSize( window.innerWidth, window.innerHeight )
+	// set up rendererWebgl
+	var rendererWebgl	= mixerContext.rendererWebgl
+	
+	var webglCanvas			= rendererWebgl.domElement
+	webglCanvas.style.position	= 'absolute'
+	webglCanvas.style.top		= '0px'
+	webglCanvas.style.width		= '50%'
+	webglCanvas.style.height	= '100%'
+	webglCanvas.style.pointerEvents	= 'none'
+	//css3dElement.appendChild( webglCanvas )
+
 	
 /*//SHADOW (TEST)
 	// must enable shadows on the renderer 
@@ -353,8 +371,8 @@ var render = function () {
 	if (typeof user !== 'undefined')
 	{
 		user.motion();
-		camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
-        camera.lookAt(user.mesh.position);
+		//camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
+        //camera.lookAt(user.mesh.position);
 	}
 	redner_iteration++;
 	if(redner_iteration%60===0) //vsako sekundo naredi
@@ -369,7 +387,6 @@ var render = function () {
 		if ( videoTexture ) 
 			videoTexture.needsUpdate = true;
 	}*/
-	
 	
 	//RENDER SCENE 
 	mirrorCube.visible = false;

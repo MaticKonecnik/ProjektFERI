@@ -66,8 +66,7 @@
 		echo('<script type="text/javascript" src="js/grafika/libs/THREEx.FullScreen.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/jQuery/jquery-1.9.1.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/jQuery/jquery-ui.js"></script>'."\n");
-		
-		//echo('<script type="text/javascript" src="js/grafika/libs/threex.htmlmixer.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/threex.htmlmixer.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/grafika.js"></script>'."\n");
 		
 		
