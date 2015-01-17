@@ -1,4 +1,11 @@
-var scene, renderer, user, video;
+// custom global variables
+var cssScene, scene, renderer, user, video, camera, raycaster, container, controls, stats;
+
+var targetList = [];
+var projector, mouse = { x: 0, y: 0 };
+
+var mouse = new THREE.Vector2(), INTERSECTED;
+var clock = new THREE.Clock();
 var obstacles = [];
 function update_text(){};
 

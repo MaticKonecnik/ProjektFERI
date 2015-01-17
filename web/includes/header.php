@@ -53,16 +53,24 @@
 	{
 		echo('<script type="text/javascript" src="js/grafika/libs/three.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/OrbitControls.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/grafika/libs/OBJLoader.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/grafika/libs/DDSLoader.js"></script>'."\n");
+		//echo('<script type="text/javascript" src="js/grafika/libs/OBJLoader.js"></script>'."\n");
+		//echo('<script type="text/javascript" src="js/grafika/libs/DDSLoader.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/MTLLoader.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/OBJMTLLoader.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/grafika/libs/threex.videotexture.js"></script>'."\n");
+		//echo('<script type="text/javascript" src="js/grafika/libs/threex.videotexture.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/stats.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/utils.js"></script>'."\n");
-		echo('<script type="text/javascript" src="js/grafika/libs/threex.domevent.js"></script>'."\n");
+		//echo('<script type="text/javascript" src="js/grafika/libs/threex.domevent.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/CSS3DRenderer.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/THREEx.WindowResize.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/THREEx.FullScreen.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/jQuery/jquery-1.9.1.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/jQuery/jquery-ui.js"></script>'."\n");
+		
+		//echo('<script type="text/javascript" src="js/grafika/libs/threex.htmlmixer.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/grafika.js"></script>'."\n");
+		
+		
 	}
 	if(basename($_SERVER['PHP_SELF'])=="registration.php")
 		echo('<script type="text/javascript" src="js/preveri_registracijo.js"></script>'."\n");

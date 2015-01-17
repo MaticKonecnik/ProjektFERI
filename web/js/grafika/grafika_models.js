@@ -10,6 +10,7 @@ loader.load( "models/cooker.json", function ( geometry, materials ) {
 	mesh.translateZ(-111);
 	scene.add( mesh );
 	obstacles.push(mesh);
+	targetList.push(mesh);
 } );
 
 
@@ -161,6 +162,7 @@ loader.load( "models/cajnik.json", function ( geometry, materials ) {
 	mesh.position.y = 57;
 	scene.add( mesh );
 	obstacles.push(mesh);
+	targetList.push(mesh);
 } );
 
 // prepare loader and load the model
