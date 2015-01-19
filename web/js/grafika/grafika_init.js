@@ -29,8 +29,8 @@
 	
 // create a set of coordinate axes to help orient user
 //    specify length in pixels in each direction
-	var axes = new THREE.AxisHelper(400);
-	scene.add( axes );
+	//var axes = new THREE.AxisHelper(400);
+	//scene.add( axes );
 
 // STATS
 	var stats = new Stats();
@@ -320,7 +320,7 @@
 	
 // FULLSCREEN
 	var fullscreen = false;
-	$("#canvas_wrapper").dblclick(function() {
+	/*$("#canvas_wrapper").dblclick(function() {
 		if(!fullscreen)
 			FullScreenOn();
 	  	else
@@ -330,7 +330,7 @@
 	$(document).keyup(function(e) {
 	  if (e.keyCode == 27) // esc
 	  	FullScreenOff();
-	});
+	});*/
 
 	function FullScreenOn()
 	{
@@ -371,8 +371,8 @@ var render = function () {
 	if (typeof user !== 'undefined')
 	{
 		user.motion();
-		//camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
-        //camera.lookAt(user.mesh.position);
+		camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
+        camera.lookAt(user.mesh.position);
 	}
 	redner_iteration++;
 	if(redner_iteration%60===0) //vsako sekundo naredi
