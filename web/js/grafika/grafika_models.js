@@ -113,6 +113,7 @@ loader.load( "models/FridgeInterier.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+
 //Hladilnikova vrata 
 loader.load( "models/FridgeDoor.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );

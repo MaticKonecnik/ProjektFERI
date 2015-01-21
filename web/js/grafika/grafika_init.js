@@ -1,4 +1,6 @@
 
+	
+	
 
 // SCENE
 	scene = new THREE.Scene(),
@@ -282,6 +284,15 @@
 				intersects[ 0 ].object.position.x += -12
 				intersects[ 0 ].object.position.z += -39	
 				intersects[ 0 ].object.name = "VrataFridgeOtvorena";
+				
+				// load a sound and play it immediatly
+				WebAudiox.loadBuffer(context, 'sounds/freezer-open-1.mp3', function(buffer){
+					// init AudioBufferSourceNode
+					var source  = context.createBufferSource();
+					source.buffer   = buffer;
+					source.connect(lineOut.destination);
+					source.start(0);
+				});
 			}
 			else if(intersects[ 0 ].object.name == "VrataFridgeOtvorena")
 			{
@@ -289,6 +300,15 @@
 				intersects[ 0 ].object.position.x += +12
 				intersects[ 0 ].object.position.z += +39	
 				intersects[ 0 ].object.name = "VrataFridgeZatvorena";
+				
+				// load a sound and play it immediatly
+				WebAudiox.loadBuffer(context, 'sounds/freezer-close-1.mp3', function(buffer){
+					// init AudioBufferSourceNode
+					var source  = context.createBufferSource();
+					source.buffer   = buffer;
+					source.connect(lineOut.destination);
+					source.start(0);
+				});
 			}
 			
 			//Sklopka
@@ -298,11 +318,27 @@
 				{
 					spotlight.intensity = 0;
 					spotlight.shadowDarkness = 0;
+					// load a sound and play it immediatly
+					WebAudiox.loadBuffer(context, 'sounds/Click02.mp3', function(buffer){
+						// init AudioBufferSourceNode
+						var source  = context.createBufferSource();
+						source.buffer   = buffer;
+						source.connect(lineOut.destination);
+						source.start(0);
+					});
 				}
 				else
 				{
 					spotlight.intensity = 1.4;
 					spotlight.shadowDarkness = 0.2;
+					// load a sound and play it immediatly
+					WebAudiox.loadBuffer(context, 'sounds/Click02.mp3', function(buffer){
+						// init AudioBufferSourceNode
+						var source  = context.createBufferSource();
+						source.buffer   = buffer;
+						source.connect(lineOut.destination);
+						source.start(0);
+					});
 				}
 			}
 			if(intersects[ 0 ].object.name == "Tablet")

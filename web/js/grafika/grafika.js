@@ -8,6 +8,9 @@ var selectKamera = 0;
 var mouse = new THREE.Vector2(), INTERSECTED;
 var clock = new THREE.Clock();
 var obstacles = [];
+var context = new AudioContext();
+var lineOut = new WebAudiox.LineOut(context);
+
 function update_text(){};
 
 $(document).ready(function() {
