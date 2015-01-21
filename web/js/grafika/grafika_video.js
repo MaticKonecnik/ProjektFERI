@@ -3,7 +3,6 @@
 // custom global variables
 var videoImage, videoImageContext, videoTexture;
 var controls;
-
 /*
 function init_video(){
 

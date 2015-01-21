@@ -60,7 +60,7 @@
 		//echo('<script type="text/javascript" src="js/grafika/libs/threex.videotexture.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/stats.min.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/utils.js"></script>'."\n");
-		//echo('<script type="text/javascript" src="js/grafika/libs/threex.domevent.js"></script>'."\n");
+		echo('<script type="text/javascript" src="js/grafika/libs/threex.domevent.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/CSS3DRenderer.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/THREEx.WindowResize.js"></script>'."\n");
 		echo('<script type="text/javascript" src="js/grafika/libs/THREEx.FullScreen.js"></script>'."\n");

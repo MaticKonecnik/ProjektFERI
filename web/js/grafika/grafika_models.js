@@ -1,4 +1,5 @@
 var loader = new THREE.JSONLoader();
+var oLoader = new THREE.OBJMTLLoader();
 
 //štedilnik
 loader.load( "models/cooker.json", function ( geometry, materials ) {
@@ -10,7 +11,6 @@ loader.load( "models/cooker.json", function ( geometry, materials ) {
 	mesh.translateZ(-111);
 	scene.add( mesh );
 	obstacles.push(mesh);
-	targetList.push(mesh);
 } );
 
 
@@ -101,16 +101,31 @@ loader.load( "models/pizza.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
-//hladilnik
-loader.load( "models/hladilnik.json", function ( geometry, materials ) {
+//hladilnik (Unutarnja strana)
+loader.load( "models/FridgeInterier.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
 	mesh.rotation.y = Math.PI;
 	mesh.scale.multiplyScalar(90);
-	mesh.position.y = 35;
+	mesh.position.y = 0;
 	mesh.translateX(-110);
 	mesh.translateZ(-202);
 	scene.add( mesh );
 	obstacles.push(mesh);
+} );
+
+//Hladilnikova vrata 
+loader.load( "models/FridgeDoor.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.rotation.y = Math.PI;
+	mesh.scale.multiplyScalar(90);
+	mesh.position.y = 0;
+	mesh.translateX(-110);
+	mesh.translateZ(-202);
+	mesh.name = "VrataFridgeZatvorena";
+	scene.add( mesh );
+	obstacles.push(mesh);
+	//Dodamo v target list
+	targetList.push(mesh);
 } );
 
 //pribor
@@ -142,10 +157,10 @@ loader.load( "models/Kuhinja/kuhinja2.json", function ( geometry, materials ) {
 	mesh.rotation.y = Math.PI *0.5;
 	//mesh.scale.set(50, 75, 80);
 	//mesh.scale.multiplyScalar(50);
-	mesh.scale.set(45,55,40);
+	mesh.scale.set(45,65,40);
 	mesh.position.x = -230;
 	mesh.position.z = 60;
-	mesh.position.y = 85;
+	mesh.position.y = 95;
 	scene.add( mesh );
 	obstacles.push(mesh);
 } );
@@ -162,12 +177,12 @@ loader.load( "models/cajnik.json", function ( geometry, materials ) {
 	mesh.position.y = 57;
 	scene.add( mesh );
 	obstacles.push(mesh);
-	targetList.push(mesh);
+	
 } );
 
 // prepare loader and load the model
 //THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
-var oLoader = new THREE.OBJMTLLoader();
+/*
 oLoader.load('models/InteraktivnaPloca/desk/Plocica.obj', 'models/InteraktivnaPloca/desk/Plocica.mtl', function(object, materials) {
 	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
 	var material = new THREE.MeshFaceMaterial(materials);
@@ -184,8 +199,156 @@ oLoader.load('models/InteraktivnaPloca/desk/Plocica.obj', 'models/InteraktivnaPl
 	object.scale.multiplyScalar(0.4);
 	
 	object.position.z = 170;
-	object.position.x = 105;
+	object.position.x = 0;
 	object.position.y = 80;
 	
 	scene.add(object);	
 });
+*/
+
+
+loader.load( "models/Tablet.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(50);
+	mesh.rotation.y = Math.PI * 0.5;
+	mesh.position.x = - 170.8;
+	mesh.position.z = 244.5;
+	mesh.position.y = 100;
+	mesh.name = "Tablet";
+	targetList.push(mesh);
+	
+	scene.add( mesh );
+} );
+
+oLoader.load('models/Window2.obj', 'models/Window2.mtl', function(object, materials) {
+	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
+	var material = new THREE.MeshFaceMaterial(materials);
+	//var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+	
+	object.traverse( function(child) {
+		if (child instanceof THREE.Mesh) {
+			// apply custom material
+			//child.material = material2;
+			// enable casting shadows
+		}
+	});
+	object.rotation.y = Math.PI * 0.5;
+	object.scale.multiplyScalar(15);
+	object.position.x = -110;
+	object.position.y = 100;
+	object.position.z = 275;
+
+		
+	scene.add(object);	
+	
+});
+
+oLoader.load('models/puerta_yafaray_door.obj', 'models/puerta_yafaray_door.mtl', function(object, materials) {
+	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
+	var material = new THREE.MeshFaceMaterial(materials);
+	//var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+	
+	object.traverse( function(child) {
+		if (child instanceof THREE.Mesh) {
+			// apply custom material
+			//child.material = material2;
+			// enable casting shadows
+		}
+	});
+	object.scale.x = 2;
+	object.scale.multiplyScalar(80);
+	object.rotation.y = Math.PI * 1.5;
+	object.position.x = -275;
+	object.position.y = 0;
+	object.position.z = -120;
+	
+	scene.add(object);	
+});
+
+oLoader.load('models/Mirror.obj', 'models/Mirror.mtl', function(object, materials) {
+	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
+	var material = new THREE.MeshFaceMaterial(materials);
+	//var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+	
+	object.traverse( function(child) {
+		if (child instanceof THREE.Mesh) {
+			// apply custom material
+			//child.material = material2;
+			// enable casting shadows
+		}
+	});
+	object.scale.x = 1.2;
+	object.scale.y = 2;
+	object.scale.z = 1.9;
+	object.scale.multiplyScalar(10);
+	
+	object.rotation.y = Math.PI;
+	object.position.x = 195;
+	object.position.y = 100;
+	object.position.z = 250;
+	
+	
+	scene.add(object);	
+});
+
+
+oLoader.load('models/Sconce.obj', 'models/Sconce.mtl', function(object, materials) {
+	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
+	var material = new THREE.MeshFaceMaterial(materials);
+	//var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+	
+	object.traverse( function(child) {
+		if (child instanceof THREE.Mesh) {
+			// apply custom material
+			//child.material = material2;
+			// enable casting shadows
+		}
+	});
+	object.scale.multiplyScalar(10);
+	
+	object.position.x = -235;
+	object.position.y = 175;
+	object.position.z = -200;
+	
+	scene.add(object);	
+});
+
+oLoader.load('models/GasStove.obj', 'models/GasStove.mtl', function(object, materials) {
+	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
+	var material = new THREE.MeshFaceMaterial(materials);
+	//var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+	
+	object.traverse( function(child) {
+		if (child instanceof THREE.Mesh) {
+			// apply custom material
+			//child.material = material2;
+			// enable casting shadows
+		}
+	});
+	object.scale.multiplyScalar(6);
+	object.rotation.y = Math.PI;
+	object.position.x = -230;
+	object.position.y = 65;
+	object.position.z = 60;
+	
+	scene.add(object);	
+});
+
+
+loader.load( "models/Switcher.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(50);
+	mesh.position.x = -240;
+	mesh.position.y =  60;
+	mesh.position.z = -50;
+	mesh.name = "Sklopka";
+	
+	scene.add( mesh );
+	targetList.push(mesh);
+	
+} );
+
+/*//TragetList
+-Hladilnikova Vrata
+-Sklopka
+*/

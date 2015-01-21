@@ -3,6 +3,7 @@ var cssScene, scene, renderer, user, video, camera, raycaster, container, contro
 
 var targetList = [];
 var projector, mouse = { x: 0, y: 0 };
+var selectKamera = 0;
 
 var mouse = new THREE.Vector2(), INTERSECTED;
 var clock = new THREE.Clock();

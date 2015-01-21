@@ -1,12 +1,15 @@
+
+
 // SCENE
 	scene = new THREE.Scene(),
-	renderer = new THREE.WebGLRenderer( { alpha: true } );
+	renderer = new THREE.WebGLRenderer( { alpha: true, antialias:true } );
 	renderer.setSize( $("#canvas_wrapper").width(), $("#canvas_wrapper").height());
 	$("#canvas_wrapper").append(renderer.domElement);
 
 // CAMERA
-	var SCREEN_WIDTH = $("#canvas_wrapper").width(),
-	SCREEN_HEIGHT = $("#canvas_wrapper").height(),
+
+	//To Testirati
+	var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
 	VIEW_ANGLE = 60,
 	ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
 	NEAR = 0.1,
@@ -14,7 +17,7 @@
 	camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
 	cameraClone = camera.clone();
 	camera.position.set(0,200,-600);
-	//camera.up.set(0, 1, 0);
+	camera.up.set(0, 1, 0);
 	scene.add(camera);
 	//camera.lookAt(scene.position);
 	
@@ -30,30 +33,16 @@
 // create a set of coordinate axes to help orient user
 //    specify length in pixels in each direction
 	var axes = new THREE.AxisHelper(400);
-	scene.add( axes );
+	//scene.add( axes );
 
 // STATS
 	var stats = new Stats();
 	stats.domElement.style.position = 'absolute';
 	stats.domElement.style.bottom = '0px';
-	stats.domElement.style.zIndex = 0;
+	stats.domElement.style.zIndex = 100;
 	$("#canvas_wrapper").append(stats.domElement);
 
-// LIGHT
-	//DirectionalLight
-	var directionalLight = new THREE.DirectionalLight( 0xffffff, 1.475 );
-	directionalLight.position.set( 100, 100, -100 );
-	//scene.add( directionalLight );
-	//small sphere show DirectionalLight
-	var lightbulb = new THREE.Mesh( 
-		new THREE.SphereGeometry( 10, 16, 8 ), 
-		new THREE.MeshBasicMaterial( { color: 0xffaa00 } )
-	);
-	lightbulb.position.x = directionalLight.position.x;
-	lightbulb.position.y = directionalLight.position.y;
-	lightbulb.position.z = directionalLight.position.z;
-	scene.add( lightbulb );
-		
+// LIGHT	
 	//HEMISPHERE LIGHT
 	var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.5 );
 	hemiLight.color.setHSL( 0.6, 1, 0.75 );
@@ -68,15 +57,15 @@
 	lightbulb.position.x = hemiLight.position.x;
 	lightbulb.position.y = hemiLight.position.y;
 	lightbulb.position.z = hemiLight.position.z;
-	scene.add( lightbulb );
+	//scene.add( lightbulb );
 	
 	
 	//POINT LIGHT
 	var pointLight = new THREE.PointLight( 0xffffff, 1.475 );
-	pointLight.position.set( 100, 100, -100 );
+	pointLight.position.set( 100, 200, -100 );
 	scene.add( pointLight );
-	
-	//small sphere show directionalLight
+	pointLight.intensity = 1;
+	//small sphere show pointLight
 	var lightbulb = new THREE.Mesh( 
 		new THREE.SphereGeometry( 10, 16, 8 ), 
 		new THREE.MeshBasicMaterial( { color: 0xffaa00 } )
@@ -84,7 +73,7 @@
 	lightbulb.position.x = pointLight.position.x;
 	lightbulb.position.y = pointLight.position.y;
 	lightbulb.position.z = pointLight.position.z;
-	scene.add( lightbulb );
+	//scene.add( lightbulb );
 	
 
 // SKYDOME
@@ -114,66 +103,31 @@
 	raycaster = new THREE.Raycaster();
 	
 //Reflection (TEST)
-	var cubeGeom = new THREE.BoxGeometry(100, 100, 10, 1, 1, 1);
+	var cubeGeom = new THREE.BoxGeometry(90, 100, 10, 1, 1, 1);
 	mirrorCubeCamera = new THREE.CubeCamera( 0.1, 512, 252 );
 	//mirrorCubeCamera.renderTarget.minFilter = THREE.LinearMipMapLinearFilter;
 	scene.add( mirrorCubeCamera );
 	var mirrorCubeMaterial = new THREE.MeshBasicMaterial( { envMap: mirrorCubeCamera.renderTarget } );
 	mirrorCube = new THREE.Mesh( cubeGeom, mirrorCubeMaterial );
-	mirrorCube.position.set(200, 100, 250);
+	mirrorCube.position.set(195, 100, 250);
 	mirrorCubeCamera.position.x = mirrorCube.position.x;
 	mirrorCubeCamera.position.y = mirrorCube.position.y;
 	mirrorCubeCamera.position.z = mirrorCube.position.z;
 	scene.add(mirrorCube);	
-
-	
-//Interakcija Mis(objekti)
-// initialize object to perform world/screen calculations
-	projector = new THREE.Projector();
-	
-	// when the mouse moves, call the given function
-	document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-	
-	function onDocumentMouseDown( event ) 
-	{
-		console.log("Klik");
-		
-		// update the mouse variable
-		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-		
-		// find intersections
-		console.log(Object.keys(targetList));
-		
-		// create a Ray with origin at the mouse position
-		//   and direction into the scene (camera direction)
-		var vector = new THREE.Vector3( mouse.x, mouse.y, 1 );
-		projector.unprojectVector( vector, camera );
-		var ray = new THREE.Raycaster( camera.position, vector.sub( camera.position ).normalize() );
-		
-		// create an array containing all objects in the scene with which the ray intersects
-		var intersects = ray.intersectObjects( targetList );
-		// if there is one (or more) intersections
-		if ( intersects.length > 0 )
-		{
-			console.log("Hit @ " + toString( intersects[0].point ) );
-			// Do stuff
-			intersects[ 0 ].object.position.set(0,0,0);
-		}
-	}
 	
 //CSS3D HTML Renders
 	var planeMaterial   = new THREE.MeshBasicMaterial({color: 0x000000, opacity: 0.001, side: THREE.DoubleSide });
-	var planeWidth = 360;
-    var planeHeight = 120;
+	var planeWidth = 32;
+    var planeHeight = 18;
 	var planeGeometry = new THREE.PlaneGeometry( planeWidth, planeHeight );
 	var planeMesh= new THREE.Mesh( planeGeometry, planeMaterial );
-	planeMesh.position.x += planeHeight/2 + 188;
-	planeMesh.position.y += planeHeight/2 + 100;
-	planeMesh.rotation.y = Math.PI *0.5;
+	planeMesh.position.x += planeHeight/2 - 179;
+	planeMesh.position.y += planeHeight/2 + 95.7;
+	planeMesh.position.z = 242;
+	planeMesh.rotation.y = Math.PI;
+	planeMesh.rotation.x = 0.4;
 	// add it to the standard (WebGL) scene
 	scene.add(planeMesh);
-	
 	
 	// create a new scene to hold CSS
 	cssScene = new THREE.Scene();
@@ -193,9 +147,13 @@
 	cssObject.position.x = planeMesh.position.x;
 	cssObject.position.y = planeMesh.position.y;
 	cssObject.position.z = planeMesh.position.z;
-	cssObject.rotation.y = Math.PI * 1.5;
+	//Rotation
+	cssObject.rotation.x = planeMesh.rotation.x;
+	cssObject.rotation.y = planeMesh.rotation.y;
+	cssObject.rotation.z = planeMesh.rotation.z;
+	
 	// resize cssObject to same size as planeMesh (plus a border)
-	var percentBorder = 0.001;
+	var percentBorder = 0.0;
 	cssObject.scale.x /= (1 + percentBorder) * (elementWidth / planeWidth);
 	cssObject.scale.y /= (1 + percentBorder) * (elementWidth / planeWidth);
 	cssScene.add(cssObject);
@@ -208,7 +166,7 @@
 	rendererCSS.domElement.style.padding  = 0;
 	document.body.appendChild( rendererCSS.domElement );
 	// when window resizes, also resize this renderer
-	//THREEx.WindowResize(rendererCSS, camera);
+	THREEx.WindowResize(rendererCSS, camera);
 	
 	renderer.domElement.style.position = 'absolute';
 	renderer.domElement.style.top      = 0;
@@ -216,8 +174,9 @@
 	renderer.domElement.style.zIndex   = 1;
 	rendererCSS.domElement.appendChild( renderer.domElement );
 
-	
+
 //HTML Mixer
+	
 	//create THREEx.HtmlMixer	
 	var mixerContext= new THREEx.HtmlMixer.Context(renderer, scene, camera)
 	// set up rendererCss
@@ -233,42 +192,130 @@
 	webglCanvas.style.height	= '100%'
 	webglCanvas.style.pointerEvents	= 'none'
 	//css3dElement.appendChild( webglCanvas )
-
 	
-/*//SHADOW (TEST)
+	
+//SHADOW (TEST)
 	// must enable shadows on the renderer 
-	//renderer.shadowMapEnabled = true;
+	renderer.shadowMapEnabled = true;
 
 
-	/*
 	// spotlight #1 -- yellow, dark shadow
 	var spotlight = new THREE.SpotLight(0xfffff0);
-	spotlight.position.set(-60,300,-50);
-	spotlight.shadowCameraVisible = true;
-	spotlight.shadowDarkness = 0.3;
+	spotlight.position.set(220,190,-200);
+	//spotlight.shadowCameraVisible = true;
+	spotlight.shadowDarkness = 0.2;
 	spotlight.intensity = 1.4;
 	// must enable shadow casting ability for the light
 	spotlight.castShadow = true;
 	scene.add(spotlight);
-	*/
+	
+	var lightbulb = new THREE.Mesh( 
+		new THREE.SphereGeometry( 10, 16, 8 ), 
+		new THREE.MeshBasicMaterial( { color: 0xffaa00 } )
+	);
+	lightbulb.position.x = spotlight.position.x;
+	lightbulb.position.y = spotlight.position.y;
+	lightbulb.position.z = spotlight.position.z;
+	//scene.add( lightbulb );
 	
 	
-	// spotlight #3
-	/*
-	var spotlight3 = new THREE.SpotLight(0x0000ff);
-	spotlight3.position.set(0,500,-100);
+	/*// spotlight #3
+	var spotlight3 = new THREE.SpotLight(0x8B0000);
+	spotlight3.position.set(-220,190,-200);
 	spotlight3.shadowCameraVisible = true;
-	spotlight3.shadowDarkness = 0.5;
-	spotlight3.intensity = 2;
+	spotlight3.shadowDarkness = 0.3;
+	spotlight3.intensity = 3;
 	spotlight3.castShadow = true;
-	scene.add(spotlight3);
+	//scene.add(spotlight3);
+	
 	// change the direction this spotlight is facing
 	var lightTarget = new THREE.Object3D();
 	lightTarget.position.set(0,10,-100);
 	scene.add(lightTarget);
 	spotlight3.target = lightTarget;
+	
+	
+	var lightbulb = new THREE.Mesh( 
+		new THREE.SphereGeometry( 10, 16, 8 ), 
+		new THREE.MeshBasicMaterial( { color: 0xffaa00 } )
+	);
+	lightbulb.position.x = spotlight3.position.x;
+	lightbulb.position.y = spotlight3.position.y;
+	lightbulb.position.z = spotlight3.position.z;
+	scene.add( lightbulb );
 	*/
 	
+	//Interakcija Mis(objekti)
+// initialize object to perform world/screen calculations
+	projector = new THREE.Projector();
+	
+	// when the mouse moves, call the given function
+	document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+	
+	function onDocumentMouseDown( event ) 
+	{
+		var intersects;
+		console.log("Klik");
+		
+		// update the mouse variable
+		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+		
+		// find intersections
+		// create a Ray with origin at the mouse position
+		//   and direction into the scene (camera direction)
+		var vector = new THREE.Vector3( mouse.x, mouse.y, 1 );
+		projector.unprojectVector(vector, camera );
+		var ray = new THREE.Raycaster( camera.position, vector.sub( camera.position ).normalize() );
+		
+		intersects = ray.intersectObjects( targetList );
+		// if there is one (or more) intersections
+		if ( intersects.length > 0 )
+		{
+			console.log(Object.keys(targetList));
+			console.log("Hit @ " + toString( intersects[0].point ) );
+			// Do stuff
+			//Vrata Frizidera
+			if(intersects[ 0 ].object.name == "VrataFridgeZatvorena")
+			{
+				intersects[ 0 ].object.rotation.y = Math.PI + 1.6;
+				intersects[ 0 ].object.position.x += -12
+				intersects[ 0 ].object.position.z += -39	
+				intersects[ 0 ].object.name = "VrataFridgeOtvorena";
+			}
+			else if(intersects[ 0 ].object.name == "VrataFridgeOtvorena")
+			{
+				intersects[ 0 ].object.rotation.y = Math.PI;
+				intersects[ 0 ].object.position.x += +12
+				intersects[ 0 ].object.position.z += +39	
+				intersects[ 0 ].object.name = "VrataFridgeZatvorena";
+			}
+			
+			//Sklopka
+			if(intersects[ 0 ].object.name == "Sklopka")
+			{
+				if(spotlight.intensity >= 1)
+				{
+					spotlight.intensity = 0;
+					spotlight.shadowDarkness = 0;
+				}
+				else
+				{
+					spotlight.intensity = 1.4;
+					spotlight.shadowDarkness = 0.2;
+				}
+			}
+			if(intersects[ 0 ].object.name == "Tablet")
+			{
+				if(selectKamera == 0)
+					selectKamera = 1;
+				else
+					selectKamera = 0;
+			}
+			
+		}
+		
+	}
 	
 // FLOOR
 	var floorWidth = 500, floorHeight = 500;
@@ -318,13 +365,16 @@
 	walls[3].material = walls[3].material.clone();
 	walls[3].material.visible = false;
 	
+	
 // FULLSCREEN
 	var fullscreen = false;
 	$("#canvas_wrapper").dblclick(function() {
+	
 		if(!fullscreen)
 			FullScreenOn();
 	  	else
 			FullScreenOff();
+			
 	});
 
 	$(document).keyup(function(e) {
@@ -332,6 +382,7 @@
 	  	FullScreenOff();
 	});
 
+	
 	function FullScreenOn()
 	{
 		fullscreen = true;
@@ -345,6 +396,8 @@
 		});
 	  	renderer.setSize( $("#canvas_wrapper").width(), $("#canvas_wrapper").height());
 	}
+	
+	
 	function FullScreenOff()
 	{
 		fullscreen = false;
@@ -358,6 +411,8 @@
 		});
 	  	renderer.setSize( $("#canvas_wrapper").width(), $("#canvas_wrapper").height());	
 	}
+	
+	
 
 //************************************
 //********** RENDER ******************
@@ -371,14 +426,44 @@ var render = function () {
 	if (typeof user !== 'undefined')
 	{
 		user.motion();
-		//camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
-        //camera.lookAt(user.mesh.position);
+		
+		
+		/*//Camera (Chase)
+		var relativeCameraOffset = new THREE.Vector3(0,100,-200);
+		var cameraOffset = relativeCameraOffset.applyMatrix4( user.mesh.matrixWorld );
+
+		camera.position.x = cameraOffset.x;
+		camera.position.y = cameraOffset.y;
+		camera.position.z = cameraOffset.z;
+		camera.lookAt( user.mesh.position );
+		*/
+		
+		
+		if(selectKamera == 0)
+		{
+		
+			camera.position.set(user.mesh.position.x, user.mesh.position.y + 128, user.mesh.position.z - 256);
+			camera.fov = 60;
+			camera.updateProjectionMatrix();
+			camera.lookAt(user.mesh.position);
+		}
+		else if(selectKamera == 1)
+		{	
+			camera.lookAt( planeMesh.position );
+			camera.fov = 2.5;
+			camera.updateProjectionMatrix();
+		}
+		
+		
+
 	}
 	redner_iteration++;
 	if(redner_iteration%60===0) //vsako sekundo naredi
 	{
 		update_text();
 	}
+	
+	//SelectCamera
 		
 	/*if(typeof video !== "undefined")
 	if ( video.readyState === video.HAVE_ENOUGH_DATA ) 
@@ -389,14 +474,20 @@ var render = function () {
 	}*/
 	
 	//RENDER SCENE 
-	mirrorCube.visible = false;
-	mirrorCubeCamera.updateCubeMap( renderer, scene );
-	mirrorCube.visible = true;
+		//Render Reflection
+		mirrorCube.visible = false;
+		mirrorCubeCamera.updateCubeMap( renderer, scene );
+		mirrorCube.visible = true;
 	
-	rendererCSS.render( cssScene, camera );
-	renderer.render( scene, camera );
-	controls.update();
-	stats.update();
+		//Render Scene
+		renderer.render( scene, camera );
+		
+		//Render cssScene
+		rendererCSS.render( cssScene, camera );
+		
+		//Update
+		controls.update();
+		stats.update();
 	
 };
 
