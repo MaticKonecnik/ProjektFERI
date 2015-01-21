@@ -452,7 +452,7 @@ var render = function () {
 		else if(selectKamera == 1)
 		{	
 			camera.lookAt( planeMesh.position );
-			camera.fov = 2.5;
+			camera.fov = 4;
 			camera.updateProjectionMatrix();
 		}	
 	}
