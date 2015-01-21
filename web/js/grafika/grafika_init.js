@@ -367,7 +367,7 @@
 	
 	
 // FULLSCREEN
-	var fullscreen = false;
+	//var fullscreen = false;
 	$("#canvas_wrapper").dblclick(function() {
 	
 		if(!fullscreen)
@@ -377,10 +377,12 @@
 			
 	});
 
+	/*
 	$(document).keyup(function(e) {
 	  if (e.keyCode == 27) // esc
 	  	FullScreenOff();
 	});
+	*/
 
 	
 	function FullScreenOn()
@@ -452,10 +454,7 @@ var render = function () {
 			camera.lookAt( planeMesh.position );
 			camera.fov = 2.5;
 			camera.updateProjectionMatrix();
-		}
-		
-		
-
+		}	
 	}
 	redner_iteration++;
 	if(redner_iteration%60===0) //vsako sekundo naredi
