@@ -117,6 +117,7 @@
 	mirrorCubeCamera.position.z = mirrorCube.position.z;
 	scene.add(mirrorCube);	
 	
+//INDEX.PHP
 //CSS3D HTML Renders
 	var planeMaterial   = new THREE.MeshBasicMaterial({color: 0x000000, opacity: 0.001, side: THREE.DoubleSide });
 	var planeWidth = 32;
@@ -135,6 +136,7 @@
 	cssScene = new THREE.Scene();
 	// create the iframe to contain webpage
 	var element	= document.createElement('iframe')
+	element.id = "frame0";
 	// webpage to be loaded into iframe
 	element.src	= "index.php";
 	// width of iframe in pixels
@@ -173,10 +175,10 @@
 	renderer.domElement.style.position = 'absolute';
 	renderer.domElement.style.top      = 0;
 	// make sure original renderer appears on top of CSS renderer
-	renderer.domElement.style.zIndex   = 1;
+	renderer.domElement.style.zIndex   = 0;
 	rendererCSS.domElement.appendChild( renderer.domElement );
-
-
+	
+	
 //HTML Mixer
 	
 	//create THREEx.HtmlMixer	
@@ -220,32 +222,6 @@
 	lightbulb.position.z = spotlight.position.z;
 	//scene.add( lightbulb );
 	
-	
-	/*// spotlight #3
-	var spotlight3 = new THREE.SpotLight(0x8B0000);
-	spotlight3.position.set(-220,190,-200);
-	spotlight3.shadowCameraVisible = true;
-	spotlight3.shadowDarkness = 0.3;
-	spotlight3.intensity = 3;
-	spotlight3.castShadow = true;
-	//scene.add(spotlight3);
-	
-	// change the direction this spotlight is facing
-	var lightTarget = new THREE.Object3D();
-	lightTarget.position.set(0,10,-100);
-	scene.add(lightTarget);
-	spotlight3.target = lightTarget;
-	
-	
-	var lightbulb = new THREE.Mesh( 
-		new THREE.SphereGeometry( 10, 16, 8 ), 
-		new THREE.MeshBasicMaterial( { color: 0xffaa00 } )
-	);
-	lightbulb.position.x = spotlight3.position.x;
-	lightbulb.position.y = spotlight3.position.y;
-	lightbulb.position.z = spotlight3.position.z;
-	scene.add( lightbulb );
-	*/
 	
 	//Interakcija Mis(objekti)
 // initialize object to perform world/screen calculations
@@ -487,10 +463,13 @@ var render = function () {
 		}
 		else if(selectKamera == 1)
 		{	
-			camera.lookAt( planeMesh.position );
+			
+			camera.lookAt( targetList[2].position );	//LookAt Tablet
 			camera.fov = 4;
 			camera.updateProjectionMatrix();
 		}	
+		
+		
 	}
 	redner_iteration++;
 	if(redner_iteration%60===0) //vsako sekundo naredi

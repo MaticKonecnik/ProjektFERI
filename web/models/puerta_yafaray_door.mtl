@@ -18,7 +18,7 @@ Ks 0.268981 0.268981 0.268981
 Ni 1.200000
 d 1.000000
 illum 2
-map_Kd C:\Users\Zerocool\Documents\BlenderObject\Door\tilewood.jpg
+map_Kd tilewood.jpg
 
 newmtl madera_puerta2
 Ns 125.490196
@@ -28,7 +28,7 @@ Ks 0.268981 0.268981 0.268981
 Ni 1.200000
 d 1.000000
 illum 2
-map_Kd C:\\Users\\Zerocool\\Documents\\BlenderObject\\Door\\tilewood.jpg
+map_Kd tilewood.jpg
 
 newmtl madera_puerta4
 Ns 125.490196
@@ -38,4 +38,4 @@ Ks 0.268981 0.268981 0.268981
 Ni 1.200000
 d 1.000000
 illum 2
-map_Kd C:\\Users\\Zerocool\\Documents\\BlenderObject\\Door\\tilewood.jpg
+map_Kd tilewood.jpg

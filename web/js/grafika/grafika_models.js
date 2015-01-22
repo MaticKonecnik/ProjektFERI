@@ -152,6 +152,41 @@ loader.load( "models/Ingredients/sadje.json", function ( geometry, materials ) {
 	obstacles.push(mesh);
 } );
 
+
+//sadje
+loader.load( "models/Milk.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(10);
+	mesh.rotation.x = Math.PI * 1.5;
+	mesh.position.y = 115;
+	mesh.position.x = 120;
+	mesh.position.z = 220;
+	mesh.name = "Milk";
+	scene.add( mesh );
+} );
+
+
+loader.load( "models/KiseloVrhnje.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(10);
+	mesh.position.y = 110;
+	mesh.position.x = 100;
+	mesh.position.z = 200;
+	mesh.name = "KiseloVrhnje";
+	scene.add( mesh );
+} );
+
+
+loader.load( "models/Onion/Onion.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.multiplyScalar(3);
+	mesh.position.y = 90;
+	mesh.position.x = 100;
+	mesh.position.z = 220;
+	mesh.name = "Luk";
+	scene.add( mesh );
+} );
+
 //omare
 loader.load( "models/Kuhinja/kuhinja2.json", function ( geometry, materials ) {
 	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
@@ -221,6 +256,19 @@ loader.load( "models/Tablet.json", function ( geometry, materials ) {
 	scene.add( mesh );
 } );
 
+loader.load( "models/Door.json", function ( geometry, materials ) {
+	var mesh = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial( materials ) );
+	mesh.scale.x = 1.5;
+	mesh.scale.multiplyScalar(80);
+	mesh.rotation.y = Math.PI * 1.5;
+	mesh.position.x = - 275;
+	mesh.position.z = -120;
+	mesh.position.y = 0;
+	targetList.push(mesh);
+	
+	scene.add( mesh );
+} );
+
 oLoader.load('models/Window2.obj', 'models/Window2.mtl', function(object, materials) {
 	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
 	var material = new THREE.MeshFaceMaterial(materials);
@@ -244,6 +292,7 @@ oLoader.load('models/Window2.obj', 'models/Window2.mtl', function(object, materi
 	
 });
 
+/*
 oLoader.load('models/puerta_yafaray_door.obj', 'models/puerta_yafaray_door.mtl', function(object, materials) {
 	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
 	var material = new THREE.MeshFaceMaterial(materials);
@@ -263,8 +312,9 @@ oLoader.load('models/puerta_yafaray_door.obj', 'models/puerta_yafaray_door.mtl',
 	object.position.y = 0;
 	object.position.z = -120;
 	
-	scene.add(object);	
+	//scene.add(object);	
 });
+*/
 
 oLoader.load('models/Mirror.obj', 'models/Mirror.mtl', function(object, materials) {
 	var mesh = new THREE.Mesh( object, new THREE.MeshFaceMaterial( material ) );
@@ -352,4 +402,5 @@ loader.load( "models/Switcher.json", function ( geometry, materials ) {
 /*//TragetList
 -Hladilnikova Vrata
 -Sklopka
+-Tablet
 */
