@@ -120,15 +120,15 @@
 //INDEX.PHP
 //CSS3D HTML Renders
 	var planeMaterial   = new THREE.MeshBasicMaterial({color: 0x000000, opacity: 0.001, side: THREE.DoubleSide });
-	var planeWidth = 32;
+	var planeWidth = 30.5;
     var planeHeight = 18;
 	var planeGeometry = new THREE.PlaneGeometry( planeWidth, planeHeight );
 	var planeMesh= new THREE.Mesh( planeGeometry, planeMaterial );
-	planeMesh.position.x += planeHeight/2 - 179;
+	planeMesh.position.x += planeHeight/2 - 178.9;
 	planeMesh.position.y += planeHeight/2 + 95.7;
-	planeMesh.position.z = 242;
+	planeMesh.position.z = 243.5;
 	planeMesh.rotation.y = Math.PI;
-	planeMesh.rotation.x = 0.4;
+	planeMesh.rotation.x = 0.36;
 	// add it to the standard (WebGL) scene
 	scene.add(planeMesh);
 	
@@ -463,10 +463,11 @@ var render = function () {
 		}
 		else if(selectKamera == 1)
 		{	
-			
+			camera.position.copy( targetList[2].position );
+			camera.position.z = targetList[2].geometry.boundingSphere.radius + 220;
 			camera.lookAt( targetList[2].position );	//LookAt Tablet
-			camera.fov = 4;
-			camera.updateProjectionMatrix();
+			//camera.fov = 90;
+			//camera.updateProjectionMatrix();
 		}	
 		
 		
